@@ -13,6 +13,7 @@ module.exports = {
         tech: '#007FBD',
         world: '#0092A8',
         infoText: '#819099',
+        carouselBorder: '#E6E6E6',
       },
       fontFamily: {
         roboto: ['Roboto'],
@@ -29,6 +30,7 @@ module.exports = {
       },
       aspectRatio: {
         '4/3': '4 / 3',
+        '40/23': '40 / 23',
       },
     },
   },

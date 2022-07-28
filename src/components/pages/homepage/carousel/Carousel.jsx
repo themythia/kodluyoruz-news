@@ -2,9 +2,12 @@ import CarouselContainer from './CarouselContainer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { useRef } from 'react';
 
-const MobileCarousel = () => {
-  // state to track carousel index
+const Carousel = () => {
+  const sliderRef = useRef(null);
+
+  // react-slick setting props
   const settings = {
     dots: true,
     infinite: true,
@@ -16,16 +19,25 @@ const MobileCarousel = () => {
     autoplay: true,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    dotsClass: 'mobileCarousel',
+    dotsClass: 'carousel',
     appendDots: (dots) => <div>{dots}</div>,
+    customPaging: (i) => (
+      <button
+        onMouseEnter={() => {
+          sliderRef.current.slickGoTo(i);
+        }}
+      >
+        {i + 1}
+      </button>
+    ),
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} ref={sliderRef}>
       {[...Array(20)].map((_, index) => (
         <CarouselContainer key={index} />
       ))}
     </Slider>
   );
 };
-export default MobileCarousel;
+export default Carousel;

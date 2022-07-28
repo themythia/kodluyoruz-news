@@ -6,22 +6,22 @@
 
 @layer components {
   /* Carousel stylings for react-slick */
-  .mobileCarousel {
-    @apply absolute -bottom-12 w-full h-12 px-[15px] pb-[7px] m-0 list-none text-center bg-textRed flex flex-row items-center justify-center;
+  .carousel {
+    @apply absolute -bottom-12 md:-bottom-[70px] w-full h-12 md:h-[70px] px-[15px] md:px-0 pb-[7px] md:pb-0 m-0 list-none text-center bg-textRed md:bg-white flex flex-row items-center justify-center;
   }
 
-  .mobileCarousel li {
-    @apply relative flex flex-row items-center justify-center w-[9px] h-full mr-[5px] p-0 cursor-pointer;
+  .carousel li {
+    @apply relative flex flex-row items-center justify-center w-[9px] md:w-[calc((100%-45px)/20)] md:max-w-[45px] h-full md:aspect-square md:h-auto mr-[5px] p-0 cursor-pointer;
   }
 
-  .mobileCarousel li:last-of-type {
+  .carousel li:last-of-type {
     @apply mr-0;
   }
 
-  .mobileCarousel li button {
-    @apply text-[0px] leading-[0px] block w-[9px] h-[9px] rounded-full bg-white/60 cursor-pointer border-0 outline-none;
+  .carousel li button {
+    @apply text-[0px] md:text-18-28 lg:text-20-22 md:font-bold leading-[0px] block w-[9px] md:w-full md:max-w-[45px] h-[9px] md:h-full rounded-full bg-white/60 md:bg-white md:text-textDark cursor-pointer border-0 md:border-2 md:border-carouselBorder outline-none;
   }
-  .mobileCarousel li.slick-active button {
-    @apply bg-white;
+  .carousel li.slick-active button {
+    @apply bg-white md:bg-textRed md:text-white duration-200;
   }
 }

@@ -1,10 +1,10 @@
-import MobileCarousel from './carousel/MobileCarousel';
+import Carousel from './carousel/Carousel';
 import Container from './Container';
 
 const HomePage = () => {
   return (
     <Container>
-      <MobileCarousel />
+      <Carousel />
     </Container>
   );
 };
