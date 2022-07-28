@@ -3,15 +3,22 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { useRef } from 'react';
+import useWindowSize from '../../../../utils/hooks/useWindowSize';
 
 const Carousel = () => {
   const sliderRef = useRef(null);
+  const { width } = useWindowSize();
 
   // react-slick setting props
   const settings = {
     dots: true,
     infinite: true,
-    speed: 300,
+    // speed controls animation duration
+    // if another button hovered faster than the speed value
+    // slickGoTo function doesn't work reliably
+    // so speed set to 0 on screens bigger than 767px width
+    // to allow smooth hovering experience
+    speed: width < 768 ? 300 : 0,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -23,8 +30,6 @@ const Carousel = () => {
     appendDots: (dots) => <div>{dots}</div>,
     customPaging: (i) => (
       <button
-        // HOVER IS NOT SMOOTH WHEN MOUSE MOVES FAST
-        // FIND A BETTER WAY
         onMouseEnter={() => {
           sliderRef.current.slickGoTo(i);
         }}
