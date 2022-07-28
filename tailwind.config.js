@@ -26,6 +26,9 @@ module.exports = {
         '20-22': ['20px', '22px'],
         '20-28': ['20px', '28px'],
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
     },
   },
   plugins: [],
