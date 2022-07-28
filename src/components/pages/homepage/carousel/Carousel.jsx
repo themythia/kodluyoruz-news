@@ -23,6 +23,8 @@ const Carousel = () => {
     appendDots: (dots) => <div>{dots}</div>,
     customPaging: (i) => (
       <button
+        // HOVER IS NOT SMOOTH WHEN MOUSE MOVES FAST
+        // FIND A BETTER WAY
         onMouseEnter={() => {
           sliderRef.current.slickGoTo(i);
         }}
