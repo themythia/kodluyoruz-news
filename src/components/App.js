@@ -1,21 +1,17 @@
 import '../index.css';
+import { Routes, Route } from 'react-router-dom';
+import Art from '../components/pages/Art';
+import Homepage from '../components/pages/Homepage';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p className='text-red-500'>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' index element={<Homepage />} />
+        <Route path='/art' element={<Art />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
