@@ -3,3 +3,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Carousel stylings for react-slick */
+  .mobileCarousel {
+    @apply absolute -bottom-12 w-full h-12 px-[15px] pb-[7px] m-0 list-none text-center bg-textRed flex flex-row items-center justify-center;
+  }
+
+  .mobileCarousel li {
+    @apply relative flex flex-row items-center justify-center w-[9px] h-full mr-[5px] p-0 cursor-pointer;
+  }
+
+  .mobileCarousel li:last-of-type {
+    @apply mr-0;
+  }
+
+  .mobileCarousel li button {
+    @apply text-[0px] leading-[0px] block w-[9px] h-[9px] rounded-full bg-white/60 cursor-pointer border-0 outline-none;
+  }
+  .mobileCarousel li.slick-active button {
+    @apply bg-white;
+  }
+}
