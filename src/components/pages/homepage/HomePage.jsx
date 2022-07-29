@@ -2,7 +2,7 @@ import BreakingNews from './breaking/BreakingNews';
 import Carousel from './carousel/Carousel';
 import Container from './Container';
 import InnerContainer from './InnerContainer';
-import NewsCard from './newsCardCarousel/NewsCard';
+import NewsCardCarousel from './newsCardCarousel/NewsCardCarousel';
 
 const HomePage = () => {
   return (
@@ -10,7 +10,7 @@ const HomePage = () => {
       <BreakingNews />
       <InnerContainer>
         <Carousel />
-        <NewsCard />
+        <NewsCardCarousel />
       </InnerContainer>
     </Container>
   );

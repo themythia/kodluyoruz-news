@@ -25,3 +25,7 @@
     @apply bg-white md:bg-textRed md:text-white duration-200;
   }
 }
+
+.slick-list {
+  padding: 0 !important;
+}
