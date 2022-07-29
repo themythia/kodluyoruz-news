@@ -34,13 +34,8 @@ const BreakingNewsSlider = () => {
   // handles arrow clicks
   const handleArrows = (type) => {
     if (sliderRef && sliderRef.current) {
-      if (type === 'next') {
-        if (index === 19) sliderRef.current.slickGoTo(0);
-        else sliderRef.current.slickGoTo(index + 1);
-      } else if (type === 'prev') {
-        if (index === 0) sliderRef.current.slickGoTo(19);
-        else sliderRef.current.slickGoTo(index - 1);
-      }
+      if (type === 'next') sliderRef.current.slickNext();
+      else if (type === 'prev') sliderRef.current.slickPrev();
     }
   };
 
