@@ -35,6 +35,14 @@ const NewsCardCarousel = () => {
         },
       },
       {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1.66,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
         breakpoint: 380,
         settings: {
           slidesToShow: 1.6,
@@ -52,7 +60,7 @@ const NewsCardCarousel = () => {
   };
 
   return (
-    <div className='md:hidden mt-[58px]'>
+    <div className='md:hidden'>
       <Slider {...settings}>
         {[...Array(20)].map((_, index) => (
           <NewsCard key={index} />

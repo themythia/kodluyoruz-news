@@ -1,6 +1,6 @@
 import CarouselimageText from './CarouselImageText';
 
-const CarouselImage = () => {
+const CarouselImage = ({ index }) => {
   return (
     <div className='w-full md:max-w-[1000px] aspect-4/3 md:aspect-40/23 overflow-hidden'>
       <img
@@ -8,7 +8,7 @@ const CarouselImage = () => {
         alt=''
         className='w-full h-full'
       />
-      <CarouselimageText />
+      <CarouselimageText index={index} />
     </div>
   );
 };

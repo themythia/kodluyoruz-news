@@ -37,7 +37,7 @@ const Carousel = () => {
   return (
     <Slider {...settings} ref={sliderRef}>
       {[...Array(20)].map((_, index) => (
-        <CarouselContainer key={index} />
+        <CarouselContainer key={index} index={index} />
       ))}
     </Slider>
   );
