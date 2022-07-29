@@ -13,12 +13,7 @@ const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    // speed controls animation duration
-    // if another button hovered faster than the speed value
-    // slickGoTo function doesn't work reliably
-    // so speed set to 0 on screens bigger than 767px width
-    // to allow smooth hovering experience
-    speed: width < 768 ? 300 : 0,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -31,7 +26,7 @@ const Carousel = () => {
     customPaging: (i) => (
       <button
         onMouseEnter={() => {
-          sliderRef.current.slickGoTo(i);
+          sliderRef.current.slickGoTo(i, true);
         }}
       >
         {i + 1}
