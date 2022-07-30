@@ -4,6 +4,7 @@ import Container from './Container';
 import InnerContainer from './InnerContainer';
 import NewsCardContainer from './NewsCard/NewsCardContainer';
 import NewsCardCarousel from './newsCardCarousel/NewsCardCarousel';
+import NewsListContainer from './newsList/NewsListContainer';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
         <Carousel />
         <NewsCardCarousel />
         <NewsCardContainer size={6} />
+        <NewsListContainer />
       </InnerContainer>
     </Container>
   );
