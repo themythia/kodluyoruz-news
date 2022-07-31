@@ -1,0 +1,152 @@
+*{
+  background-color:#e9e9e9;
+
+}
+
+.header{
+width: 100%;
+height: 50px;
+background-color:#022032;
+font-size: 14px !important;
+color:white;
+/* display: block; */
+
+}
+.navbar{
+  width: 100%;
+  height: 41px;
+  position: relative;
+  background-color: #fff;
+  color: #022032;
+  /* display: block; */
+
+}
+.altNavbar{
+  width: 100%;
+  height: 40px;
+  position: relative;
+  background-color: #009b8a;
+  font:inherit;
+  vertical-align: baseline;
+
+}
+.slickSlider{
+  width: 1000px;
+  height:648px; 
+  user-select: none;
+  /* -webkit-tap-highlight-color: transparent; */
+  position: relative;
+  margin: auto ;
+  color:red;
+  background-color: black;
+
+}
+.slider2{
+  font:inherit;
+  vertical-align: baseline;
+  width: 1000px;
+  height: 256px;
+  background-color: #022032;
+  margin: auto;
+  color:#fff;
+
+
+}
+
+.listItem{
+width: 497px;
+height: 278px;
+float: left; 
+position: relative;
+padding-left: 10px;
+padding-right: 10px;
+box-sizing: border-box;
+display: block;
+background-color: purple;
+color:#fff;
+margin-left: 175px;;
+
+
+}
+.listItem2{
+  width: 497px;
+  height: 278px;
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  background-color: yellow;
+  color:black;
+  margin: auto;
+  /* margin-left: 6px; */
+  
+}
+  
+.multipleItems{
+  float: left; 
+  width: 333px;
+  height: 279px;
+  /* margin-right: 20px; */
+    /* margin: auto; */
+  margin-top: 22px;
+  /* margin-left: 175px; */
+  /* position: relative; */
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
+  box-sizing: border-box;
+  /* display: block; */
+  background-color: gray;
+  /* flex-wrap: wrap; */
+  column-gap: line-size;
+  row-gap: line-size;
+  grid-template-columns: 300px;
+  grid-template-rows: 80px;
+
+}
+.showMore{
+  float: left;
+  width: 1000px;
+  height: 58px;
+  position: relative;
+  margin-left: 175px;
+  /* display: block; */
+  box-sizing: border-box; 
+  background-color: rgb(157, 184, 175);
+  color:black;
+  margin-top: 20px;
+}
+
+.footerCopyRight{
+  float: left;
+  width: 1000px;
+  height: 34px;
+  position: relative;
+  margin-left: 175px;
+  background-color: #022032;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.footer{
+  font:inherit;
+  /* vertical-align: baseline; */
+  position: relative;
+  margin-left: 175px;
+  float: left;
+  width: 1000px;
+  height: 342px;
+  background-color: #022032;
+  margin-top:0.5px;
+  /* justify-content: space-between; */
+  color: #fff;
+
+}
+
+.footerIcons{
+  width: 100%;
+  height: 100px;
+  float: left;
+  background-color: #022032;
+  color: #fff;
+  margin-top: 1px;
+}
