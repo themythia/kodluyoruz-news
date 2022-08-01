@@ -14,6 +14,7 @@ const NewsList = ({ type }) => {
       <NewsListImage
         image={contextData?.[type]?.items?.[0]?.media}
         alt={contextData?.[type]?.items?.[0]?.title}
+        link={contextData?.[type]?.items?.[0]?.link}
       />
       <List news={contextData?.[type]?.items} />
     </Container>
