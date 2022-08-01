@@ -3,11 +3,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { useRef } from 'react';
-import useWindowSize from '../../../../utils/hooks/useWindowSize';
 
 const Carousel = () => {
   const sliderRef = useRef(null);
-  const { width } = useWindowSize();
 
   // react-slick setting props
   const settings = {

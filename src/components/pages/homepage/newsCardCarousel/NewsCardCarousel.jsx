@@ -2,8 +2,12 @@ import Slider from 'react-slick';
 import NewsCard from '../NewsCard/NewsCard';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useContext } from 'react';
+import { HomeContext } from '../../../../contexts/HomeContext';
 
 const NewsCardCarousel = () => {
+  const { breaking } = useContext(HomeContext);
+
   // react-slick setting props
   const settings = {
     dots: false,
@@ -63,7 +67,7 @@ const NewsCardCarousel = () => {
     <div className='md:hidden'>
       <Slider {...settings}>
         {[...Array(20)].map((_, index) => (
-          <NewsCard key={index} />
+          <NewsCard key={index} news={breaking?.items?.[index + 30]} />
         ))}
       </Slider>
     </div>

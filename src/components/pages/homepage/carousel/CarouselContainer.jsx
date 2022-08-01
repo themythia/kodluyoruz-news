@@ -5,7 +5,7 @@ const CarouselContainer = ({ index }) => {
   return (
     <div className='w-full h-auto flex flex-col'>
       <CarouselImage index={index} />
-      <CarouselTitle />
+      <CarouselTitle index={index} />
     </div>
   );
 };

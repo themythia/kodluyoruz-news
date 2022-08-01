@@ -10,11 +10,13 @@ const Arrow = ({ type, handleArrows }) => {
         <IoIosArrowDropdownCircle
           size={20}
           onClick={() => handleArrows('next')}
+          className='cursor-pointer'
         />
       ) : (
         <IoIosArrowDropupCircle
           size={20}
           onClick={() => handleArrows('prev')}
+          className='cursor-pointer'
         />
       )}
     </>

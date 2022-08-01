@@ -1,3 +1,4 @@
+import HomeContextWrapper from '../../../contexts/HomeContext';
 import BreakingNews from './breaking/BreakingNews';
 import Carousel from './carousel/Carousel';
 import Container from './Container';
@@ -8,16 +9,18 @@ import NewsListContainer from './newsList/NewsListContainer';
 
 const HomePage = () => {
   return (
-    <Container>
-      <BreakingNews />
-      <InnerContainer>
-        <NewsCardContainer size={3} />
-        <Carousel />
-        <NewsCardCarousel />
-        <NewsCardContainer size={6} />
-        <NewsListContainer />
-      </InnerContainer>
-    </Container>
+    <HomeContextWrapper>
+      <Container>
+        <BreakingNews />
+        <InnerContainer>
+          <NewsCardContainer size={3} />
+          <Carousel />
+          <NewsCardCarousel />
+          <NewsCardContainer size={6} />
+          <NewsListContainer />
+        </InnerContainer>
+      </Container>
+    </HomeContextWrapper>
   );
 };
 export default HomePage;

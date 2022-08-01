@@ -4,7 +4,7 @@ const NewsListTitle = ({ type }) => {
       ? 'bg-tech'
       : type === 'world'
       ? 'bg-world'
-      : type === 'turkiye'
+      : type === 'turkey'
       ? 'bg-textRed'
       : '';
   const text =
@@ -12,7 +12,7 @@ const NewsListTitle = ({ type }) => {
       ? 'TEKNOLOJİ'
       : type === 'world'
       ? 'DÜNYA'
-      : type === 'turkiye'
+      : type === 'turkey'
       ? 'TÜRKİYE'
       : '';
 

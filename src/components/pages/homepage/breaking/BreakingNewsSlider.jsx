@@ -4,12 +4,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import SliderItem from './SliderItem';
 import useWindowSize from '../../../../utils/hooks/useWindowSize';
 import Arrows from './Arrows';
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
+import { HomeContext } from '../../../../contexts/HomeContext';
 
 const BreakingNewsSlider = () => {
   // carousel slide index
   const [index, setIndex] = useState(0);
   const sliderRef = useRef(null);
+  const { breaking } = useContext(HomeContext);
 
   // react-slick setting props
   const settings = {
@@ -43,8 +45,8 @@ const BreakingNewsSlider = () => {
     <div className='md:w-[calc(100vw-164px)] lg:w-[846px] h-full flex flex-row'>
       <Arrows handleArrows={handleArrows} />
       <Slider {...settings} ref={sliderRef}>
-        {[...Array(20)].map((_, index) => (
-          <SliderItem key={index} text={index} />
+        {[...Array(10)].map((_, index) => (
+          <SliderItem key={index} news={breaking?.items?.[index]} />
         ))}
       </Slider>
     </div>

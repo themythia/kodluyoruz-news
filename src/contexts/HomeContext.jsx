@@ -1,43 +1,27 @@
-import { parseFeed } from 'htmlparser2';
 import { createContext, useEffect, useState } from 'react';
+import fetchHome from '../utils/hooks/api/fetchHome';
 
 export const HomeContext = createContext();
 
 const HomeContextWrapper = ({ children }) => {
-  const [feed, setFeed] = useState('');
+  const [breaking, setBreaking] = useState({});
+  const [tech, setTech] = useState({});
+  const [world, setWorld] = useState({});
+  const [turkey, setTurkey] = useState({});
+
   useEffect(() => {
-    const corsProxy = 'https://pacific-caverns-96128.herokuapp.com/';
-    const rssFeeds = [
-      'https://www.ntv.com.tr/son-dakika.rss',
-      'https://www.ntv.com.tr/gundem.rss',
-    ];
-
-    const fetchRSS = async (url) => {
-      try {
-        const response = await fetch(url);
-        const text = await response.text();
-        const parse = parseFeed(text);
-        const formatParse = {
-          description: parse.description,
-          items: parse.items.map((item) => ({
-            title: item.title,
-            link: item.link,
-            media: item.description
-              .split('<img src="')[1]
-              .split('?width=1200')[0],
-          })),
-        };
-        setFeed(formatParse);
-      } catch (error) {
-        console.error(`Fetching RSS Feed: ${url} failed!`, error);
-      }
-    };
-
-    fetchRSS(corsProxy + rssFeeds[0]);
+    fetchHome().then((data) => {
+      setBreaking(data.breaking);
+      setTech(data.tech);
+      setWorld(data.world);
+      setTurkey(data.turkey);
+    });
   }, []);
 
   return (
-    <HomeContext.Provider value={{ feed }}>{children}</HomeContext.Provider>
+    <HomeContext.Provider value={{ breaking, tech, world, turkey }}>
+      {children}
+    </HomeContext.Provider>
   );
 };
 

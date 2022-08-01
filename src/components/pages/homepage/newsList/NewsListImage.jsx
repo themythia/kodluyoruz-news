@@ -1,14 +1,10 @@
 import NewsListImageText from './NewsListImageText';
 
-const NewsListImage = () => {
+const NewsListImage = ({ image, alt }) => {
   return (
     <div className='aspect-4/3 w-full h-auto overflow-hidden'>
-      <img
-        src='https://cdn1.ntv.com.tr/gorsel/6v3BJXHeZUKqUZqbu5tv9w.jpg'
-        className='w-full h-full object-cover'
-        alt=''
-      />
-      <NewsListImageText />
+      <img src={image} className='w-full h-full object-cover' alt={alt} />
+      <NewsListImageText text={alt} />
     </div>
   );
 };

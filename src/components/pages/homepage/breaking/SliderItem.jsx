@@ -1,6 +1,13 @@
-const SliderItem = ({ text }) => {
+const SliderItem = ({ news }) => {
   return (
-    <p className='md:text-14-16 md:h-[42px] lg:h-[50px] flex items-center'>{`Lorem ipsum dolorLorem ipsum ipsum : ${text}.`}</p>
+    <a
+      href={news?.link}
+      className='md:text-14-16 md:h-[42px] lg:h-[50px] flex items-center'
+      target='_blank'
+      rel='noreferrer'
+    >
+      {news?.title}
+    </a>
   );
 };
 export default SliderItem;
