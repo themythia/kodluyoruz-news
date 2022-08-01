@@ -6,22 +6,22 @@
 
 @layer components {
   /* Carousel stylings for react-slick */
-  .carousel {
+  .home__carousel {
     @apply w-full h-12 md:h-[70px] px-[15px] mb-2.5 md:px-0 pb-[7px] md:pb-0 m-0 list-none text-center bg-carouselMobileBg md:bg-white flex flex-row items-center justify-center shadow-[0_1px_0_0_rgb(0_0_0_/_15%)];
   }
 
-  .carousel li {
+  .home__carousel li {
     @apply relative flex flex-row items-center justify-center w-[9px] md:w-[calc((100%-45px)/20)] md:max-w-[45px] h-full md:aspect-square md:h-auto mr-[5px] p-0 cursor-pointer;
   }
 
-  .carousel li:last-of-type {
+  .home__carousel li:last-of-type {
     @apply mr-0;
   }
 
-  .carousel li button {
+  .home__carousel li button {
     @apply text-[0px] md:text-18-28 lg:text-20-22 md:font-bold leading-[0px] block w-[9px] md:w-full md:max-w-[45px] h-[9px] md:h-full rounded-full bg-white/60 md:bg-white md:text-textDark cursor-pointer border-0 md:border-2 md:border-carouselBorder outline-none;
   }
-  .carousel li.slick-active button {
+  .home__carousel li.slick-active button {
     @apply bg-white md:bg-textRed md:text-white duration-200;
   }
 }

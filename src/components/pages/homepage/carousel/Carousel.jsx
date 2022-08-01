@@ -19,7 +19,7 @@ const Carousel = () => {
     autoplay: true,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    dotsClass: 'carousel',
+    dotsClass: 'home__carousel',
     appendDots: (dots) => <div>{dots}</div>,
     customPaging: (i) => (
       <button
