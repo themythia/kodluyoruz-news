@@ -13,6 +13,8 @@ module.exports = {
         tech: '#007FBD',
         world: '#0092A8',
         infoText: '#819099',
+        carouselBorder: '#E6E6E6',
+        carouselMobileBg: '#650000',
       },
       fontFamily: {
         roboto: ['Roboto'],
@@ -25,8 +27,13 @@ module.exports = {
         '18-28': ['18px', '28px'],
         '20-22': ['20px', '22px'],
         '20-28': ['20px', '28px'],
+        '20-34': ['20px', '34px'],
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '40/23': '40 / 23',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
