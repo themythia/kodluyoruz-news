@@ -15,6 +15,7 @@ module.exports = {
         infoText: '#819099',
         carouselBorder: '#E6E6E6',
         carouselMobileBg: '#650000',
+        economy: '#C59527',
       },
       fontFamily: {
         roboto: ['Roboto'],
