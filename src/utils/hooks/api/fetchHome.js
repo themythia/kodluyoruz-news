@@ -9,6 +9,7 @@ const fetchHome = async () => {
     'https://www.ntv.com.tr/turkiye.rss',
   ];
 
+  // fetches RSS feed & formats the response
   const handleFetch = async (index) => {
     try {
       const response = await fetch(corsProxy + rssFeeds[index]);
@@ -30,6 +31,8 @@ const fetchHome = async () => {
       console.error(`Fetching RSS Feed: ${rssFeeds[index]} failed!`, error);
     }
   };
+
+  // fetches every RSS feed in rssFeeds array
   const fetchEverything = await Promise.all([
     handleFetch(0),
     handleFetch(1),
