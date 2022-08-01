@@ -44,7 +44,7 @@ const Art = () => {
         {news.length > 0 ? (
           news.map((item) => <ArtCard content={item} />)
         ) : (
-          <p>Yükleniyor...</p>
+          <p className='font-bold'>Yükleniyor...</p>
         )}
       </div>
     </div>

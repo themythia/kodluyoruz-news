@@ -19,8 +19,8 @@ const ArtCard = (props) => {
         src={imageSrc}
         alt={props?.content?.title}
       />
-      <div className='p-3'>
-        <h2 className='text-textDark font-bold'>{props?.content?.title}</h2>
+      <div className='p-3 bg-[#bb1919] h-24'>
+        <h2 className='text-[#FFF] font-bold'>{props?.content?.title}</h2>
       </div>
     </div>
   );
