@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ArtCard from '../ArtCard';
+import ArtCard from './ArtCard';
 import { parseFeed } from 'htmlparser2';
 
 const Art = () => {
