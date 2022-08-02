@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import IconRight from './icons/IconRight';
+import IconLeft from './icons/IconLeft';
 
 const Carousel = ({ slides, className }) => {
   const [slide, setSlide] = useState(0);
@@ -24,7 +26,6 @@ const Carousel = ({ slides, className }) => {
     <div className={className}>
       {slides.map((item, index) => (
         <div key={index} hidden={slide !== index}>
-          {' '}
           {/* // Bizde gelmiş olan tüm verilere bakar ancak sadece birbiriyle eşlesen indexleri gösterir diğerlerini gizler. */}
           <div className='relative h-[500px]'>
             <img className='w-full h-full' src={item.src} alt={item.title} />
@@ -36,16 +37,14 @@ const Carousel = ({ slides, className }) => {
               className='absolute rounded-full w-11 h-11 bg-white bg-opacity-50 flex justify-center 
               items-center top-1/2 left-2 transform -translate-y-1/2 lg:hidden'
             >
-              {' '}
-              1{' '}
+              <IconLeft />
             </button>
             <button
               onClick={handleRightArrow}
               className='absolute rounded-full w-11 h-11 bg-white bg-opacity-50 flex justify-center 
               items-center top-1/2 right-2 transform -translate-y-1/2 lg:hidden'
             >
-              {' '}
-              2{' '}
+              <IconRight />
             </button>
           </div>
           <div className='bg-white py-3 px-2 flex justify-between shadow-md'>
