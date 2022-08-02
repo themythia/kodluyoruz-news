@@ -4,6 +4,7 @@ import InnerContainer from '../homepage/InnerContainer';
 import Breadcrumb from './Breadcrumb';
 import Carousel from './carousel/Carousel';
 import CurrencyContainer from './currency/CurrencyContainer';
+import NewsCardContainer from './newsCard/NewsCardContainer';
 import TitleBar from './TitleBar';
 
 const Economy = () => {
@@ -15,6 +16,7 @@ const Economy = () => {
         <InnerContainer>
           <Carousel />
           <CurrencyContainer />
+          <NewsCardContainer />
         </InnerContainer>
       </Container>
     </EconContextWrapper>
