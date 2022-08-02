@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import IconRight from './icons/IconRight';
-import IconLeft from './icons/IconLeft';
+import IconRight from '../../icons/IconRight';
+import IconLeft from '../../icons/IconLeft';
 
 const Carousel = ({ slides, className }) => {
   const [slide, setSlide] = useState(0);
