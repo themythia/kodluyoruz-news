@@ -6,11 +6,6 @@ const TourismCard = (props) => {
   useEffect(() => {
     const data = props?.content?.description;
 
-    console.log(
-      'data ---------------------------------------------------------',
-      data
-    );
-
     const src = data.split('src="')[1].split('"')[0];
 
     setImageSrc(src);
