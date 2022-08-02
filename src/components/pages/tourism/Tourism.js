@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import TourismCard from '../TourismCard';
+import TourismCard from '../../TourismCard';
 import { parseFeed } from 'htmlparser2';
-import Carousel from '../Carousel';
+import Carousel from '../../Carousel';
 
 const Tourism = () => {
   const [rssText, setRssText] = useState('');

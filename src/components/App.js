@@ -1,17 +1,17 @@
 import '../index.css';
 import { Routes, Route } from 'react-router-dom';
-import Art from '../components/pages/Art';
-import Tourism from '../components/pages/Tourism';
-import Homepage from '../components/pages/Homepage';
+import Art from '../components/pages/art/Art';
+import Tourism from './pages/tourism/Tourism';
 import NotFound from './pages/NotFound';
+import HomePage from './pages/homepage/HomePage';
 
 function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' index element={<Homepage />} />
-        <Route path='/Sanat' element={<Art />} />
-        <Route path='/Turizm' element={<Tourism />} />
+        <Route path='/sanat' element={<Art />} />
+        <Route path='/turizm' element={<Tourism />} />
+        <Route path='/' index element={<HomePage />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
