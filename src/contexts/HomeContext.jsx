@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import fetchHome from '../utils/hooks/api/fetchHome';
+import fetchHome from '../utils/api/fetchHome';
 
 export const HomeContext = createContext();
 
