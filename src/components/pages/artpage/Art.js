@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ArtCard from './ArtCard';
 import { parseFeed } from 'htmlparser2';
+import Carousel from './Carousel';
 
 const Art = () => {
   const [rssText, setRssText] = useState('');
   const [news, setNews] = useState([]);
+  const [slides, setSlides] = useState([]);
 
   const fetchNews = async () => {
     const response = await fetch(
@@ -25,6 +27,15 @@ const Art = () => {
   useEffect(() => {
     if (rssText) {
       setNews(rssText.items);
+
+      const slides = rssText.items.slice(0, 20).map((item) => {
+        const src = item.description.split('src="')[1].split('"')[0];
+        return {
+          ...item,
+          src,
+        };
+      });
+      setSlides(slides);
     }
   }, [rssText]);
 
@@ -38,8 +49,8 @@ const Art = () => {
         <Link className='text-textDark' to='/art'>
           Sanat Haberleri
         </Link>
+        <Carousel className='mt-4' slides={slides} />
       </div>
-
       <div className=' md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-3'>
         {news.length > 0 ? (
           news.map((item) => <ArtCard content={item} />)
