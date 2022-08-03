@@ -3,7 +3,6 @@ import HomePage from './HomePage';
 
 test('renders breaking news', () => {
   render(<HomePage />);
-
   const breakingElement = screen.getByText(/son haberler/i);
   expect(breakingElement).toBeInTheDocument();
 });

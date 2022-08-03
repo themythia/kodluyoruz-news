@@ -26,6 +26,7 @@ const Carousel = () => {
         onMouseEnter={() => {
           sliderRef.current.slickGoTo(i, true);
         }}
+        data-testid='carousel-button'
       >
         {i + 1}
       </button>
