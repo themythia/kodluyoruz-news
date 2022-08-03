@@ -26,7 +26,17 @@ module.exports = {
         '20-22': ['20px', '22px'],
         '20-28': ['20px', '28px'],
       },
+      boxShadow: {
+        '3xl': '0px 6px 8px -5px rgba(0, 0, 0, 0.2)',
+      },
+      width: {
+        '100/3': '32%',
+        130: '130%',
+      },
+      minHeight: {
+        11: '11rem',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
