@@ -19,7 +19,7 @@ import Health from './pages/Health';
 import HealthDetails from './pages/details/HealthDetails';
 function App() {
   return (
-    <>
+    
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/economy'>
@@ -52,7 +52,6 @@ function App() {
         </Route>
         <Route path='*' element={<Page404 />} />
       </Routes>
-    </>
   );
 }
 
