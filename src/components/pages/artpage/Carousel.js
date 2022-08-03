@@ -7,14 +7,14 @@ const Carousel = ({ slides, className }) => {
 
   const handleLeftArrow = () => {
     if (slide === 0) {
-      setSlide(slides.lengt - 1);
+      setSlide(slides.length - 1);
     } else {
       setSlide(slide - 1);
     }
   };
 
   const handleRightArrow = () => {
-    if (slide === slides.lenght - 1) {
+    if (slide === slides.length - 1) {
       setSlide(0);
     } else {
       setSlide(slide + 1);

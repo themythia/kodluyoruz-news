@@ -40,7 +40,7 @@ const Art = () => {
   }, [rssText]);
 
   return (
-    <div className='bg-white px-2 lg:container lg:mx-auto lg:px-0'>
+    <div className='bg-white px-2 lg:w-[1000px] lg:mx-auto lg:px-0'>
       <div className='py-4'>
         <Link className='text-textGray font-bold' to='/'>
           Haberler
@@ -53,7 +53,7 @@ const Art = () => {
       </div>
       <div className=' md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-3'>
         {news.length > 0 ? (
-          news.map((item) => <ArtCard content={item} />)
+          news.map((item, index) => <ArtCard key={index} content={item} />)
         ) : (
           <p className='font-bold'>Yükleniyor...</p>
         )}
