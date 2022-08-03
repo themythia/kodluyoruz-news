@@ -67,7 +67,11 @@ const NewsCardCarousel = () => {
     <div className='md:hidden'>
       <Slider {...settings}>
         {[...Array(20)].map((_, index) => (
-          <NewsCard key={index} news={breaking?.items?.[index + 30]} />
+          <NewsCard
+            key={index}
+            news={breaking?.items?.[index + 30]}
+            type='mobile'
+          />
         ))}
       </Slider>
     </div>

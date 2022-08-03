@@ -5,6 +5,7 @@ const SliderItem = ({ news }) => {
       className='md:text-14-16 md:h-[42px] lg:h-[50px] flex items-center'
       target='_blank'
       rel='noreferrer'
+      data-testid='slider-item'
     >
       {news?.title}
     </a>

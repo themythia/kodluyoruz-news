@@ -4,7 +4,12 @@ import NewsCard from './NewsCard';
 const NewsCardContainer = ({ size }) => {
   const { breaking } = useContext(HomeContext);
   return (
-    <div className='hidden  md:flex md:flex-row md:justify-between mb-2.5 flex-wrap gap-y-2.5'>
+    <div
+      className='hidden  md:flex md:flex-row md:justify-between mb-2.5 flex-wrap gap-y-2.5'
+      data-testid={
+        size === 3 ? 'top-news-card-container' : 'bottom-news-card-container'
+      }
+    >
       {[...Array(size)].map((_, index) => (
         <NewsCard
           key={index}

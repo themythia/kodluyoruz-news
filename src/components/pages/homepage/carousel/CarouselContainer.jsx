@@ -11,7 +11,7 @@ const CarouselContainer = ({ index }) => {
       target='_blank'
       rel='noreferrer'
     >
-      <div className='w-full h-auto flex flex-col'>
+      <div className='w-full h-auto flex flex-col' data-testid='carousel-item'>
         <CarouselImage index={index} />
         <CarouselTitle index={index} />
       </div>
