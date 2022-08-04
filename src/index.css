@@ -35,6 +35,18 @@
   .econ__carousel li.slick-active button {
     @apply bg-white md:bg-economy md:text-white duration-200;
   }
+  .news-detail__innerContainer {
+    @apply text-14-22 md:text-base lg:text-18-28 font-normal;
+  }
+  .news-detail__innerContainer p {
+    @apply py-2 lg:py-2.5;
+  }
+  .news-detail__innerContainer strong {
+    @apply font-bold py-2 lg:py-2.5;
+  }
+  .news-detail__innerContainer img {
+    @apply py-2 lg:my-2.5;
+  }
 }
 
 .slick-list {
