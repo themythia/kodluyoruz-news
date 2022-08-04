@@ -1,9 +1,12 @@
+import Breadcrumb from './Breadcrumb';
 import Share from './share/Share';
 import Title from './Tltle';
 
-const News = ({ news }) => {
+const News = ({ news, category }) => {
   return (
-    <div className='basis-2/3 px-2.5'>
+    <div className='w-full px-2.5'>
+      <Breadcrumb type={category} newsTitle={news.title} />
+
       <Title type='title' text={news.title} />
       <Title type='subtitle' text={news.subtitle} />
       <Share />

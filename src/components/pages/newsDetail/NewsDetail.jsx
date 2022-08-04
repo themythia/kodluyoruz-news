@@ -1,14 +1,22 @@
-import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Container from './Container';
 import News from './News';
 
 const NewsDetail = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // if data doesnt exist, redirect to homepage
+  useEffect(() => {
+    if (!location.state) navigate('/');
+  }, [location.state, navigate]);
+
+  if (!location.state) return null;
 
   return (
     <Container>
-      <News news={location.state.news} />
-      <div className='w-full basis-1/3'></div>
+      <News news={location.state.news} category={location.state.category} />
     </Container>
   );
 };
