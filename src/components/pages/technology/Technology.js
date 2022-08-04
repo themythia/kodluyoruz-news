@@ -97,14 +97,16 @@ const Technology = () => {
         </div>
    
         <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-2/3 mx-auto h-auto md:w-full sm:w-full mt-4'>
-                <div className="col-span-3 row-span-4 lg:col-span-3 row-span-4 md:col-span-2 row-span-2 sm:col-span-3 row-span-4 ">
+                <div className="col-span-3 row-span-4 w-full h-full  lg:col-span-3 row-span-4 w-full h-full md:col-span-3 row-span-4 w-full h-full sm:col-span-3 row-span-4 w-full h-full">
                     {
                         txt[0] ? (
-                            <div className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'>
+                            <div className='w-full h-full relative bg-white flex flex-col justify-center'>
                                 <a href={`${txt[0].linkContent[count]}`}>
-                                    <img src={txt[0].imageContent[count]} className="object-fill w-full h-full bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full" alt="sportimage" />
+                                    <img src={txt[0].imageContent[count]} className="w-full h-full bg-cover bg-center" alt="sportimage" />
                                 </a>
-                                <p className='absolute w-3/4 absolute bottom-24 text-center font-bold font-sans p-2 bg-blue-900 text-white text-3xl'>{txt[0].textContent[count]}</p>
+                                <div className='justify-center flex'>
+                                    <p className='lg:text-3xl flex absolute w-auto bottom-32 text-center text-white font-bold font-sans p-2 bg-blue-900 box-border md:text-xl sm:text-sm'>{txt[0].textContent[count]}</p>
+                                </div>
                             
                                 <ul className='absolute bottom-0 flex justify-center flex-nowrap w-full cursor-pointer bg-white p-5'>
                                     <li onMouseEnter={() => numbers(1)} className={numberClass[0]}>1</li>
@@ -204,11 +206,11 @@ const Technology = () => {
                     txt[0] ? (
                         <>
                             {
-                                <div className='flex bg-black h-14 items-center text-2xl flex lg:pl-64 sm:pl-32'>
+                                <div className='flex bg-black h-14 items-center mt-4 text-2xl flex lg:pl-64 sm:pl-32'>
                                     <a href="https://ntv.com.tr" className=''>
                                         <img className='mr-12' src="https://cdn.ntv.com.tr/img/logo.svg?v=6429z" alt="ntv.com.tr"></img>
                                     </a>
-                                    <a className='text-white text-sm'>Copyright 2022 | Tüm Hakları Saklıdır.</a>
+                                    <a className='text-white text-sm'>&#169; Copyright 2022 | Tüm Hakları Saklıdır.</a>
                                 </div>
                             }
                         </>
@@ -222,5 +224,3 @@ const Technology = () => {
 }
 
 export default Technology
-
-
