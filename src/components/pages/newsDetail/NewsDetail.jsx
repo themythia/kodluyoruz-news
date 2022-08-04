@@ -6,7 +6,7 @@ import News from './News';
 const NewsDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  console.log('location', location);
   // if data doesnt exist, redirect to homepage
   useEffect(() => {
     if (!location.state) navigate('/');

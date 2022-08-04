@@ -16,7 +16,6 @@ const fetchHome = async () => {
       const response = await fetch(corsProxy + rssFeeds[index]);
       const text = await response.text();
       const parse = parseFeed(text);
-      console.log('parse', parse);
       return formatRSSFeed(parse);
     } catch (error) {
       console.error(`Fetching RSS Feed: ${rssFeeds[index]} failed!`, error);

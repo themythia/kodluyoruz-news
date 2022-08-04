@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 const Breadcrumb = ({ type, newsTitle }) => {
-  console.log('type:', type);
-  console.log('newsTitle:', newsTitle);
   const navigate = useNavigate();
   const categories = {
     saglik: {
@@ -22,6 +20,10 @@ const Breadcrumb = ({ type, newsTitle }) => {
       str: 'Tarih Haberleri',
     },
     ekonomi: {
+      path: '/economy',
+      str: 'Ekonomi Haberleri',
+    },
+    ntvpara: {
       path: '/economy',
       str: 'Ekonomi Haberleri',
     },
@@ -53,6 +55,10 @@ const Breadcrumb = ({ type, newsTitle }) => {
       path: '/turkiye',
       str: 'Türkiye Haberleri',
     },
+    dunya: {
+      path: '/dunya',
+      str: 'Dunya Haberleri',
+    },
   };
   return (
     <div className='text-xs font-bold  flex flex-row my-[14px] md:my-[15px] lg:my-4 justify-center'>
@@ -66,8 +72,8 @@ const Breadcrumb = ({ type, newsTitle }) => {
           </span>
           <span
             className='ml-1 text-[#909090] hover:text-textDark duration-200 cursor-pointer'
-            onClick={() => navigate(categories[type].path)}
-          >{`/ ${categories[type].str}`}</span>
+            onClick={() => navigate(categories?.[type]?.path || '/')}
+          >{`/ ${categories?.[type]?.str || `${type} Haberleri`}`}</span>
           <span className='ml-1 text-textDark cursor-pointer'>{`/ ${newsTitle}`}</span>
         </p>
       </div>
