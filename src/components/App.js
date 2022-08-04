@@ -1,11 +1,13 @@
 import '../index.css';
 import React from 'react';
-import Sport from './pages/sport/Sport';
+// import Sport from './pages/sport/Sport';
+import Technology from './pages/technology/Technology';
 
 function App() {
   return (
     <div className='App'>
-      <Sport />
+      {/* <Sport /> */}
+      <Technology />
     </div>
   );
 }
