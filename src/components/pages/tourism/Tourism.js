@@ -54,7 +54,7 @@ const Tourism = () => {
       </div>
       <div className='md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-3'>
         {news.length > 0 ? (
-          news.map((item) => <TourismCard content={item} />)
+          news.map((item, index) => <TourismCard key={index} content={item} />)
         ) : (
           <p className='font-bold'> Yükleniyor...</p>
         )}
