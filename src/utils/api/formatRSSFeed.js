@@ -6,6 +6,8 @@ const formatRSSFeed = (feed) => {
       media: item.description.split('<img src="')[1].split('?width=1200')[0],
       subtitle: item.description.split('<p>')[1].split('</p>')[0],
       description: item.description,
+      id: item.link.split('com.tr/')?.[1].split('/')[1],
+      category: item.link.split('com.tr/')?.[1].split('/')[0],
     })),
   };
 };
