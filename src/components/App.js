@@ -1,6 +1,7 @@
 import '../index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Art from '../components/pages/Art';
+import Tourism from './pages/tourism/Tourism';
+import Art from '../components/pages/artpage/Art';
 import NotFound from './pages/NotFound';
 import HomePage from './pages/homepage/HomePage';
 import Economy from './pages/economy/Economy';
@@ -10,8 +11,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' index element={<HomePage />} />
+        <Route path='/turizm' element={<Tourism />} />
         <Route path='/economy' index element={<Economy />} />
-        <Route path='/art' element={<Art />} />
+        <Route path='/sanat' element={<Art />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
