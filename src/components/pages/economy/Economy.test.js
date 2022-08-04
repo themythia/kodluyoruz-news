@@ -10,27 +10,27 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
-test('renders title bar', () => {
+test('economy: renders title bar', () => {
   render(<Economy />);
   const title = screen.getByTestId('title');
   expect(title).toBeInTheDocument();
 });
 
-test('renders mobile news cards', () => {
+test('economy: renders mobile news cards', () => {
   // app should render 80 news cards
   render(<Economy />);
   const newsCards = screen.getAllByTestId('newsCard');
   expect(newsCards).toHaveLength(80);
 });
 
-test('renders currency lists', () => {
+test('economy: renders currency lists', () => {
   // mobile layout should render 2 currency lists
   render(<Economy />);
   const currencyLists = screen.getAllByTestId('currency-list');
   expect(currencyLists).toHaveLength(2);
 });
 
-test('renders carousel items', () => {
+test('economy: renders carousel items', () => {
   // we want 20 slides in the carousel
   // but react-slick renders 2n+1 slides,
   // which means app should render 41 slides
@@ -39,7 +39,7 @@ test('renders carousel items', () => {
   expect(carouselItems).toHaveLength(41);
 });
 
-test('renders carousel buttons', () => {
+test('economy: renders carousel buttons', () => {
   // app should render 20 carousel buttons
   render(<Economy />);
   const carouselButtons = screen.getAllByTestId('carousel-button');
