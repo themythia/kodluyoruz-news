@@ -9,7 +9,7 @@ const News = ({ news, category }) => {
 
       <Title type='title' text={news.title} />
       <Title type='subtitle' text={news.subtitle} />
-      <Share />
+      <Share link={news.link} />
       <div
         dangerouslySetInnerHTML={{ __html: news.description }}
         className='news-detail__innerContainer'
