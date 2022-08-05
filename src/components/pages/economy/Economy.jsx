@@ -2,7 +2,7 @@ import EconContextWrapper from '../../../contexts/EconContext';
 import Container from '../homepage/Container';
 import InnerContainer from '../homepage/InnerContainer';
 import Breadcrumb from './Breadcrumb';
-import Carousel from './carousel/Carousel';
+import Carousel from '../homepage/carousel/Carousel';
 import CurrencyContainer from './currency/CurrencyContainer';
 import NewsCardContainer from './newsCard/NewsCardContainer';
 import TitleBar from './TitleBar';
@@ -14,7 +14,7 @@ const Economy = () => {
         <TitleBar />
         <Breadcrumb />
         <InnerContainer>
-          <Carousel />
+          <Carousel type='econ' />
           <CurrencyContainer />
           <NewsCardContainer />
         </InnerContainer>
