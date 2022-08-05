@@ -1,10 +1,10 @@
 import '../index.css';
-import Sport from './pages/Sport/Sport';
+import Astrology from './pages/Astroloji/Astrology';
 
 function App() {
   return (
    <>
-   <Sport/>
+   <Astrology/>
    </>
   );
 }
