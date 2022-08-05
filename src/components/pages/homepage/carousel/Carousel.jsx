@@ -7,7 +7,6 @@ import useDynamicContext from '../../../../utils/hooks/useDynamicContext.js';
 
 const Carousel = ({ type }) => {
   const sliderRef = useRef(null);
-  const news = useDynamicContext(type);
 
   // react-slick setting props
   const settings = {
