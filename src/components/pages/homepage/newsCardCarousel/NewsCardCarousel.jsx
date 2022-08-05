@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { HomeContext } from '../../../../contexts/HomeContext';
 
 const NewsCardCarousel = () => {
-  const { breaking } = useContext(HomeContext);
+  const { news } = useContext(HomeContext);
 
   // react-slick setting props
   const settings = {
@@ -69,8 +69,9 @@ const NewsCardCarousel = () => {
         {[...Array(20)].map((_, index) => (
           <NewsCard
             key={index}
-            news={breaking?.items?.[index + 30]}
+            news={news?.items?.[index + 30]}
             type='mobile'
+            page='home'
           />
         ))}
       </Slider>
