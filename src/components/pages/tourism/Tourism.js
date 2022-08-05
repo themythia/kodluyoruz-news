@@ -36,8 +36,6 @@ const Tourism = () => {
         };
       });
       setSlides(slides);
-
-      console.log('slides', slides);
     }
   }, [rssText]);
   return (

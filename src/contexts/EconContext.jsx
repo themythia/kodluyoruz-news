@@ -6,7 +6,7 @@ import fetchCurrencies from '../utils/api/fetchCurrencies';
 export const EconContext = createContext();
 
 const EconContextWrapper = ({ children }) => {
-  const [economy, setEconomy] = useState({});
+  const [news, setNews] = useState({});
   const [currentRates, setCurrentRates] = useState(null);
   const [prevRates, setPrevRates] = useState(null);
 
@@ -17,7 +17,7 @@ const EconContextWrapper = ({ children }) => {
     )
       .then((res) => res.text())
       .then((data) => parseFeed(data))
-      .then((parsedData) => setEconomy(formatRSSFeed(parsedData)))
+      .then((parsedData) => setNews(formatRSSFeed(parsedData)))
       .catch((e) => console.warn(e));
 
     fetchCurrencies().then((data) => {
@@ -27,7 +27,7 @@ const EconContextWrapper = ({ children }) => {
   }, []);
 
   return (
-    <EconContext.Provider value={{ economy, currentRates, prevRates }}>
+    <EconContext.Provider value={{ news, currentRates, prevRates }}>
       {children}
     </EconContext.Provider>
   );

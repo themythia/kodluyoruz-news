@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 const ListItem = ({ index, text, link, news }) => {
-  console.log('listitem', news);
   return (
     <Link to={`/news/${news?.id}`} state={{ category: news?.category, news }}>
       <div

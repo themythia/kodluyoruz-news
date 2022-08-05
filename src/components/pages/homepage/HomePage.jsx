@@ -14,7 +14,7 @@ const HomePage = () => {
         <BreakingNews />
         <InnerContainer>
           <NewsCardContainer size={3} />
-          <Carousel />
+          <Carousel type='home' />
           <NewsCardCarousel />
           <NewsCardContainer size={6} />
           <NewsListContainer />
