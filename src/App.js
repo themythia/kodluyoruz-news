@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import Health from './pages/Health';
+import Life from './pages/Life';
+import Rss from './pages/Rss';
+import Test from './pages/Test';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      {/* <Test /> */}
+      <Rss /> 
+    <Life />
     </div>
   );
 }
 
 export default App;
+  // <Life />  
+  //     
+  //     <Health /> 

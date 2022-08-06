@@ -1,0 +1,358 @@
+*{
+    background-color:#e9e9e9;
+  
+  }
+  
+  .header{
+  width: 100%;
+  height: 68px;
+  background-color:#EB0028;
+  font-size: 14px !important;
+  color:white;
+  /* display: block; */
+  
+  }
+  .navbar{
+    width: 100%;
+    height: 57px;
+    position: relative;
+    background-color: #fff;
+    color: #022032;
+    margin-bottom: 20px;
+    /* display: block; */
+  
+  }
+  .slickSlider{
+    width: 1000px;
+    height:655px; 
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    margin: auto ;
+    color:red;
+    background-color: black;
+    vertical-align: baseline;
+  
+  }
+  .listItem{
+  justify-content:flex-start;
+  display: flex;
+  margin-left: 175px;
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  width: 1000px;
+  height: 325px;
+  background-color: orange;
+  }
+  .listItem2{
+    width: 320px;
+    height: 306px;
+    flex: inherit;
+    float: left;
+    margin-bottom: 1.42rem;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 8px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    display: list-item;
+    color:#022032;
+    
+  
+  }
+
+  .card{
+    width: 1000px;
+    height: 320px;
+    float: left;
+    background-color: yellowgreen;
+    box-sizing: border-box;
+    margin: auto;
+    margin-left: 175px;
+    padding-top: 9px;
+    
+  }
+  .card1{
+    float: left;
+    width: 49%;
+    height: 302px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    background-color:purple;
+    
+
+  }
+  .card2{
+    float: right;
+    width: 49%;
+    height: 302px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    background-color:purple;
+   
+
+  }
+  .content{
+    width: 1000px;
+    height: 326px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    float:left;
+    background-color: gray;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 175px;
+  }
+  .contentAll{
+      width: 320px;
+      height: 306px;
+      float: left;
+      margin-bottom: 20px;
+      /* box-sizing: border-box; */
+      background-color: brown;
+      margin-left: 10px;
+  }
+    
+  .redCard{
+    width: 1000px;
+    height: 448px;
+    background-color:#EB0028;
+    margin: auto;
+    float: left;
+    margin-left: 175px;
+    padding: 10px;
+    /* padding-top: 20px; */
+  }
+  
+  /* .redCardMain{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  } */
+  
+  .redCardIn{
+    width: 320px;
+    height: 176px;
+    background-color: lightcoral;
+    float: left;
+    /* margin-left: 6px;
+    margin-right: 6px; */
+    margin: 6px;
+
+  }
+
+  .ntvContent{
+    position: relative;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    float: left;
+    width: 1020px;
+    height: 326px;
+    background-color: #b8df0e;
+    margin-left: 175px;
+    
+  }
+  .ulCard{
+    justify-content: flex-start;
+    flex: auto;
+    flex-direction: row;
+    gap: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    /* background-color: rgb(7, 11, 243); */
+    width: 1000px;
+    height: 326px;
+    float: left;
+
+  }
+  .listCard{
+    margin-right: 0% !important;
+    flex: inherit;
+    width: 320px;
+    height: 306px;
+    float: left;
+    margin-bottom: 1.42857rem;
+    list-style: none;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    display: list-item;
+    /* text-align: -webkit-match-parent; */
+    background-color: #00912345;
+
+  }
+
+.bigImg{
+  /* margin-top: 20px; */
+  margin: auto;
+  margin-left: 175px;
+  box-sizing: border-box;
+  font: inherit;
+  float: left;
+  width: 1020px;
+  height: 575px;
+  background-color: #442828;
+  
+  
+}
+
+.innerContent{
+  width: 1020px;
+  height: 6012px;
+  float: left;
+  /* width: 100%; */
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  margin-left: 175px;
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: rgb(53, 177, 235);
+
+}
+.innerContentIn{
+  justify-content: flex-start;
+  height: 6012px;
+  flex: auto;
+  flex-direction: row;
+  gap: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: red;
+}
+.multipleItems2{
+  margin-right: 0% !important;
+  flex: inherit;
+  width: 320px;
+  height: 306px;
+  float: left;
+  margin-bottom: 1.42857rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* .multipleItems{
+    float: left; 
+    width: 333px;
+    height: 279px;
+    margin-right: 20px;
+      margin: auto;
+    margin-top: 22px;
+    margin-left: 175px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    display: block;
+    background-color: gray;
+    flex-wrap: wrap;
+    column-gap: line-size;
+    row-gap: line-size;
+    grid-template-columns: 300px;
+    grid-template-rows: 80px;
+  
+  } */
+  .showMore{
+    float: left;
+    width: 1020px;
+    height: 58px;
+    position: relative;
+    margin-left: 175px;
+    box-sizing: border-box; 
+    background-color: rgb(157, 184, 175);
+    color:black;
+    margin-top: 20px;
+  } 
+  
+  /* .footerCopyRight{
+    float: left;
+    width: 1000px;
+    height: 34px;
+    position: relative;
+    margin-left: 175px;
+    background-color: #022032;
+    color: #fff;
+    box-sizing: border-box;
+  }
+   */
+  .footer{
+    font:inherit;
+    /* vertical-align: baseline; */
+    position: relative;
+    margin-left: 175px;
+    float: left;
+    width: 1000px;
+    height: 342px;
+    background-color: #022032;
+    margin-top:0.5px;
+    /* justify-content: space-between; */
+    color: #fff;
+  
+  }
+  
+  .footerIcons{
+    width: 100%;
+    height: 74px;
+    float: left;
+    background-color: #022032;
+    color: #fff;
+    margin-top: 1px;
+  }
