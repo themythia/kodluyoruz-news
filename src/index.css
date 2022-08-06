@@ -1,5 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /*Header ilk kısım  */
+  /* Arka plan rengi, main position, margin ve padding 0, dikeyde baseline, block halinde görünsün   */
+  .header {
+    @apply font-roboto bg-textDark relative box-border m-0 p-0 border-0 block;
+  }
+  /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
+  .header .container {
+    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline flex items-center justify-center;
+  }
+  /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
+  .header .container .content {
+    @apply bg-textDark relative box-border w-full my-0 mx-auto py-2 border-0 align-baseline flex items-center justify-between;
+  }
+
+  .header-weather {
+    @apply relative box-border m-0 p-0 border-0  text-white flex items-center justify-center;
+  }
+
+  /*Header 2. kısım  */
+  .header-category {
+    @apply font-roboto bg-white  relative box-border m-0 p-0 border-0 block shadow-3xl;
+  }
+  .header-category .container {
+    @apply bg-white relative box-border mx-auto my-0 p-0 w-full max-w-screen-lg border-0 align-baseline flex justify-center;
+  }
+  .header-category .container .content {
+    @apply bg-white relative flex items-center  w-full;
+  }
+
+  .header-category .container .content .content-list {
+    @apply flex py-3 px-6  list-none box-border m-0;
+  }
+  .header-category .container .content .content-list .content-list-items {
+    @apply shrink-0 inline-block relative mr-4 box-border;
+  }
+
+  /*Header 3. kısım  */
+  .header-sub-category {
+    @apply font-roboto !bg-breakingRed relative w-full box-border m-0 p-0 border-0 block;
+  }
+  .header-sub-category .container {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 block;
+  }
+  .header-sub-category .container .content {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 flex items-center;
+  }
+  .header-sub-category .container .content h4 {
+    @apply text-white font-black leading-10 text-16-19;
+  }
+
+  /*Header 4. kısım  */
+  .page-title-info {
+    @apply font-roboto mx-auto max-w-screen-lg text-infoText text-14-16 m-6 items-center justify-start flex flex-row font-bold;
+  }
+
+  .page-title-info .title-item-active {
+    @apply text-navBg  before:px-1 before:content-["/"] font-bold;
+  }
+  /* Orta Bölüm */
+  #main-content .container {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 block;
+  }
+
+  /*Footer 1. kısım*/
+  .footer-about {
+    @apply font-roboto bg-textDark relative box-border m-0 py-4 border-b border-gray-500 border-solid block;
+  }
+  .footer-about .container {
+    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline flex items-center justify-start;
+  }
+  .footer-about .container .content {
+    @apply text-infoText font-black;
+  }
+  .footer-about .container .content h4 {
+    @apply text-infoText font-black text-16-19 my-4;
+  }
+  .footer-about .container .content ul li {
+    @apply text-14-22 font-normal my-1;
+  }
+  .social-info {
+    @apply bg-textDark relative box-border m-0 py-4 border-b border-gray-300 border-solid block;
+  }
+  /*Footer 2. kısım*/
+  .social-info .container {
+    @apply bg-textDark  relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline;
+  }
+  .social-info .container .content ul {
+    @apply text-infoText font-roboto text-16-19 font-black flex  items-center;
+  }
+  .social-info .container .content ul li {
+    @apply ml-4;
+  }
+}
