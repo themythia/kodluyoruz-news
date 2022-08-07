@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBarKategoryLane = (props) => {
-  const categories = props.categories; // Listelenmesini istediğimiz rakam
+  const categories = props.categories;
+  // Listelenmesini istediğimiz rakam
   const totalItemNumber =
     Object.keys(categories).length >= 10 ? 10 : categories.length;
 
-  // Kategoriler oluşturuluyor
+  // Kategori listesi oluşturuluyor
   const categoriesList = [];
   for (let i = 0; i < totalItemNumber; i++) {
     categoriesList.push(
@@ -17,6 +18,14 @@ const NavBarKategoryLane = (props) => {
       </li>
     );
   }
+
+  let moreCategoriesList = Array(Object.keys(categories).length - 10).fill(
+    null
+  );
+
+  moreCategoriesList = moreCategoriesList.map(function (each, index) {
+    return <div>{Object.keys(categories)?.[10 + index]}</div>;
+  });
   return (
     <div className=' header-category'>
       <div className='container'>

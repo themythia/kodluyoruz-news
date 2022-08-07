@@ -3,8 +3,6 @@ import Footer from '../shared/Footer';
 import Header from '../shared/Header/Header';
 import { getPosts } from '../../services/posts';
 import CarouselSlider from '../shared/carouselslider/CarouselSlider';
-import axios from 'axios';
-import { parseFeed } from 'htmlparser2';
 const Sport = () => {
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(18);
