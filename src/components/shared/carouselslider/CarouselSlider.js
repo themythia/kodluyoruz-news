@@ -9,7 +9,7 @@ import './styles.css';
 
 import { EffectCoverflow, Pagination, Navigation, Parallax } from 'swiper';
 
-const CarouselSlider = (data) => {
+const CarouselSlider = (news) => {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -18,7 +18,7 @@ const CarouselSlider = (data) => {
   };
   let newData = [];
   for (let i = 0; i < 10; i++) {
-    newData.push(data.data[i]);
+    newData.push(news.data[i]);
   }
 
   const newsArray = newData.map(function (each, key) {
@@ -82,7 +82,7 @@ const CarouselSlider = (data) => {
         }}
         pagination={pagination}
         modules={[Parallax, Pagination, Navigation, EffectCoverflow]}
-        className='mySwiper'
+        className='mySwiper max-w-screen-lg'
       >
         {newsArray}
       </Swiper>

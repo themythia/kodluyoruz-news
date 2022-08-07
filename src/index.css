@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 @layer base {
   body {
     @apply bg-bg;
@@ -102,9 +101,6 @@
   .social-info .container .content ul li {
     @apply ml-4;
   }
-}
-=======
-@layer components {
   /* Carousel stylings for react-slick */
   .home__carousel {
     @apply w-full h-12 md:h-[70px] px-[15px] mb-2.5 md:px-0 pb-[7px] md:pb-0 m-0 list-none text-center bg-carouselMobileBg md:bg-white flex flex-row items-center justify-center shadow-[0_1px_0_0_rgb(0_0_0_/_15%)];
@@ -129,4 +125,3 @@
 .slick-list {
   padding: 0 !important;
 }
->>>>>>> dev

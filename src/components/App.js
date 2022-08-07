@@ -19,39 +19,38 @@ import Health from './pages/Health';
 import HealthDetails from './pages/details/HealthDetails';
 function App() {
   return (
-    
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/economy'>
-          <Route index={true} element={<Economy />} />
-          <Route path='details' element={<EconomyDetails />} />
-        </Route>
-        <Route path='/life'>
-          <Route index={true} element={<Life />} />
-          <Route path='details' element={<LifeDetails />} />
-        </Route>
-        <Route path='/technology'>
-          <Route index={true} element={<Technology />} />
-          <Route path='details' element={<TechnologyDetails />} />
-        </Route>
-        <Route path='/astrology'>
-          <Route index={true} element={<Astrology />} />
-          <Route path='details' element={<AstrologyDetails />} />
-        </Route>
-        <Route path='/web3'>
-          <Route index={true} element={<Web3 />} />
-          <Route path='details' element={<Web3Details />} />
-        </Route>
-        <Route path='/sport'>
-          <Route index={true} element={<Sport />} />
-          <Route path='details' element={<SportDetails />} />
-        </Route>
-        <Route path='/health'>
-          <Route index={true} element={<Health />} />
-          <Route path='details' element={<HealthDetails />} />
-        </Route>
-        <Route path='*' element={<Page404 />} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/economy'>
+        <Route index={true} element={<Economy />} />
+        <Route path='details' element={<EconomyDetails />} />
+      </Route>
+      <Route path='/life'>
+        <Route index={true} element={<Life />} />
+        <Route path='details' element={<LifeDetails />} />
+      </Route>
+      <Route path='/technology'>
+        <Route index={true} element={<Technology />} />
+        <Route path='details' element={<TechnologyDetails />} />
+      </Route>
+      <Route path='/astrology'>
+        <Route index={true} element={<Astrology />} />
+        <Route path='details' element={<AstrologyDetails />} />
+      </Route>
+      <Route path='/web3'>
+        <Route index={true} element={<Web3 />} />
+        <Route path='details' element={<Web3Details />} />
+      </Route>
+      <Route path='/sport'>
+        <Route index={true} element={<Sport />} />
+        <Route path='details' element={<SportDetails />} />
+      </Route>
+      <Route path='/health'>
+        <Route index={true} element={<Health />} />
+        <Route path='details' element={<HealthDetails />} />
+      </Route>
+      <Route path='*' element={<Page404 />} />
+    </Routes>
   );
 }
 

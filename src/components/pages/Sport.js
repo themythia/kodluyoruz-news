@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../shared/Footer';
-import Header from '../shared/Header';
+import Header from '../shared/Header/Header';
 import { getPosts } from '../../services/posts';
 import CarouselSlider from '../shared/carouselslider/CarouselSlider';
+import axios from 'axios';
+import { parseFeed } from 'htmlparser2';
 const Sport = () => {
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(18);
+  const [weatherList, setWeatherList] = useState({});
 
   useEffect(() => {
-    getPosts('turkiye').then((test) => setGetData(test));
+    getPosts('weather')?.then((data) => setWeatherList(data));
+    getPosts('turkiye')?.then((data) => setGetData(data));
   }, []);
 
   let newsArray = [];
@@ -16,11 +20,11 @@ const Sport = () => {
     newsArray.push(getData[i]);
   }
 
-  const newsList = newsArray.map(function (each, key) {
+  const newsList = newsArray.map(function (each, index) {
     return (
       <li
         className='bg-white relative h-64 w-100/3  box-border items-center justify-center '
-        key={key}
+        key={index}
       >
         <a
           href={
@@ -52,10 +56,9 @@ const Sport = () => {
       </li>
     );
   });
-
   return (
     <>
-      <Header name={'Sport'} />
+      <Header name={'Sport'} weathers={weatherList} />
       <div className='font-roboto common-container bg-bg'>
         <div className='category-container mx-3'>
           <CarouselSlider data={newsArray} />

@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import Footer from '../shared/Footer';
-import Header from '../shared/Header';
+import Header from '../shared/Header/Header';
 
 export default function Page404() {
   return (

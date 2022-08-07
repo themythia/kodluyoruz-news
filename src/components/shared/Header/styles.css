@@ -1,0 +1,8 @@
+.szh-menu-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.szh-menu-container .szh-menu {
+  left: 0px !important;
+}
