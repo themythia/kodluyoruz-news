@@ -3,6 +3,7 @@ import Health from './pages/Health';
 import Life from './pages/Life';
 import Rss from './pages/Rss';
 import Test from './pages/Test';
+import Request from './pages/Request';
 import './App.css';
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       {/* <Test /> */}
       <Rss /> 
     <Life />
+    {/* <Request /> */}
+    {/* <Test /> */}
     </div>
   );
 }

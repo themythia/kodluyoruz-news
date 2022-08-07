@@ -1,154 +1,84 @@
-// /*Axios ile Deneme */
+import React, { useEffect, useState } from 'react';
+// import { getPosts } from './getposts';
+import './Life.css'
+// import '../../index.css';
+// import Carousel from './Carousel';
+// import ChangeImages from './ChangeImages';
 
-// import React, { useEffect, useState } from "react";
-// import Axios from "axios";
-// import Spinner from "../Spinner/Spinner";
-// // import classes from "./NewsList2.module.css";
-// import { Link, withRouter } from "react-router-dom";
-// import moment from "moment";
-// import XMLParser from "react-xml-parser";
-// import Parser from "html-react-parser";
+function Test  () {
+  const [feed, setFeed] = useState({});
+  const [seeMore, setSeeMore] = useState(18);
 
-// function NewsList2(props) {
-//   const [post, setPost] = useState([]);
-//   const [err, seterr] = useState(null);
-//   const [loading, setloading] = useState(true);
-//   const [cat, setCat] = useState(null);
+  useEffect(() => {
+    getPosts().then((test) => setFeed(test));
+  }, []);
+
+  let newsArray = [];
+  for (let i = 0; i < seeMore; i++) {
+    newsArray.push(feed[i]);
+  }
   
 
-//   let url1 = `https://cors-anywhere.herokuapp.com/https://www.ntv.com.tr/saglik.rss`;
-//   if (cat === undefined || cat === null) {
-//     url1 = `https://cors-anywhere.herokuapp.com/https://www.ntv.com.tr/saglik.rss`;
-//   } else {
-//     url1 = `https://cors-anywhere.herokuapp.com/https://www.ntv.com.tr/saglik.rss`;
-//   }
+  const newList = newsArray.map(function (each, key) {
+    return (
+      <li
+        className='bg-white relative h-64 w-100/3  box-border items-center justify-center'
+        key={key}
+      >
+        <a
+          href={
+            each?.['description']
+              ? each['description'].substring(
+                  10,
+                  each['description'].indexOf(' ', 10) - 1
+                )
+              : ' '
+          }
+          className='relative block max-w-full'
+        >
+          <img
+            src={
+              each?.['description']
+                ? each['description'].substring(
+                    10,
+                    each['description'].indexOf(' ', 10) - 1
+                  )
+                : ''
+            }
+            alt='Html tutorial'
+            className='min-h-11 cursor-pointer'
+          ></img>
+        </a>
+        <div className='block items-center justify-center p-4 text-16-19 font-bold line-clamp-2 '>
+          {each?.['title'] ? each['title'] : ''}
+        </div>
+      </li>
+    );
+  });
 
-//   useEffect(() => {
-//     setloading(true);
-//     setCat(props.location.state);
-//   }, [props.location.state]);
+  return (
+    <>
+    {/* <ChangeImages /> */}
+      {/* <Carousel /> */}
+        <div className='category-container mx-3 bg-bg' >
+          <div className=' relative mx-auto max-w-screen-lg  w-full'>
+            <ul className='relative box-border gap-4 clear-both flex flex-wrap items-center justify-between'>
+              {newList}
+            </ul>
+          </div>
+        </div>
+      <div className='font-roboto bg-white relative infinite max-w-screen-lg mx-auto w-full  justify-center items-center flex'>
+        <div className='block pt-12 pb-7 w-full mx-3'>
+          <div
+            className=' infinite-link w-full py-4 border-solid border-2 justify-center items-center flex text-16-19 cursor-pointer'
+            onClick={() => setSeeMore((totalListNumber) => totalListNumber + 9)}
+          >
+            DAHA FAZLA GÖSTER
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
- 
-//   useEffect(() => {
-//      // console.log(props.location.state,url1,cat)
-//     Axios.get(url1, {
-//       headers: new Headers({
-//         Accept: "text/html",
-//         "content-type": "application/x-www-form-urlencoded",
-//         "Access-Control-Allow-Origin": "*",
-//         "Access-Control-Allow-Methods": "GET, POST, PUT",
-//         "Access-Control-Allow-Headers": "Content-Type",
-//       }),
-//       mode: "no-cors",
-//     })
-//       .then((d) => {
-//         let p = [];
-//         var xml = new XMLParser().parseFromString(d.data);
-//         let news = [];
-//         console.log(xml);
-//         var mainChildrens = xml.children;
-
-//         mainChildrens.forEach(mainChildren => {
-//           if(mainChildren.name == "entry")
-//             {
-//               news.push(mainChildren.children[6]);
-//             }
-//         });
-        
-//         /*for (let i in news) {
-//           if (
-//             news[i].children !== null &&
-//             news[i].children !== [] &&
-//             news[i].children.length > 0
-//           ) {
-//             p.push(news[i].children);
-//           }
-//         }*/
-
-//         console.log(news);
-//         news.forEach(newsSingle => {
-//               console.log(newsSingle.children[0].value);
-//               console.log(newsSingle.children[1]?.children[0]?.children[0]?.attributes?.src);
-//         });
-//         console.log(p);
-//         setPost(p);
-
-//         setloading(false);
-//       })
-//       .catch((e) => {
-//         setloading(false);
-//         console.log(e);
-//         seterr(e);
-//       });
-//   }, [url1]);
-
-//   let posts = post.map((p, index) => (
-//     <Link
-//       className={classes.colors}
-//       key={index}
-//       to={{
-//         pathname: `${props.location.pathname}/${index}`,
-//         customObject: p,
-//         state: [
-//           p[0].value,
-//           p[1].value,
-//           p[7].value,
-//           p[9].attributes.url,
-//           p[3].value,
-//         ],
-        
-//       }}
-//     >
-//       <div className={`card ${classes.card}`} style={{}}>
-//         <div className={classes.cardhorizontal}>
-//           <div className="img-square-wrapper">
-//             <img className="" src={p[9]?.attributes.url} alt="Card  cap" />
-//           </div>
-
-//           <div  className={`card-body ${classes.cardbody}`}>
-//             <h4 className="card-title">{p[0]?.value}</h4>
-
-//             <div className={`card-text ${classes.limit}`}>
-//               {Parser(Parser(p[7]?.value))}
-//             </div>
-//           </div>
-//         </div>
-//         <div className="card-footer">
-//           <small className="text-muted">
-//             {moment.utc(p[3].value).format("llll")}
-//           </small>
-//         </div>
-//       </div>
-//     </Link>
-//   ));
-
-//   let rendered;
-//   let error;
-//   let errorMsg;
-//   if (err && !loading) {
-//     console.log("Errtor is :", err);
-//     error = err.code ? err.code : err.name;
-//     errorMsg = err.message;
-//     rendered = (
-//       <>
-//         <h2 className="red center">{error}</h2>
-//         <p className="errorMessage center">{errorMsg}</p>
-//       </>
-//     );
-//   }
-
-//   if (loading) {
-//     rendered = <Spinner />;
-//   }
-//   if (!loading && posts.length > 0) {
-//     rendered = <div>{posts}</div>;
-//   }
-
-//   return (
-//     <div>
-//       <div className="container">{rendered}</div>
-//     </div>
-//   );
-// }
-
-// export default withRouter(NewsList2);
+export default Test;
