@@ -9,6 +9,7 @@ const List = ({ news }) => {
           index={index}
           text={news?.[index + 1]?.title}
           link={news?.[index + 1]?.link}
+          news={news?.[index + 1]}
         />
       ))}
     </div>

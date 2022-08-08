@@ -1,6 +1,8 @@
-const ListItem = ({ index, text, link }) => {
+import { Link } from 'react-router-dom';
+
+const ListItem = ({ index, text, link, news }) => {
   return (
-    <a href={link} target='_blank'>
+    <Link to={`/news/${news?.id}`} state={{ category: news?.category, news }}>
       <div
         className={`${
           index !== 4 && 'border-b border-b-[#E1E1E1]'
@@ -10,7 +12,7 @@ const ListItem = ({ index, text, link }) => {
           {text}
         </p>
       </div>
-    </a>
+    </Link>
   );
 };
 export default ListItem;

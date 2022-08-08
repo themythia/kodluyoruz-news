@@ -11,7 +11,7 @@ const BreakingNewsSlider = () => {
   // carousel slide index
   const [index, setIndex] = useState(0);
   const sliderRef = useRef(null);
-  const { breaking } = useContext(HomeContext);
+  const { news } = useContext(HomeContext);
 
   // react-slick setting props
   const settings = {
@@ -46,7 +46,7 @@ const BreakingNewsSlider = () => {
       <Arrows handleArrows={handleArrows} />
       <Slider {...settings} ref={sliderRef}>
         {[...Array(10)].map((_, index) => (
-          <SliderItem key={index} news={breaking?.items?.[index]} />
+          <SliderItem key={index} news={news?.items?.[index]} />
         ))}
       </Slider>
     </div>

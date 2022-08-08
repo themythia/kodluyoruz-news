@@ -1,10 +1,11 @@
-import CarouselContainer from './CarouselContainer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { useRef } from 'react';
+import CarouselItem from './CarouselItem';
+import useDynamicContext from '../../../../utils/hooks/useDynamicContext.js';
 
-const Carousel = () => {
+const Carousel = ({ type }) => {
   const sliderRef = useRef(null);
 
   // react-slick setting props
@@ -19,13 +20,19 @@ const Carousel = () => {
     autoplay: true,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    dotsClass: 'home__carousel',
+    dotsClass:
+      type === 'home'
+        ? 'home__carousel'
+        : type === 'econ'
+        ? 'econ__carousel'
+        : '',
     appendDots: (dots) => <div>{dots}</div>,
     customPaging: (i) => (
       <button
         onMouseEnter={() => {
           sliderRef.current.slickGoTo(i, true);
         }}
+        data-testid='carousel-button'
       >
         {i + 1}
       </button>
@@ -35,7 +42,7 @@ const Carousel = () => {
   return (
     <Slider {...settings} ref={sliderRef}>
       {[...Array(20)].map((_, index) => (
-        <CarouselContainer key={index} index={index} />
+        <CarouselItem key={index} index={index} type={type} />
       ))}
     </Slider>
   );
