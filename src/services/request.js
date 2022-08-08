@@ -26,7 +26,7 @@ async function getRequest(url) {
     const query = parseFeed(data.data).items;
     return query;
   } else {
-    console.log("Lütfen çağırmak istediğiniz api'ı yazınız");
+    alert("Lütfen çağırmak istediğiniz api'ı yazınız");
   }
 }
 

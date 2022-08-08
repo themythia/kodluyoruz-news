@@ -1,5 +1,4 @@
 import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu';
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBarCategoryLane = (props) => {
@@ -14,7 +13,7 @@ const NavBarCategoryLane = (props) => {
     categoriesList.push(
       <li key={i} className='content-list-items'>
         <Link to={'/' + Object.keys(categories)[i]}>
-          {Object.values(categories)[i]}
+          {Object.values(categories)[i].toUpperCase().replace('I', 'İ')}
         </Link>
       </li>
     );
@@ -25,13 +24,18 @@ const NavBarCategoryLane = (props) => {
   );
 
   moreCategoriesList = moreCategoriesList.map(function (each, index) {
-    return <MenuItem>{Object.values(categories)?.[10 + index]}</MenuItem>;
+    return (
+      <MenuItem>
+        {Object.values(categories)
+          ?.[10 + index].toUpperCase()
+          .replace('I', 'İ')}
+      </MenuItem>
+    );
   });
-  console.log('🚀 ~ moreCategoriesList', moreCategoriesList);
 
   const DrawerMenu = () => {
     return (
-      <div className='h-6 flex items-center justify-center '>
+      <div className='h-6 flex items-center justify-center text-16-19'>
         <Menu
           offsetY={12}
           menuButton={({ open }) => (

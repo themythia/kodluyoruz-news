@@ -52,12 +52,8 @@ const NavBarWeatherLane = (props) => {
   };
 
   const cities = ['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya'];
-  // console.log('🚀 ~ NavBarWeatherLane ~ cities', cities);
   const WeatherList = () => {
-    // console.log('object');
     const weatherOfCitiesPng = getData?.map(function (each, index) {
-      // console.log("iconları almaya calısıoz: ", each)
-      // console.log('iconları almaya calısıoz: ', each);
       return [
         weatherStates[each?.weather[0]?.icon],
         Math.floor(each?.main?.temp),

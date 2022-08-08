@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-bg;
+    @apply bg-bg font-roboto;
   }
 }
 
@@ -39,10 +39,10 @@
   }
 
   .header-category .container .content .content-list {
-    @apply flex py-3 px-6  list-none box-border m-0;
+    @apply flex py-3 px-6  list-none box-border m-0 w-full justify-evenly;
   }
   .header-category .container .content .content-list .content-list-items {
-    @apply shrink-0 inline-block relative mr-4 box-border;
+    @apply shrink-0 relative box-border text-16-19 font-semibold flex justify-between items-center;
   }
 
   /*Header 3. kısım  */
