@@ -3,11 +3,11 @@ import { parseFeed } from 'htmlparser2';
 
 function Sport() {
 
-    const style1 = 'bg-blue-900 text-white border-2 mr-2 text-base font-black px-4 py-2 rounded-full';
-    const style2 = 'border-2 mr-2 text-base font-black px-4 py-2 rounded-full';
-    const style3 = 'border-2 mr-2 text-base font-black px-3 py-2 rounded-full';
-    const style4 = 'border-2 mr-2 text-base font-black px-4 py-2 rounded-full bg-blue-900 text-white';
-    const style5 = 'border-2 mr-2 text-base font-black px-3 py-2 rounded-full bg-blue-900 text-white';
+    const style1 = 'bg-blue-900 text-white border-2 mr-1 text-base font-black px-4 py-2 rounded-full';
+    const style2 = 'border-2 mr-1 text-base font-black px-4 py-2 rounded-full';
+    const style3 = 'border-2 mr-1 text-base font-black px-3 py-2 rounded-full';
+    const style4 = 'border-2 mr-1 text-base font-black px-4 py-2 rounded-full bg-blue-900 text-white';
+    const style5 = 'border-2 mr-1 text-base font-black px-3 py-2 rounded-full bg-blue-900 text-white';
 
     const [text, setText] = useState('');
     const [txt, setTxt] = useState({ textContent: "", imageContent: "", linkContent: "" });
