@@ -5,6 +5,7 @@ import Rss from './pages/Rss';
 import Test from './pages/Test';
 import Request from './pages/Request';
 import './App.css';
+import Retest from './pages/Retest';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       
       {/* <Test /> */}
       <Rss /> 
-    <Life />
+    {/*<Life />*/}
     {/* <Request /> */}
     {/* <Test /> */}
+    {/* <Retest /> */}
     </div>
   );
 }

@@ -9,6 +9,31 @@ const Life = (arr = {}) => {
   setDataPull (arr) 
    
   }, [arr])
+    //console.log(arr)
+
+    // return (
+    //   <div>
+    //     {arr.arr.map((value, index) => {
+    //       console.log("value: ",value)
+    //       return <div key={index}>
+    //       <a href = {value?.id} target = '_blank' textDecoration='none'>
+    //           <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='multipleItems2'></img>
+    //           <div>{value?.title}</div>
+          
+    //       </a>
+        
+
+    //       </div>
+      
+    //     })}
+    //     </div>
+    // )
+  
+
+
+
+
+
   // console.log(arr)
   // console.log(arr.arr[2])
   // console.log(dataPull?.arr?.[4])
@@ -35,8 +60,9 @@ const Life = (arr = {}) => {
         <div className='listItem'>
             {/* <div className='listItem2'>{dataPull.arr[0]}</div> */}
             <div className='listItem2'>list2</div>
-            <div className='listItem2'>{dataPull?.arr?.[4]?.src}</div>
-            {/* <div className='listItem2'>{dataPull?.arr?.[4]?.title}</div> */}
+            <div className='listItem2'>asdasd</div>
+            <div className='listItem2'>asdasdadsd</div>
+            
         </div>
         {/* 2li card */}
         <div className='card'> 
@@ -73,7 +99,7 @@ const Life = (arr = {}) => {
             {dataPull?.arr?.[1]?.title}
             </li>
             <li className='listCard'>
-            {dataPull?.arr?.[2]?.description}
+            
             </li>
           </ul>
         </div>
@@ -89,15 +115,31 @@ const Life = (arr = {}) => {
       {/* multiple ıtems */}
         <div className='innerContent'>
           <div className='innerContentIn'>
-              <div className='multipleItems2'>{dataPull?.arr?.[0]?.description}</div>
+              {/* <div className='multipleItems2'>{dataPull?.arr?.[0]?.description}</div> */}
               
               
               
-              <div className='multipleItems2'>{dataPull?.arr?.[1]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[2]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[3]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[4]?.description}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[5]?.title}</div>
+              {/* <div className='multipleItems2'>{dataPull?.arr?.[1]?.title}</div>
+              <div className='multipleItems2'>{dataPull?.arr?.[2]?.title}</div> */}
+              {/* <div className='multipleItems2'>{dataPull?.arr?.[4]?.description}</div> */}
+         
+      <div className='newsDivDis'>
+        {arr.arr.map((value, index) => {
+          console.log("value: ",value)
+          return <div className='newsDiv' key={index}>
+          <a href = {value?.id} target = '_blank' textDecoration='none'>
+              <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='newsimage'></img>
+              <div className='newstitle'>{value?.title}</div>
+          
+          </a>
+        
+
+          </div>
+      
+        })}
+        </div>
+    
+              {/* <div className='multipleItems2'>{dataPull?.arr?.[5]?.title}</div>
               <div className='multipleItems2'>{dataPull?.arr?.[6]?.title}</div>
               <div className='multipleItems2'>{dataPull?.arr?.[7]?.title}</div>
               <div className='multipleItems2'>{dataPull?.arr?.[8]?.title}</div>
@@ -109,7 +151,7 @@ const Life = (arr = {}) => {
               <div className='multipleItems2'>{dataPull?.arr?.[14]?.title}</div>
               <div className='multipleItems2'>{dataPull?.arr?.[15]?.title}</div>
               <div className='multipleItems2'>{dataPull?.arr?.[16]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[17]?.title}</div>
+              <div className='multipleItems2'>{dataPull?.arr?.[17]?.title}</div> */}
 
           
             

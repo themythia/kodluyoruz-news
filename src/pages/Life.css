@@ -222,7 +222,7 @@
 
 .innerContent{
   width: 1020px;
-  height: 6012px;
+  height: auto;
   float: left;
   /* width: 100%; */
   position: relative;
@@ -243,7 +243,7 @@
 }
 .innerContentIn{
   justify-content: flex-start;
-  height: 6012px;
+  height: auto;
   flex: auto;
   flex-direction: row;
   gap: 2%;
@@ -355,4 +355,30 @@
     background-color: #022032;
     color: #fff;
     margin-top: 1px;
+  }
+
+  .newsDivDis{
+    width:100%;
+    
+  }
+  .newsDiv{
+    display:flex;
+    width:31.5%;
+    float:left;
+    margin:0.5em;
+    min-height:250px;
+  }
+  .newstitle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .newsDiv a{
+text-decoration: none;
+color:#000;
+  }
+  .newsimage{
+    width:100%;
+    height:200px;
   }
