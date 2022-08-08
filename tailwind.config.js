@@ -10,6 +10,7 @@ module.exports = {
         textRed: '#9C0000',
         breakingRed: '#BB1919',
         newsListBg: '#DCDCDC',
+        textGray: '#909090',
         tech: '#007FBD',
         world: '#0092A8',
         infoText: '#819099',

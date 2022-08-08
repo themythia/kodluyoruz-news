@@ -17,6 +17,7 @@ import {
   WindySunny,
 } from '../../../assets/png';
 import { Link } from 'react-router-dom';
+import './styles.css';
 
 // NavBar ilk alan: logo ve Hava durumu
 const NavBarWeatherLane = (props) => {
@@ -51,11 +52,16 @@ const NavBarWeatherLane = (props) => {
   };
 
   const cities = ['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya'];
+  // console.log('🚀 ~ NavBarWeatherLane ~ cities', cities);
   const WeatherList = () => {
+    // console.log('object');
     const weatherOfCitiesPng = getData?.map(function (each, index) {
       // console.log("iconları almaya calısıoz: ", each)
-      // console.log("iconları almaya calısıoz: ", each)
-      return [weatherStates[each.weather[0].icon], Math.floor(each.main.temp)];
+      // console.log('iconları almaya calısıoz: ', each);
+      return [
+        weatherStates[each?.weather[0]?.icon],
+        Math.floor(each?.main?.temp),
+      ];
     });
 
     return weatherOfCitiesPng.map(function (each, index) {
@@ -93,7 +99,8 @@ const NavBarWeatherLane = (props) => {
           />
           <div className='h-6 absolute flex items-center justify-end flex-wrap right-12 '>
             <Menu
-              className='overflow-y-auto h-64 w-40 absolute box-border z-50 '
+              offsetY={12}
+              offsetX={-120}
               menuButton={
                 <MenuButton>
                   <svg

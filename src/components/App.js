@@ -1,5 +1,8 @@
 import '../index.css';
 import { Routes, Route } from 'react-router-dom';
+import Art from '../components/pages/artpage/Art';
+import NotFound from './pages/NotFound';
+import HomePage from './pages/homepage/HomePage';
 
 import Home from './pages/Home';
 import Life from './pages/Life';
@@ -17,10 +20,12 @@ import Sport from './pages/Sport';
 import SportDetails from './pages/details/SportDetails';
 import Health from './pages/Health';
 import HealthDetails from './pages/details/HealthDetails';
+import Tourism from './pages/tourism/Tourism';
+
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<HomePage />} />
       <Route path='/economy'>
         <Route index={true} element={<Economy />} />
         <Route path='details' element={<EconomyDetails />} />
@@ -50,6 +55,14 @@ function App() {
         <Route path='details' element={<HealthDetails />} />
       </Route>
       <Route path='*' element={<Page404 />} />
+      <Route path='/turizm'>
+        <Route index={true} element={<Tourism />} />
+        <Route path='details' element={<HealthDetails />} />
+      </Route>
+      <Route path='/art'>
+        <Route index={true} element={<Tourism />} />
+        <Route path='details' element={<HealthDetails />} />
+      </Route>
     </Routes>
   );
 }
