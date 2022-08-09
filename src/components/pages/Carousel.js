@@ -1,71 +1,103 @@
-import React, { useEffect, useState } from 'react';
-import { getPosts } from './getposts';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useEffect, useState, useRef } from 'react';
 import '../../index.css';
-
-
-const Carousel = () => {
-    const[button , setButton] = useState('');
-    const [data, setData] = useState(10)
-
-    useEffect(() => {
-      getPosts().then((items) => setData(items));
-    }, []);
-
-    let holdData = [];
-    for (let i=0; i < 10; i++) {
-    holdData.push(data[i])
-    }
+import dataList from './DataList';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/bundle";
+import { Pagination, Navigation } from "swiper";
 
 
 
-const holdDataList = holdData.map(function (each , value) {
-  return (
-   
-   <li key={value}>
-    <a 
-    href={each?.['description']
-     ? each['description'].substring(
-      10,
-       each['description'].indexOf(' ', 
-       10) -1
-      )
-    : ' '
-  }
-  >
-    <img src={
-              each?.['description']
-                ? each['description'].substring(
-                    10,
-                    each['description'].indexOf(' ', 10) - 1
-                  )
-                : ''
-            }
-            alt='Html tutorial'>
-
-            </img>
-  </a>
-  <div className='block items-center justify-center p-4 text-16-19 font-bold line-clamp-2 '>
-          {each?.['title'] ? each['title'] : ''}
-        </div>
-   </li>
-   
-    
-  );
-});
 
 
+const Carousel = () => { 
 
-return (
-  
-  <>
-  <div></div>
-  <span className=' flex items-center justify-center' >
-  {[...Array(10)].map((_,index) => <button key = {index}className='bg-white-500 border-2 border-indigo-100 hover:bg-blue-700 hover:text-white text-black font-bold py-2 px-4 rounded-full' >{index + 1}</button>)}
-</span>
-    
+  const [itemList, setitemList] = useState({});
+
+  useEffect(() => {
+    dataList().then((api) => setitemList(api));
+  }, []);
+
+console.log(itemList)
  
-  </>
-)
-}
+  useEffect(() => {
+    if (Object.keys(itemList).length > 0) {
+      let textDatas = { imageData: [], titleData: [], hrefData: [] };
+      if (itemList) {
+          for (let i = 0; i < 10; i++) {
+        textDatas.imageData.push(
+          itemList[i].description.split('<img src="')[1].split('?width')[0]
+        );
+        textDatas.titleData.push(itemList[i].title);
+        textDatas.hrefData.push(itemList[i].link);
+      }
+      setitemList(textDatas);
+    }
+   
+    
+  }
+  }, [itemList]);
 
-export default Carousel
+
+
+  const [newDataList , setNewDataList] = useState([]);
+  useEffect(() =>  {
+    let newArray = []
+  for (let i=0; i < 10; i++) {
+    newArray.push(itemList[i])
+  }
+  setNewDataList(newArray)
+  
+},[itemList]
+)
+    console.log(newDataList)
+
+  const newMappingData = newDataList?.map(function (value, index) {
+    
+    
+    return (
+      <SwiperSlide
+       key={index} className='items-start justify-start flex h-full w-full '>
+       <div  slot='container-start' className='parallax-bg'>
+       <a href={value?.[index]?.description}  className='relative'>
+       <img src={value?.link} >
+       </img>
+       </a>
+       </div>
+       <div
+          className='opacity-80 bg-blue-600 text-2xl p-3 ml-44 mb-4 relative rounded-full'
+          data-swiper-parallax='-100'
+        >
+          <div>{ value?.title } </div>
+          </div>
+      </SwiperSlide>
+    )
+   
+  })
+  
+
+
+  return(
+   <div>
+          <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+      >
+    
+    {newMappingData}
+    </Swiper>
+     </div>
+  )
+};
+
+export default Carousel;

@@ -1,7 +1,5 @@
 import '../index.css';
-import { Routes, Route } from 'react-router-dom';
-import Art from '../components/pages/Art';
-import NotFound from './pages/NotFound';
+import { Routes, Route } from 'react-router-dom'
 import Otomobil from './pages/Otomobil';
 
 function App() {
@@ -9,9 +7,9 @@ function App() {
     <div className='App'>
       <Routes>
         
+        <Route path='/asdasdas' index element={<Otomobil />} />
         <Route path='/' index element={<Otomobil />} />
-        <Route path='/art' element={<Art />} />
-        <Route path='*' element={<NotFound />} />
+      
       </Routes>
     </div>
   );

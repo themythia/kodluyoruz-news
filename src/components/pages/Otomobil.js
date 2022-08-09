@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { getPosts } from './getposts';
 import '../../index.css';
+import Button from './Button';
 import Carousel from './Carousel';
-import ChangeImages from './ChangeImages';
 
 const Otomobil = () => {
   const [feed, setFeed] = useState({});
   const [seeMore, setSeeMore] = useState(18);
 
-  useEffect(() => {
-    getPosts().then((test) => setFeed(test));
-  }, []);
-
   let newsArray = [];
   for (let i = 0; i < seeMore; i++) {
     newsArray.push(feed[i]);
   }
-  
 
   const newList = newsArray.map(function (each, key) {
     return (
@@ -57,15 +51,15 @@ const Otomobil = () => {
 
   return (
     <>
-    <ChangeImages />
       <Carousel />
-        <div className='category-container mx-3 bg-bg' >
-          <div className=' relative mx-auto max-w-screen-lg  w-full'>
-            <ul className='relative box-border gap-4 clear-both flex flex-wrap items-center justify-between'>
-              {newList}
-            </ul>
-          </div>
+      <Button />
+      <div className='category-container mx-3 bg-bg'>
+        <div className=' relative mx-auto max-w-screen-lg  w-full'>
+          <ul className='relative box-border gap-4 clear-both flex flex-wrap items-center justify-between'>
+            {newList}
+          </ul>
         </div>
+      </div>
       <div className='font-roboto bg-white relative infinite max-w-screen-lg mx-auto w-full  justify-center items-center flex'>
         <div className='block pt-12 pb-7 w-full mx-3'>
           <div
