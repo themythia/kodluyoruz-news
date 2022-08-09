@@ -16,6 +16,11 @@ module.exports = {
         infoText: '#819099',
         carouselBorder: '#E6E6E6',
         carouselMobileBg: '#650000',
+        economy: '#C59527',
+        twitter: '#1C9DEB',
+        facebook: '#4064AD',
+        whatsapp: '#25AF3A',
+        flipboard: '#E12828',
       },
       fontFamily: {
         roboto: ['Roboto'],

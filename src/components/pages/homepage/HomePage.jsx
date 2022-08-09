@@ -13,10 +13,10 @@ const HomePage = () => {
       <Container>
         <BreakingNews />
         <InnerContainer>
-          <NewsCardContainer size={3} />
-          <Carousel />
+          <NewsCardContainer size={3} type='home' />
+          <Carousel type='home' />
           <NewsCardCarousel />
-          <NewsCardContainer size={6} />
+          <NewsCardContainer size={6} type='home' />
           <NewsListContainer />
         </InnerContainer>
       </Container>

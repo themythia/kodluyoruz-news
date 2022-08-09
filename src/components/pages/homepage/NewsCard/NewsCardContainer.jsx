@@ -1,14 +1,21 @@
-import { useContext } from 'react';
-import { HomeContext } from '../../../../contexts/HomeContext';
+import useDynamicContext from '../../../../utils/hooks/useDynamicContext';
 import NewsCard from './NewsCard';
-const NewsCardContainer = ({ size }) => {
-  const { breaking } = useContext(HomeContext);
+const NewsCardContainer = ({ size, type }) => {
+  const news = useDynamicContext(type);
   return (
-    <div className='hidden  md:flex md:flex-row md:justify-between mb-2.5 flex-wrap gap-y-2.5'>
+    <div
+      className={`${
+        type === 'home' ? 'hidden md:grid md:grid-cols-3' : ''
+      } grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-2.5 w-full mb-2.5`}
+      data-testid={
+        size === 3 ? 'top-news-card-container' : 'bottom-news-card-container'
+      }
+    >
       {[...Array(size)].map((_, index) => (
         <NewsCard
           key={index}
-          news={breaking?.items?.[size === 3 ? index + 30 : index + 33]}
+          news={news?.items?.[size === 3 ? index + 30 : index + 33]}
+          page={type}
         />
       ))}
     </div>

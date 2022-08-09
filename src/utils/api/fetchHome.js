@@ -1,4 +1,5 @@
 import { parseFeed } from 'htmlparser2';
+import formatRSSFeed from './formatRSSFeed';
 
 const fetchHome = async () => {
   const corsProxy = 'https://pacific-caverns-96128.herokuapp.com/';
@@ -15,18 +16,7 @@ const fetchHome = async () => {
       const response = await fetch(corsProxy + rssFeeds[index]);
       const text = await response.text();
       const parse = parseFeed(text);
-      const formattedParse = {
-        description: parse.description,
-        items: parse.items.map((item) => ({
-          title: item.title,
-          link: item.link,
-          media: item.description
-            .split('<img src="')[1]
-            .split('?width=1200')[0],
-          description: item.description.split('<p>')[1].split('</p>')[0],
-        })),
-      };
-      return formattedParse;
+      return formatRSSFeed(parse);
     } catch (error) {
       console.error(`Fetching RSS Feed: ${rssFeeds[index]} failed!`, error);
     }

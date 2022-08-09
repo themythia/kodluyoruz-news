@@ -1,19 +1,17 @@
-import { useContext } from 'react';
-import { HomeContext } from '../../../../contexts/HomeContext';
-import CarouselimageText from './CarouselImageText';
+import useDynamicContext from '../../../../utils/hooks/useDynamicContext';
+import Text from './Text';
 
-const CarouselImage = ({ index }) => {
-  const { breaking } = useContext(HomeContext);
-  const news = breaking?.items?.[index + 10];
+const CarouselImage = ({ index, type }) => {
+  const news = useDynamicContext(type);
 
   return (
     <div className='w-full md:max-w-[1000px] aspect-4/3 md:aspect-40/23 overflow-hidden'>
       <img
-        src={news?.media}
-        alt={news?.title}
+        src={news?.items?.[index + 10]?.media}
+        alt={news?.items?.[index + 10]?.title}
         className='w-full h-full object-cover'
       />
-      <CarouselimageText text={news?.title} />
+      <Text text={news?.items?.[index + 10]?.title} type={type} />
     </div>
   );
 };

@@ -1,8 +1,15 @@
 import '../index.css';
+<<<<<<< HEAD
 import { Routes, Route } from 'react-router-dom';
+=======
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Tourism from './pages/tourism/Tourism';
+>>>>>>> 0ef92db92b8a1811793774c2a11c11c5523e91ef
 import Art from '../components/pages/artpage/Art';
 import NotFound from './pages/NotFound';
 import HomePage from './pages/homepage/HomePage';
+import Economy from './pages/economy/Economy';
+import NewsDetail from './pages/newsDetail/NewsDetail';
 
 import Life from './pages/Life';
 import EconomyDetails from './pages/details/EconomyDetails';
@@ -21,6 +28,7 @@ import Turkey from './pages/turkey/Turkey';
 
 function App() {
   return (
+<<<<<<< HEAD
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='*' element={<NotFound />} />
@@ -61,6 +69,18 @@ function App() {
         <Route path='details' element={<TechnologyDetails />} />
       </Route>
     </Routes>
+=======
+    <Router>
+      <Routes>
+        <Route path='/' index element={<HomePage />} />
+        <Route path='/turizm' element={<Tourism />} />
+        <Route path='/economy' index element={<Economy />} />
+        <Route path='/news/:newsId' element={<NewsDetail />} />
+        <Route path='/sanat' element={<Art />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Router>
+>>>>>>> 0ef92db92b8a1811793774c2a11c11c5523e91ef
   );
 }
 
