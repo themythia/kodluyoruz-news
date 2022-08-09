@@ -6,6 +6,7 @@ import Test from './pages/Test';
 import Request from './pages/Request';
 import './App.css';
 import Retest from './pages/Retest';
+import Carousel from './pages/Carousel';
 
 function App() {
   return (
@@ -13,10 +14,12 @@ function App() {
       
       {/* <Test /> */}
       <Rss /> 
-    {/*<Life />*/}
+      {/* <Carousel /> */}
+    {/* <Life /> */}
     {/* <Request /> */}
     {/* <Test /> */}
     {/* <Retest /> */}
+    {/* <Health /> */}
     </div>
   );
 }

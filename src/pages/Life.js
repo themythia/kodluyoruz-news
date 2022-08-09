@@ -9,46 +9,8 @@ const Life = (arr = {}) => {
   setDataPull (arr) 
    
   }, [arr])
-    //console.log(arr)
-
-    // return (
-    //   <div>
-    //     {arr.arr.map((value, index) => {
-    //       console.log("value: ",value)
-    //       return <div key={index}>
-    //       <a href = {value?.id} target = '_blank' textDecoration='none'>
-    //           <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='multipleItems2'></img>
-    //           <div>{value?.title}</div>
-          
-    //       </a>
-        
-
-    //       </div>
-      
-    //     })}
-    //     </div>
-    // )
-  
-
-
-
-
-
-  // console.log(arr)
-  // console.log(arr.arr[2])
-  // console.log(dataPull?.arr?.[4])
-  
-  
-  // console.log(dataPull.arr)
-
-  
-
-  // console.log(arr)
-  // console.log(arr[0]?.["title"])
-  // console.log(arr["arr"])
-  // console.log(arr.arr[0]?.["title"])
-  // console.log(arr[0])
    
+
 
   return (
      <>
@@ -56,58 +18,175 @@ const Life = (arr = {}) => {
               <div className='header'>Life</div>
               <div className='navbar'>Kategori</div>
         </div>
+
         <div className='slickSlider'>Slider Alanı</div>
         <div className='listItem'>
-            {/* <div className='listItem2'>{dataPull.arr[0]}</div> */}
-            <div className='listItem2'>list2</div>
-            <div className='listItem2'>asdasd</div>
-            <div className='listItem2'>asdasdadsd</div>
-            
+            <div className='listItem2'>
+            <a href = {dataPull?.arr?.[0]?.id}  target = '_blank'>
+                    <img src={dataPull?.arr?.[0]?.description.substring(10 , dataPull?.arr?.[0]?.description.indexOf(' ' , 10)-1 )}></img>
+                      <div>
+                        {dataPull?.arr?.[0]?.title}
+                      </div>
+                </a>
+            </div>
+            <div className='listItem2'>
+              <a href = {dataPull?.arr?.[1]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[1]?.description.substring(10 , dataPull?.arr?.[1]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[1]?.title}
+                        </div>
+                  </a>
+            </div>
+
+            <div className='listItem2'>
+              <a href = {dataPull?.arr?.[2]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[2]?.description.substring(10 , dataPull?.arr?.[2]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[2]?.title}
+                        </div>
+                  </a>
+            </div>
         </div>
+
         {/* 2li card */}
+
         <div className='card'> 
-            <div className='card1'>card1</div>
-            <div className='card2'>card2</div>
+            <div className='card1'>  
+              <a href = {dataPull?.arr?.[3]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[3]?.description.substring(10 , dataPull?.arr?.[3]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[3]?.title}
+                        </div>
+                  </a>
+            </div>
+            <div className='card2'>
+                <a href = {dataPull?.arr?.[4]?.id}  target = '_blank'>
+                    <img src={dataPull?.arr?.[4]?.description.substring(10 , dataPull?.arr?.[4]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                      <div>
+                        {dataPull?.arr?.[4]?.title}
+                      </div>
+                </a>
+            </div>
         </div>
+
         <div className='content'>
               <div className='contentAll'>
-                1
+                <a href = {dataPull?.arr?.[5]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[5]?.description.substring(10 , dataPull?.arr?.[5]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[5]?.title}
+                        </div>
+                  </a>
               </div>
               <div className='contentAll'>
-                2
+                <a href = {dataPull?.arr?.[6]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[6]?.description.substring(10 , dataPull?.arr?.[6]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[6]?.title}
+                        </div>
+                  </a>
               </div>
               <div className='contentAll'>
-                3
+                  <a href = {dataPull?.arr?.[7]?.id}  target = '_blank'>
+                        <img src={dataPull?.arr?.[7]?.description.substring(10 , dataPull?.arr?.[7]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                          <div>
+                            {dataPull?.arr?.[7]?.title}
+                          </div>
+                    </a>
               </div>
         </div>
         <div className='redCard'>
           <div className='redCardMain'>
-              <div className='redCardIn'></div>
-              <div className='redCardIn'></div>
-              <div className='redCardIn'></div>
-              <div className='redCardIn'></div>
-              <div className='redCardIn'></div>
-              <div className='redCardIn'></div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[8]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[8]?.description.substring(10 , dataPull?.arr?.[8]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[8]?.title}
+                        </div>
+                  </a>
+              </div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[9]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[9]?.description.substring(10 , dataPull?.arr?.[9]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[9]?.title}
+                        </div>
+                  </a>
+              </div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[10]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[10]?.description.substring(10 , dataPull?.arr?.[10]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[10]?.title}
+                        </div>
+                  </a>
+              </div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[11]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[11]?.description.substring(10 , dataPull?.arr?.[11]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[11]?.title}
+                        </div>
+                  </a>
+              </div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[12]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[12]?.description.substring(10 , dataPull?.arr?.[12]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[12]?.title}
+                        </div>
+                  </a>
+              </div>
+              <div className='redCardIn'>
+                <a href = {dataPull?.arr?.[13]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[13]?.description.substring(10 , dataPull?.arr?.[13]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[13]?.title}
+                        </div>
+                  </a>
+              </div>
           </div>
         </div>
         <div className='ntvContent'>
           <ul className='ulCard'>
             <li className='listCard'>
-            {dataPull?.arr?.[0]?.title}
+              <a href = {dataPull?.arr?.[14]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[14]?.description.substring(10 , dataPull?.arr?.[14]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[14]?.title}
+                        </div>
+                  </a>
             </li>
             <li className='listCard'>
-            {dataPull?.arr?.[1]?.title}
+              <a href = {dataPull?.arr?.[15]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[15]?.description.substring(10 , dataPull?.arr?.[15]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[15]?.title}
+                        </div>
+                  </a>
             </li>
             <li className='listCard'>
-            
+              <a href = {dataPull?.arr?.[16]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[16]?.description.substring(10 , dataPull?.arr?.[16]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                        <div>
+                          {dataPull?.arr?.[16]?.title}
+                        </div>
+                  </a>  
             </li>
           </ul>
         </div>
 
+
+
         <div className='bigImg'>
+              
+                
+              
           <div>
               <div>
-                big image
+              big img
+
+
               </div>
           </div>
         </div>
@@ -115,43 +194,27 @@ const Life = (arr = {}) => {
       {/* multiple ıtems */}
         <div className='innerContent'>
           <div className='innerContentIn'>
-              {/* <div className='multipleItems2'>{dataPull?.arr?.[0]?.description}</div> */}
-              
-              
-              
-              {/* <div className='multipleItems2'>{dataPull?.arr?.[1]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[2]?.title}</div> */}
-              {/* <div className='multipleItems2'>{dataPull?.arr?.[4]?.description}</div> */}
-         
-      <div className='newsDivDis'>
-        {arr.arr.map((value, index) => {
-          console.log("value: ",value)
-          return <div className='newsDiv' key={index}>
-          <a href = {value?.id} target = '_blank' textDecoration='none'>
-              <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='newsimage'></img>
-              <div className='newstitle'>{value?.title}</div>
-          
-          </a>
         
+             
+      <div className='newsDivDis'>
+            {arr.arr.map((value, index) => {
+            // console.log("value: ",value)
+              return <div className='newsDiv' key={index}>
+              <a href = {value?.id} target = '_blank' textDecoration='none'>
+                  <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='newsimage'></img>
+                  <div className='newstitle'>{value?.title}</div>
+              
+              </a>
 
-          </div>
-      
-        })}
+          
+            
+
+              </div>
+          
+            })}
         </div>
     
-              {/* <div className='multipleItems2'>{dataPull?.arr?.[5]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[6]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[7]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[8]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[9]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[10]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[11]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[12]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[13]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[14]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[15]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[16]?.title}</div>
-              <div className='multipleItems2'>{dataPull?.arr?.[17]?.title}</div> */}
+           
 
           
             

@@ -82,3 +82,16 @@
 // };
 
 // export default Test;
+
+/*
+
+
+
+<a href = {dataPull?.arr?.[1]?.id}  target = '_blank'>
+                    <img src={dataPull?.arr?.[1]?.description.substring(10 , dataPull?.arr?.[1]?.description.indexOf(' ' , 10)-1 )} width ="49%" height="302px"></img>
+                      <div>
+                        {dataPull?.arr?.[1]?.title}
+                      </div>
+                </a>
+
+*/
