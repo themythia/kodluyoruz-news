@@ -12,7 +12,7 @@
 
 //     });
 
-//     test('should go to the link', () => { 
+//     test('should go to the link', () => {
 //         userEvent.click(link);
 //         expect(screen.getByRole('link')).toHaveAttribute('href', 'https://ntv.com.tr')
 //     })
