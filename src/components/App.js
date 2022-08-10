@@ -1,4 +1,5 @@
 import '../index.css';
+import Astrology from './pages/Astroloji/Astrology';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Tourism from './pages/tourism/Tourism';
 import Art from '../components/pages/artpage/Art';
@@ -20,6 +21,7 @@ function App() {
         <Route path='/sanat' element={<Art />} />
         <Route path='/teknoloji' element={<Technology />} />
         <Route path='/spor' element={<Sport />} />
+        <Route path='/magazin' element={<Astrology />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
