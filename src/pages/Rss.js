@@ -13,7 +13,7 @@ export default function Rss ()  {
 
 
 const [getData2 , setGetData2] =useState({});
-const [loadMore2 , setLoadMore2] = useState(30);
+const [loadMore2 , setLoadMore2] = useState(62);
 
 
 
@@ -96,9 +96,9 @@ const [loadMore2 , setLoadMore2] = useState(30);
   return(
     <div>
     
-      {/* { <Life arr = {newsArray}/> } */}
+      { <Life arr = {newsArray}/> }
 
-      {<Health  arr2 = {newsArray2}/>}
+      {/* {<Health  arr2 = {newsArray2}/>} */}
       
       
       
