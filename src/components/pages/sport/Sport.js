@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
+import { Link } from 'react-router-dom';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 
 function Sport() {
   const style1 =
@@ -36,6 +38,9 @@ function Sport() {
     Array.from(Array(3).keys(), (x) => x + 22)
   );
 
+  // to handle news detail
+  const [news, setNews] = useState([]);
+
   useEffect(() => {
     fetch(
       'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/sporskor.rss'
@@ -48,8 +53,13 @@ function Sport() {
     if (text.length > 0) {
       const feed = parseFeed(text);
       console.log('feed:', feed);
+      setNews(formatRSSFeed(feed));
       let textContents = [
-        { textContent: [], imageContent: [], linkContent: [] },
+        {
+          textContent: [],
+          imageContent: [],
+          linkContent: [],
+        },
       ];
       if (feed) {
         for (let i = 0; i < 100; i++) {
@@ -201,13 +211,19 @@ function Sport() {
         <div className='col-span-3 row-span-4 lg:col-span-2 row-span-4 md:col-span-2 row-span-2 sm:col-span-3 row-span-4 '>
           {txt[0] ? (
             <div className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'>
-              <a href={`${txt[0].linkContent[count]}`}>
+              <Link
+                to={`/news/${news.items[count].id}`}
+                state={{
+                  category: news.items[count].category,
+                  news: news.items[count],
+                }}
+              >
                 <img
                   src={txt[0].imageContent[count]}
                   className='bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full'
                   alt='sportimage'
                 />
-              </a>
+              </Link>
               <p
                 className='w-full h-28 absolute bottom-20 text-center font-bold font-sans p-2 box-border text-white text-3xl'
                 style={{
@@ -308,21 +324,25 @@ function Sport() {
           {txt[0] ? (
             <>
               {order2.map((item, index) => (
-                <div
-                  className='row-span-3 w-full h-full bg-white grid grid-cols-2'
+                <Link
                   key={index}
+                  to={`/news/${news.items[item].id}`}
+                  state={{
+                    category: news.items[item].category,
+                    news: news.items[item],
+                  }}
                 >
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <div className='row-span-3 w-full h-full bg-white grid grid-cols-2'>
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='col-span-1 my-auto w-full h-full bg-contain'
                     ></img>
-                  </a>
-                  <p className='col-span-1 my-auto px-2 text-xs text-blue-900 font-bold text-left'>
-                    {txt[0].textContent[item]}
-                  </p>
-                </div>
+                    <p className='col-span-1 my-auto px-2 text-xs text-blue-900 font-bold text-left'>
+                      {txt[0].textContent[item]}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </>
           ) : null}
@@ -331,24 +351,25 @@ function Sport() {
           {txt[0] ? (
             <>
               {order3.map((item, index) => (
-                <div
-                  className='row-span-1 w-full h-full bg-white grid grid-rows-3'
+                <Link
                   key={index}
+                  to={`/news/${news.items[item].id}`}
+                  state={{
+                    category: news.items[item].category,
+                    news: news.items[item],
+                  }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
-                    className='row-span-2 w-full h-full bg-contain'
-                  >
+                  <div className='row-span-1 w-full h-full bg-white grid grid-rows-3'>
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
-                  <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-left'>
-                    {txt[0].textContent[item]}
-                  </p>
-                </div>
+                    <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-left'>
+                      {txt[0].textContent[item]}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </>
           ) : null}
@@ -357,27 +378,34 @@ function Sport() {
           {txt[0] ? (
             <>
               {order5.map((item, index) => (
-                <div
-                  className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'
+                <Link
                   key={index}
+                  to={`/news/${news.items[item].id}`}
+                  state={{
+                    category: news.items[item].category,
+                    news: news.items[item],
+                  }}
                 >
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <div
+                    className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'
+                    key={index}
+                  >
                     <img
                       src={txt[0].imageContent[item]}
                       className='bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full'
                       alt='sportimage'
                     />
-                  </a>
-                  <p
-                    className='w-full h-24 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-xl'
-                    style={{
-                      background:
-                        'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
-                    }}
-                  >
-                    {txt[0].textContent[item]}
-                  </p>
-                </div>
+                    <p
+                      className='w-full h-24 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-xl'
+                      style={{
+                        background:
+                          'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
+                      }}
+                    >
+                      {txt[0].textContent[item]}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </>
           ) : null}
@@ -390,8 +418,13 @@ function Sport() {
                   className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                   key={index}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  <Link
+                    key={index}
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full bg-contain'
                   >
                     <img
@@ -399,7 +432,7 @@ function Sport() {
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                  </Link>
                   <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
                     {txt[0].textContent[item]}
                   </p>
@@ -412,24 +445,28 @@ function Sport() {
           {txt[0] ? (
             <>
               {order7.map((item, index) => (
-                <div
-                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                <Link
                   key={index}
+                  to={`/news/${news.items[item].id}`}
+                  state={{
+                    category: news.items[item].category,
+                    news: news.items[item],
+                  }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
-                    className='row-span-2 w-full h-full bg-contain'
+                  <div
+                    className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                    key={index}
                   >
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
-                  <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
-                    {txt[0].textContent[item]}
-                  </p>
-                </div>
+                    <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
+                      {txt[0].textContent[item]}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </>
           ) : null}
@@ -445,22 +482,29 @@ function Sport() {
                   <p className='text-3xl mt-2 mb-2 ml-4 font-bold justify-start'>
                     FOTO
                   </p>
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <Link
+                    key={index}
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
+                  >
                     <img
                       src={txt[0].imageContent[item]}
                       className='w-full h-max box-border'
                       alt='sportimage'
                     />
-                  </a>
-                  <p
-                    className='w-full h-28 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-4xl'
-                    style={{
-                      background:
-                        'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
-                    }}
-                  >
-                    {txt[0].textContent[item]}
-                  </p>
+                    <p
+                      className='w-full h-28 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-4xl'
+                      style={{
+                        background:
+                          'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
+                      }}
+                    >
+                      {txt[0].textContent[item]}
+                    </p>
+                  </Link>
                 </div>
               ))}
             </>
@@ -526,21 +570,30 @@ function Sport() {
           {txt[0] ? (
             <>
               {order9.map((item, index) => (
-                <div
-                  className='row-span-3 p-3 w-full h-full bg-white grid grid-cols-2'
+                <Link
                   key={index}
+                  to={`/news/${news.items[item].id}`}
+                  state={{
+                    category: news.items[item].category,
+                    news: news.items[item],
+                  }}
                 >
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <div
+                    className='row-span-3 p-3 w-full h-full bg-white grid grid-cols-2'
+                    key={index}
+                  >
+                    {/* <a href={`${txt[0].linkContent[item]}`}> */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='bg-gray-200 row-span-1 w-full h-full bg-contain'
                     ></img>
-                  </a>
-                  <p className='hover:ease-in duration-300 hover:bg-sky-800 hover:text-white bg-gray-200 px-2 text-xs text-black w-full h-full font-bold text-left'>
-                    {txt[0].textContent[item]}
-                  </p>
-                </div>
+                    {/* </a> */}
+                    <p className='hover:ease-in duration-300 hover:bg-sky-800 hover:text-white bg-gray-200 px-2 text-xs text-black w-full h-full font-bold text-left'>
+                      {txt[0].textContent[item]}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </>
           ) : null}
@@ -553,16 +606,26 @@ function Sport() {
                   className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                   key={index}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  <Link
+                    key={index}
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full bg-contain'
                   >
+                    {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='row-span-2 w-full h-full bg-contain'
+                    > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
                     {txt[0].textContent[item]}
                   </p>
