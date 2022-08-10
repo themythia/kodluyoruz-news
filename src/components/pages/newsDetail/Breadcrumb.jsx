@@ -59,6 +59,10 @@ const Breadcrumb = ({ type, newsTitle }) => {
       path: '/dunya',
       str: 'Dunya Haberleri',
     },
+    'n-life': {
+      path: '/magazin',
+      str: 'Magazin Haberleri',
+    },
   };
   return (
     <div className='text-xs font-bold  flex flex-row my-[14px] md:my-[15px] lg:my-4 justify-center'>

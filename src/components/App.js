@@ -21,7 +21,7 @@ function App() {
         <Route path='/sanat' element={<Art />} />
         <Route path='/teknoloji' element={<Technology />} />
         <Route path='/spor' element={<Sport />} />
-        <Route path='/astroloji' element={<Astrology />} />
+        <Route path='/magazin' element={<Astrology />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>

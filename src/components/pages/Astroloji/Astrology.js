@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { Link } from 'react-router-dom';
 
 const Astrology = () => {
   const style1 =
@@ -40,6 +42,9 @@ const Astrology = () => {
   const order6 = [27];
   const order7 = Array.from(Array(moreNumbers).keys(), (x) => x + 28);
 
+  const [news, setNews] = useState([]);
+  console.log('news', news);
+
   function more() {
     if (moreNumbers <= 60) {
       setMoreNumbers(moreNumbers + 12);
@@ -57,6 +62,7 @@ const Astrology = () => {
   useEffect(() => {
     if (text.length > 0) {
       const feed = parseFeed(text);
+      setNews(formatRSSFeed(feed));
       console.log('feed:', feed);
       let textContents = [
         { textContent: [], imageContent: [], linkContent: [], headContent: [] },
@@ -263,13 +269,21 @@ const Astrology = () => {
         <div className='col-span-3 row-span-4 w-full h-full mx-auto lg:col-span-3 row-span-4 w-full h-full md:col-span-3 row-span-4 w-full h-full  sm:col-span-3 row-span-6 w-full h-full '>
           {txt[0] ? (
             <div className='w-full h-full bg-white flex flex-col justify-center relative'>
-              <a href={`${txt[0].linkContent[count]}`}>
+              <Link
+                to={`/news/${news.items[count].id}`}
+                state={{
+                  category: news.items[count].category,
+                  news: news.items[count],
+                }}
+              >
+                {/* <a href={`${txt[0].linkContent[count]}`}> */}
                 <img
                   src={txt[0].imageContent[count]}
                   className='bg-cover bg-center w-full h-full'
                   alt='sportimage'
                 />
-              </a>
+                {/* </a> */}
+              </Link>
               <p className='w-full absolute text-center bg-white font-bold font-sans p-2 box-border text-black lg:text-2xl bottom-45 md:text-lg bottom-25 sm:text-sm bottom-10'>
                 {txt[0].textContent[count]}
               </p>
@@ -368,16 +382,25 @@ const Astrology = () => {
                   className='flex flex-col justify-center items-start col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto pb-3'
                   style={{ borderBottom: '1px solid black' }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full bg-contain'
                   >
+                    {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='row-span-2 w-full h-full bg-contain'
+                    > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <div className='row-span-1 pb-1 mt-2'>
                     <p
                       className='w-full h-full my-auto px-3 text-red-700 font-normal text-lg text-left uppercase'
@@ -403,13 +426,21 @@ const Astrology = () => {
                   key={index}
                   className='col-span-2 row-span-2 w-full h-full relative mx-auto object-contain bg-white flex justify-center lg:col-span-1 md:col-span-1 sm:col-span-2 row-span-2 w-full h-full'
                 >
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
+                  >
+                    {/* <a href={`${txt[0].linkContent[item]}`}> */}
                     <img
                       src={txt[0].imageContent[item]}
                       className='bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full'
                       alt='sportimage'
                     />
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <p
                     className='w-full h-24 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-xl'
                     style={{
@@ -434,16 +465,25 @@ const Astrology = () => {
                   className='flex flex-col justify-center items-start col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                   style={{ borderBottom: '1px solid black' }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full bg-contain'
                   >
+                    {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='row-span-2 w-full h-full bg-contain'
+                    > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <div className='row-span-1 pb-1 mt-2'>
                     <p
                       className='w-full h-full px-3 text-red-700 font-normal text-lg text-left uppercase'
@@ -498,10 +538,18 @@ const Astrology = () => {
                     key={index}
                     className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full sm:col-span-3 mx-auto '
                   >
-                    <a
-                      href={`${txt[0].linkContent[item]}`}
+                    <Link
+                      to={`/news/${news.items[item].id}`}
+                      state={{
+                        category: news.items[item].category,
+                        news: news.items[item],
+                      }}
                       className='w-full h-full bg-contain relative'
                     >
+                      {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='w-full h-full bg-contain relative'
+                    > */}
                       <img
                         src={txt[0].imageContent[item]}
                         alt=''
@@ -516,7 +564,8 @@ const Astrology = () => {
                       >
                         {txt[0].textContent[item]}
                       </p>
-                    </a>
+                      {/* </a> */}
+                    </Link>
                   </div>
                 ))}
               </>
@@ -535,16 +584,25 @@ const Astrology = () => {
                   className='flex flex-col justify-center items-start col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                   style={{ borderBottom: '1px solid black' }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full bg-contain'
                   >
+                    {/* <a
+                    href={`${txt[0].linkContent[item]}`}
+                    className='row-span-2 w-full h-full bg-contain'
+                  > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <div className='row-span-1 pb-1 mt-2'>
                     <p
                       className='w-full h-full px-3 text-red-700 font-normal text-lg text-left uppercase'
@@ -573,13 +631,21 @@ const Astrology = () => {
                   <p className='text-3xl mt-2 mb-2 ml-4 font-bold justify-start'>
                     FOTO
                   </p>
-                  <a href={`${txt[0].linkContent[item]}`}>
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
+                  >
+                    {/* <a href={`${txt[0].linkContent[item]}`}> */}
                     <img
                       src={txt[0].imageContent[item]}
                       className='w-full h-max box-border'
                       alt='sportimage'
                     />
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <p
                     className='w-full h-28 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-4xl'
                     style={{
@@ -604,16 +670,26 @@ const Astrology = () => {
                   className='flex flex-col justify-center items-start col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                   style={{ borderBottom: '1px solid black' }}
                 >
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
+                  {' '}
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                     className='row-span-2 w-full h-full'
                   >
+                    {/* <a
+                    href={`${txt[0].linkContent[item]}`}
+                    className='row-span-2 w-full h-full'
+                  > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-cover bg-center'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <div className='row-span-1 pb-1 mt-2'>
                     <p
                       className='w-full h-full px-3 text-red-700 font-normal text-lg text-left uppercase'
