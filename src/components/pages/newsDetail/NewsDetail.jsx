@@ -13,6 +13,8 @@ const NewsDetail = () => {
 
   if (!location.state) return null;
 
+  console.log('location.state:', location.state);
+
   return (
     <Container>
       <News news={location.state.news} category={location.state.category} />

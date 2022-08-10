@@ -27,7 +27,7 @@ const Breadcrumb = ({ type, newsTitle }) => {
       path: '/economy',
       str: 'Ekonomi Haberleri',
     },
-    spor: {
+    sporskor: {
       path: '/spor',
       str: 'Spor Haberleri',
     },
