@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { Link } from 'react-router-dom';
 
 const Technology = () => {
   const style1 =
@@ -38,9 +40,13 @@ const Technology = () => {
     Array.from(Array(3).keys(), (x) => x + 22)
   );
 
+  // to handle news detail
+  const [news, setNews] = useState([]);
+
   const order1 = [10, 11, 12];
   const order2 = [13, 14, 15, 16, 17, 18];
   const order3 = Array.from(Array(moreNumbers).keys(), (x) => x + 19);
+  console.log('order3', order3);
 
   useEffect(() => {
     fetch(
@@ -53,6 +59,7 @@ const Technology = () => {
   useEffect(() => {
     if (text.length > 0) {
       const feed = parseFeed(text);
+      setNews(formatRSSFeed(feed));
       console.log('feed:', feed);
       let textContents = [
         { textContent: [], imageContent: [], linkContent: [] },
@@ -96,6 +103,8 @@ const Technology = () => {
       console.log(textContents[0].textContent);
     }
   }, [text]);
+
+  console.log('news', news);
 
   function numbers(i) {
     let squares = (Array(9).fill(style2) + ',' + Array(1).fill(style3)).split(
@@ -150,13 +159,22 @@ const Technology = () => {
         <div className='col-span-3 row-span-4 w-full h-full  lg:col-span-3 row-span-4 w-full h-full md:col-span-3 row-span-4 w-full h-full sm:col-span-3 row-span-4 w-full h-full'>
           {txt[0] ? (
             <div className='w-full h-full relative bg-white flex flex-col justify-center'>
-              <a href={`${txt[0].linkContent[count]}`}>
+              <Link
+                key={count}
+                to={`/news/${news.items[count].id}`}
+                state={{
+                  category: news.items[count].category,
+                  news: news.items[count],
+                }}
+              >
+                {/* <a href={`${txt[0].linkContent[count]}`}> */}
                 <img
                   src={txt[0].imageContent[count]}
                   className='w-full h-full bg-cover bg-center'
                   alt='sportimage'
                 />
-              </a>
+                {/* </a> */}
+              </Link>
               <div className='justify-center flex'>
                 <p className='lg:text-3xl flex absolute w-auto bottom-32 text-center text-white font-bold font-sans p-2 bg-blue-900 box-border md:text-xl sm:text-sm'>
                   {txt[0].textContent[count]}
@@ -206,16 +224,24 @@ const Technology = () => {
             <>
               {order1.map((item) => (
                 <div className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'>
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
-                    className='row-span-2 w-full h-full bg-contain'
+                  <Link
+                    to={`/news/${news.items[item].id}`}
+                    state={{
+                      category: news.items[item].category,
+                      news: news.items[item],
+                    }}
                   >
+                    {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='row-span-2 w-full h-full bg-contain'
+                    > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <p className='row-span-1 my-auto px-2 text-black font-bold text-center'>
                     {txt[0].textContent[item]}
                   </p>
@@ -254,16 +280,24 @@ const Technology = () => {
             <>
               {order3.map((item) => (
                 <div className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'>
-                  <a
-                    href={`${txt[0].linkContent[item]}`}
-                    className='row-span-2 w-full h-full bg-contain'
+                  <Link
+                    to={`/news/${news.items[item + 2].id}`}
+                    state={{
+                      category: news.items[item + 2].category,
+                      news: news.items[item + 2],
+                    }}
                   >
+                    {/* <a
+                      href={`${txt[0].linkContent[item]}`}
+                      className='row-span-2 w-full h-full bg-contain'
+                    > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
                       className='row-span-2 w-full h-full bg-contain'
                     ></img>
-                  </a>
+                    {/* </a> */}
+                  </Link>
                   <p className='row-span-1 my-auto px-2 text-black font-bold text-center'>
                     {txt[0].textContent[item]}
                   </p>
