@@ -2,16 +2,17 @@ import { get } from './request';
 //https://www.ntv.com.tr/dunya.rss
 export const getPosts = async (categoryName) => {
   if (categoryName === 'turkiye') {
-    return get(
+    return await get(
       'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/turkiye.rss'
     );
   } else if (categoryName === 'dunya') {
-    return get(
+    return await get(
       'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/dunya.rss'
     );
   } else if (categoryName === 'weather') {
     //aylık
     //https://api.openweathermap.org/data/2.5/forecast?lat=41.09307&lon=28.80203&appid=62767d215061ee27d2529f249d91cb50
+
     //güncel
     //https://api.openweathermap.org/data/2.5/weather?lat=41.015137&lon=28.979530&appid=62767d215061ee27d2529f249d91cb50
     const cities = {
@@ -26,6 +27,6 @@ export const getPosts = async (categoryName) => {
       Antalya:
         'https://api.openweathermap.org/data/2.5/weather?lat=36.884804&lon=30.704044&appid=62767d215061ee27d2529f249d91cb50&units=metric',
     };
-    return get(cities);
+    return await get(cities);
   }
 };

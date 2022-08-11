@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../../shared/Footer';
-import Header from '../../shared/Header/Header';
 import { getPosts } from '../../../services/posts';
 import CarouselSlider from '../../shared/carouselslider/CarouselSlider';
 const Turkey = () => {
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(18);
-  const [weatherList, setWeatherList] = useState({});
 
   useEffect(() => {
-    getPosts('weather')?.then((data) => setWeatherList(data));
     getPosts('turkiye')?.then((data) => setGetData(data));
   }, []);
 
@@ -56,7 +52,6 @@ const Turkey = () => {
   });
   return (
     <>
-      <Header name={'Sport'} weathers={weatherList} />
       <div className='font-roboto common-container bg-bg'>
         <div className='category-container mx-3'>
           <CarouselSlider data={newsArray} />
@@ -79,13 +74,6 @@ const Turkey = () => {
           </div>
         </div>
       </div>
-      <Footer
-        twitter='https://twitter.com/'
-        facebook='https://www.facebook.com/'
-        instagram='https://www.instagram.com/'
-        youtube='https://www.youtube.com/'
-        linkedin='https://www.linkedin.com/'
-      />
     </>
   );
 };

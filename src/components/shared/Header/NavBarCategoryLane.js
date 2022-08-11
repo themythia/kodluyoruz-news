@@ -1,7 +1,10 @@
 import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu';
 import { Link } from 'react-router-dom';
+import { useCategory } from '../../../contexts/InfoContext';
 
 const NavBarCategoryLane = (props) => {
+  const { category, setCategory } = useCategory();
+
   const categories = props.categories;
   // Listelenmesini istediğimiz rakam
   const totalItemNumber =
@@ -12,7 +15,10 @@ const NavBarCategoryLane = (props) => {
   for (let i = 0; i < totalItemNumber; i++) {
     categoriesList.push(
       <li key={i} className='content-list-items'>
-        <Link to={'/' + Object.keys(categories)[i]}>
+        <Link
+          to={'/' + Object.keys(categories)[i]}
+          onClick={() => setCategory(Object.keys(categories)[i])}
+        >
           {Object.values(categories)[i].toUpperCase().replace('I', 'İ')}
         </Link>
       </li>
@@ -25,7 +31,7 @@ const NavBarCategoryLane = (props) => {
 
   moreCategoriesList = moreCategoriesList.map(function (each, index) {
     return (
-      <MenuItem>
+      <MenuItem key={index}>
         {Object.values(categories)
           ?.[10 + index].toUpperCase()
           .replace('I', 'İ')}
@@ -38,7 +44,7 @@ const NavBarCategoryLane = (props) => {
       <div className='h-6 flex items-center justify-center text-16-19'>
         <Menu
           offsetY={12}
-          menuButton={({ open }) => (
+          menuButton={({ open, key }) => (
             <MenuButton>
               {open ? (
                 <svg

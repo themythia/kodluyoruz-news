@@ -1,15 +1,7 @@
 import React from 'react';
-import Footer from '../../shared/Footer';
-import Header from '../../shared/Header/Header';
 
 const HealthDetails = () => {
-  return (
-    <>
-      <Header name={'Health details'} />
-      Sağlık Detay Sayfası
-      <Footer />
-    </>
-  );
+  return <>Sağlık Detay Sayfası</>;
 };
 
 export default HealthDetails;

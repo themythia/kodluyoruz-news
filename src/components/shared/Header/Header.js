@@ -5,26 +5,25 @@ import '@szhsin/react-menu/dist/transitions/slide.css';
 import NavBarCategoryLane from './NavBarCategoryLane';
 import NavBarInfoLane from './NavBarInfoLane';
 import NavBarWeatherLane from './NavBarWeatherLane';
+import { useCategory } from '../../../contexts/InfoContext';
 
-const Header = ({ name = '', weathers = {} }) => {
+const Header = () => {
+  const { category } = useCategory();
   const categories = {
-    Economy: 'Ekonomi',
-    Health: 'Sağlık',
-    Astrology: 'Astroloji',
-    Sport: 'Spor',
-    Car: 'Otomobil',
-    Art: 'Sanat',
-    Turkey: 'Türkiye',
-    Life: 'Yaşam',
-    Technology: 'Teknoloji',
-    Magazine: 'Magazin',
-    Tourism: 'Turizm',
-    Education: 'Eğitim',
-    World: 'Dünya',
-    Extra_1: 'Ekstra 1',
-    Extra_2: 'Ekstra 2',
-    Extra_3: 'Ekstra 3',
-    Extra_4: 'Ekstra 4',
+    Ekonomi: 'Ekonomi',
+    Yasam: 'Yaşam',
+    Astroloji: 'Astroloji',
+    Spor: 'Spor',
+    Otomobil: 'Otomobil',
+    Sanat: 'Sanat',
+    Turkiye: 'Türkiye',
+    Saglik: 'Sağlık',
+    Teknoloji: 'Teknoloji',
+    Magazin: 'Magazin',
+    Turizm: 'Turizm',
+    Egitim: 'Eğitim',
+    Dunya: 'Dünya',
+    Anasayfa: 'ANA SAYFA',
   };
 
   return (
@@ -32,15 +31,10 @@ const Header = ({ name = '', weathers = {} }) => {
       {/* Header */}
       <nav>
         {/* NavBar ilk alan: logo ve Hava durumu */}
-        <NavBarWeatherLane weathers={weathers} />
+        <NavBarWeatherLane />
         {/* NavBar ikinci alan: driwer menu ve kategoriler */}
         <NavBarCategoryLane categories={categories} />
         {/* NavBar ikinci alan: Ana sayfaysa NavBar kırmızı çizgi ve bulunduğu kategori başlığı başlık değilse sadece bulunduğu kategori başlığı */}
-        <NavBarInfoLane
-          categories={categories}
-          name={name}
-          newsDetail={"İstanbul'da yarım ay manzaraları"}
-        />
       </nav>
       <Outlet />
     </>

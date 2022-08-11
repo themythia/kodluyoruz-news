@@ -18,15 +18,20 @@ import {
 } from '../../../assets/png';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import { useCategory } from '../../../contexts/InfoContext';
 
 // NavBar ilk alan: logo ve Hava durumu
-const NavBarWeatherLane = (props) => {
+const NavBarWeatherLane = () => {
   const [getData, setGetData] = useState([]);
   const [changeCity, setChangeCity] = useState(0);
+  const { category, weathers } = useCategory();
+  console.log(category, weathers);
 
-  const weathers = props.weathers;
   useEffect(() => {
-    setGetData(weathers);
+    console.log(weathers);
+    if (weathers) {
+      setGetData(weathers);
+    }
   }, [weathers]);
 
   const weatherStates = {

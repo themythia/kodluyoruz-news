@@ -14,7 +14,8 @@ const NavBarInfoLane = (props) => {
               <h4>
                 {categories[name]
                   ? categories[name] + categoriesNewsTitle
-                  : name === ''
+                  : // : name === '' || name === 'ANA SAYFA'
+                  name === ''
                   ? categoriesNewsTitle.substring(
                       1,
                       categoriesNewsTitle.length - 1
