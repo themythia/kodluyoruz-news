@@ -7,6 +7,16 @@ const InfoContextWrapper = ({ children }) => {
   const [category, setCategory] = useState('ANA SAYFA');
   const [weathers, setWeathers] = useState();
 
+  //sosyal media hesapları düzenlensin mi?
+  const socialMedia = {
+    'Enes Yasin Gedik': [
+      'Twitter',
+      'Facebook',
+      'Instagram',
+      'YouTube',
+      'Linkedin',
+    ],
+  };
   useEffect(() => {
     getPosts('weather')?.then((data) => setWeathers(data));
   }, []);
@@ -15,7 +25,7 @@ const InfoContextWrapper = ({ children }) => {
     setCategory,
     weathers,
   };
-  console.log(category,weathers);
+  console.log(category, weathers);
   return (
     <InfoContext.Provider value={{ state, weathers }}>
       {children}

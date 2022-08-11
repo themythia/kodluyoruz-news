@@ -25,7 +25,7 @@ const NewsRouter = () => {
         <Route path='/news/:newsId' element={<NewsDetail />} />
         <Route path='/Ekonomi' index element={<Economy />} />
         <Route path='/Yasam' element={<Life />} />
-        <Route path='/Astroloji' element={<Astrology />} />
+        <Route path='/Magazin' element={<Astrology />} />
         <Route path='/Spor' element={<Sport />} />
         {/* Otomobil sayfası */}
         <Route path='/Sanat' element={<Art />} />
