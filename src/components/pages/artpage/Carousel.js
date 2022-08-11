@@ -48,7 +48,7 @@ const Carousel = ({ slides, className, detail }) => {
               >
                 <IconRight />
               </button>
-            </div>{' '}
+            </div>
           </Link>
           <div className='bg-white py-3 px-2 flex justify-between shadow-md'>
             {slides.map((item, index) => (
