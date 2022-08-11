@@ -50,7 +50,7 @@ const Art = () => {
           Haberler
         </Link>
         <span className='text-textDark'> / </span>
-        <Link className='text-textDark' to='/art'>
+        <Link className='text-textDark' to='/sanat'>
           Sanat Haberleri
         </Link>
         <Carousel className='mt-4' slides={slides} detail={newsDetail} />

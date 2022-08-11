@@ -163,7 +163,7 @@ const Technology = () => {
                 key={count}
                 to={`/news/${news.items[count].id}`}
                 state={{
-                  category: news.items[count].category,
+                  category: 'teknoloji',
                   news: news.items[count],
                 }}
               >
@@ -227,7 +227,7 @@ const Technology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'teknoloji',
                       news: news.items[item],
                     }}
                   >
@@ -283,7 +283,7 @@ const Technology = () => {
                   <Link
                     to={`/news/${news.items[item + 2].id}`}
                     state={{
-                      category: news.items[item + 2].category,
+                      category: 'teknoloji',
                       news: news.items[item + 2],
                     }}
                   >

@@ -27,7 +27,7 @@ const Carousel = ({ slides, className, detail }) => {
         <div key={index} hidden={slide !== index}>
           <Link
             to={`/news/${detail[index].id}`}
-            state={{ category: detail[index].category, news: detail[index] }}
+            state={{ category: 'sanat', news: detail[index] }}
           >
             <div className='relative h-[500px]'>
               <img className='w-full h-full' src={item.src} alt={item.title} />

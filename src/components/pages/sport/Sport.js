@@ -214,7 +214,7 @@ function Sport() {
               <Link
                 to={`/news/${news.items[count].id}`}
                 state={{
-                  category: news.items[count].category,
+                  category: 'spor',
                   news: news.items[count],
                 }}
               >
@@ -328,7 +328,7 @@ function Sport() {
                   key={index}
                   to={`/news/${news.items[item].id}`}
                   state={{
-                    category: news.items[item].category,
+                    category: 'spor',
                     news: news.items[item],
                   }}
                 >
@@ -355,7 +355,7 @@ function Sport() {
                   key={index}
                   to={`/news/${news.items[item].id}`}
                   state={{
-                    category: news.items[item].category,
+                    category: 'spor',
                     news: news.items[item],
                   }}
                 >
@@ -382,7 +382,7 @@ function Sport() {
                   key={index}
                   to={`/news/${news.items[item].id}`}
                   state={{
-                    category: news.items[item].category,
+                    category: 'spor',
                     news: news.items[item],
                   }}
                 >
@@ -422,7 +422,7 @@ function Sport() {
                     key={index}
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'spor',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -449,7 +449,7 @@ function Sport() {
                   key={index}
                   to={`/news/${news.items[item].id}`}
                   state={{
-                    category: news.items[item].category,
+                    category: 'spor',
                     news: news.items[item],
                   }}
                 >
@@ -486,7 +486,7 @@ function Sport() {
                     key={index}
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'spor',
                       news: news.items[item],
                     }}
                   >
@@ -574,7 +574,7 @@ function Sport() {
                   key={index}
                   to={`/news/${news.items[item].id}`}
                   state={{
-                    category: news.items[item].category,
+                    category: 'spor',
                     news: news.items[item],
                   }}
                 >
@@ -610,7 +610,7 @@ function Sport() {
                     key={index}
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'spor',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'

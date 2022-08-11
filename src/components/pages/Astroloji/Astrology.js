@@ -272,7 +272,7 @@ const Astrology = () => {
               <Link
                 to={`/news/${news.items[count].id}`}
                 state={{
-                  category: news.items[count].category,
+                  category: 'magazin',
                   news: news.items[count],
                 }}
               >
@@ -385,7 +385,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -429,7 +429,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                   >
@@ -468,7 +468,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -541,7 +541,7 @@ const Astrology = () => {
                     <Link
                       to={`/news/${news.items[item].id}`}
                       state={{
-                        category: news.items[item].category,
+                        category: 'magazin',
                         news: news.items[item],
                       }}
                       className='w-full h-full bg-contain relative'
@@ -587,7 +587,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -634,7 +634,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                   >
@@ -674,7 +674,7 @@ const Astrology = () => {
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full'
