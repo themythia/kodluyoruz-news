@@ -4,11 +4,11 @@ const Breadcrumb = ({ type, newsTitle }) => {
   const navigate = useNavigate();
   const categories = {
     ekonomi: {
-      path: '/economy',
+      path: '/ekonomi',
       str: 'Ekonomi Haberleri',
     },
     ntvpara: {
-      path: '/economy',
+      path: '/ekonomi',
       str: 'Ekonomi Haberleri',
     },
     spor: {

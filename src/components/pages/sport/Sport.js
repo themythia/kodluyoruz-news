@@ -212,7 +212,7 @@ function Sport() {
           {txt[0] ? (
             <div className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'>
               <Link
-                to={`/news/${news.items[count].id}`}
+                to={`/haberler/${news.items[count].id}`}
                 state={{
                   category: 'spor',
                   news: news.items[count],
@@ -326,7 +326,7 @@ function Sport() {
               {order2.map((item, index) => (
                 <Link
                   key={index}
-                  to={`/news/${news.items[item].id}`}
+                  to={`/haberler/${news.items[item].id}`}
                   state={{
                     category: 'spor',
                     news: news.items[item],
@@ -353,7 +353,7 @@ function Sport() {
               {order3.map((item, index) => (
                 <Link
                   key={index}
-                  to={`/news/${news.items[item].id}`}
+                  to={`/haberler/${news.items[item].id}`}
                   state={{
                     category: 'spor',
                     news: news.items[item],
@@ -380,7 +380,7 @@ function Sport() {
               {order5.map((item, index) => (
                 <Link
                   key={index}
-                  to={`/news/${news.items[item].id}`}
+                  to={`/haberler/${news.items[item].id}`}
                   state={{
                     category: 'spor',
                     news: news.items[item],
@@ -420,7 +420,7 @@ function Sport() {
                 >
                   <Link
                     key={index}
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
                       category: 'spor',
                       news: news.items[item],
@@ -447,7 +447,7 @@ function Sport() {
               {order7.map((item, index) => (
                 <Link
                   key={index}
-                  to={`/news/${news.items[item].id}`}
+                  to={`/haberler/${news.items[item].id}`}
                   state={{
                     category: 'spor',
                     news: news.items[item],
@@ -484,7 +484,7 @@ function Sport() {
                   </p>
                   <Link
                     key={index}
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
                       category: 'spor',
                       news: news.items[item],
@@ -572,7 +572,7 @@ function Sport() {
               {order9.map((item, index) => (
                 <Link
                   key={index}
-                  to={`/news/${news.items[item].id}`}
+                  to={`/haberler/${news.items[item].id}`}
                   state={{
                     category: 'spor',
                     news: news.items[item],
@@ -608,7 +608,7 @@ function Sport() {
                 >
                   <Link
                     key={index}
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
                       category: 'spor',
                       news: news.items[item],

@@ -14,7 +14,7 @@ const TourismCard = (props) => {
 
   return (
     <Link
-      to={`/news/${props.detail.id}`}
+      to={`/haberler/${props.detail.id}`}
       state={{ category: 'turizm', news: props.detail }}
     >
       <div className='shadow-md mt-2'>

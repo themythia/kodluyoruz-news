@@ -26,7 +26,7 @@ const Carousel = ({ slides, className, detail }) => {
       {slides.map((item, index) => (
         <div key={index} hidden={slide !== index}>
           <Link
-            to={`/news/${detail[index].id}`}
+            to={`/haberler/${detail[index].id}`}
             state={{ category: 'turizm', news: detail[index] }}
           >
             <div className='relative h-[500px]'>

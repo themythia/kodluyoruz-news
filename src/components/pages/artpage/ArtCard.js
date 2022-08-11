@@ -14,7 +14,7 @@ const ArtCard = (props) => {
 
   return (
     <Link
-      to={`/news/${props.detail.id}`}
+      to={`/haberler/${props.detail.id}`}
       state={{ category: 'sanat', news: props.detail }}
     >
       <div className='shadow-md mt-2'>
