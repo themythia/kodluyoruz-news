@@ -14,19 +14,19 @@ function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// function imgUrl() {
-//   const id = rand(1, 200);
-//   return  `https://picsum.photos/id/${id}/1920/1080`;
+function imgUrl() {
+  const id = rand(1, 200);
+  return  `https://picsum.photos/id/${id}/1920/1080`;
 
+}
+
+// function Carousel (props){
+// console.log(props.caroselItemList)
+// const carouselArray=[]
+// for (let i=0; i<10;i++){
+//   carouselArray.push(Object.keys(props.carouselItemList)[i])
 // }
-
-function Carousel (props){
-console.log(props.caroselItemList)
-const carouselArray=[]
-for (let i=0; i<10;i++){
-  carouselArray.push(Object.keys(props.carouselItemList)[i])
-}
-}
+// }
 /*
 
 const Carousel = (props) => {
@@ -37,7 +37,7 @@ const Carousel = (props) => {
       
   }
   console.log(carouselArray)
-return (
+return (  
 
 
   <div>Carousel</div>
@@ -56,7 +56,7 @@ export default Carousel;
 function createSlide() {
   return (
     <SwiperSlide>
-      <img className="img" src={/*imgUrl*/Carousel()} alt=""  width={1000} height={"100%"}/>
+      <img className="img" src={imgUrl /*Carousel*/()} alt=""  width={1000} height={"100%"}/>
     </SwiperSlide>
   );
 }

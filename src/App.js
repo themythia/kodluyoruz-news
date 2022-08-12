@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import React from 'react';
 import Health from './pages/Health';
 import Life from './pages/Life';
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       
       {/* <Test /> */}
-      <Rss /> 
+      { <Rss /> }
       {/* <Carousel /> */}
     {/* <Life /> */}
     {/* <Request /> */}

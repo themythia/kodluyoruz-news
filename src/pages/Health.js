@@ -55,7 +55,7 @@ console.log(arr2)
                               return <div className='newsDivhealth' key={index}>
                               <a href = {value?.id} target = '_blank' textDecoration='none'>
                                     <img src = {value?.description.substring(10,value?.description.indexOf(' ' , 10)  -1 )} className='newsimage'></img>
-                                    <div className='newstitlehealth'>{value?.title}</div>
+                                    <div className='newstitlehealth'>{value?.title.substring(0,80)+"..."}</div>
                               
                               </a>
 

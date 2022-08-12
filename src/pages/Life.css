@@ -48,7 +48,6 @@ body{
   vertical-align: baseline;
   width: 1000px;
   height: auto;
-  background-color: orange;
   }
   .listItem2{
     width: 320px;
@@ -68,26 +67,28 @@ body{
     
   
   }
-  /* .listItem2 a{
-    text-dec
-  } */
-.listItem2Title{
-  
-}
+
+  .listItem2 a{
+    text-decoration:none;
+    color:#000;
+    font-size:18px;
+  }
+
   .card{
     width: 1000px;
-    height: 320px;
-    float: left;
-    background-color: yellowgreen;
+    height: auto;
     box-sizing: border-box;
     margin: auto;
     margin-left: 175px;
     padding-top: 9px;
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .card1{
-    float: left;
-    width: 49%;
+    position: relative;
+    text-align: center;
+    width:98%;
+    margin:10px 10px 10px 0px;
     height: 302px;
     /* padding-left: 10px; */
     /* padding-right: 10px; */
@@ -96,22 +97,31 @@ body{
 
   }
   .card2{
-    float: right;
-    width: 49%;
+    position: relative;
+    text-align: center;
     height: 302px;
     /* padding-left: 10px; */
     /* padding-right: 10px; */
     background-color:purple;
-   
+    width:98%;
+    margin:10px 10px 0px 10px;
 
+  }
+  .cardTitle{
+    position: absolute;
+    bottom: 15px;
+    left: 5px;
+    background-color:transparent;
+    font-size:24px;
+    color:white;
+    font-weight: bold;
   }
   .content{
     width: 1000px;
-    height: 326px;
+    height: auto;
     /* padding-left: 10px;
     padding-right: 10px; */
     float:left;
-    background-color: gray;
     box-sizing: border-box;
     margin: auto;
     margin-bottom: 20px;
@@ -119,20 +129,26 @@ body{
   }
   .contentAll{
       width: 320px;
-      height: 306px;
+      height: auto;
+      min-height:250px;
       float: left;
       margin-bottom: 20px;
       /* box-sizing: border-box; */
-      background-color: brown;
       margin-left: 10px;
+      font-size:18px;
+      border-bottom:1px solid #000;
   }
-    
+  .contentAll a{
+    text-decoration:none;
+    color:#000;
+  }
   .redCard{
     width: 1000px;
-    height: 448px;
+    height: auto;
     background-color:#EB0028;
     margin: auto;
-    float: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-left: 175px;
     padding: 10px;
     /* padding-top: 20px; */
@@ -146,15 +162,22 @@ body{
   
   .redCardIn{
     width: 320px;
-    height: 176px;
-    background-color: lightcoral;
-    float: left;
+    height: auto;
     /* margin-left: 6px;
     margin-right: 6px; */
     margin: 6px;
-
+    position: relative;
+    text-align: center;
   }
-
+.redCardTitle{
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  background-color:transparent;
+  font-size:18px;
+  color:white;
+  font-weight: bold;
+}
   .ntvContent{
     position: relative;
     min-height: 1px;
@@ -163,10 +186,7 @@ body{
     box-sizing: border-box;
     float: left;
     width: 1020px;
-    height: 326px;
-    background-color: #b8df0e;
-    margin-left: 175px;
-    
+    margin:10px 0px 10px 175px;
   }
   .ulCard{
     justify-content: flex-start;
@@ -187,7 +207,6 @@ body{
     vertical-align: baseline;
     /* background-color: rgb(7, 11, 243); */
     width: 1000px;
-    height: 326px;
     float: left;
 
   }
@@ -195,7 +214,7 @@ body{
     margin-right: 0% !important;
     flex: inherit;
     width: 320px;
-    height: 306px;
+    min-height: 250px;
     float: left;
     margin-bottom: 1.42857rem;
     list-style: none;
@@ -207,24 +226,39 @@ body{
     vertical-align: baseline;
     display: list-item;
     /* text-align: -webkit-match-parent; */
-    background-color: #00912345;
-
+    border-bottom: 1px solid #000;
   }
-
+  .listCard a{
+    text-decoration: none;
+    color:#000;
+    font-size:18px;
+  }
 .bigImg{
   /* margin-top: 20px; */
   margin: auto;
   margin-left: 175px;
   box-sizing: border-box;
   font: inherit;
-  float: left;
   width: 1020px;
-  height: 575px;
+  height: auto;
   background-color: #442828;
-  
+  display: grid;
+  grid-template-columns: 1fr;
   
 }
-
+.bigImg a{
+  position: relative;
+  text-align: center;
+}
+.bigImageTitle{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color:transparent;
+  font-size:32px;
+  color:white;
+  font-weight: bold;
+}
 .innerContent{
   width: 1020px;
   height: auto;
@@ -243,7 +277,6 @@ body{
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  background-color: rgb(53, 177, 235);
 
 }
 .innerContentIn{
@@ -262,7 +295,6 @@ body{
   border: 0;
   font: inherit;
   vertical-align: baseline;
-  background-color: red;
 }
 .multipleItems2{
   margin-right: 0% !important;

@@ -3,6 +3,8 @@ import axios from 'axios';
 import {parseFeed} from 'htmlparser2';
 import Life from './Life';
 import Health from './Health';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NoPage from './NoPage';
 
 
 export default function Rss ()  {
@@ -94,9 +96,20 @@ const [loadMore2 , setLoadMore2] = useState(62);
     
 
   return(
-    <div>
-    
-      { <Life arr = {newsArray}/> }
+    <div> 
+
+{/* <Life arr = {newsArray}/> */}
+
+
+    <BrowserRouter>
+      <Routes>
+        <Route  path="/" element={<Health arr2 = {newsArray2}/>}/>
+        <Route path="health" element={<Health arr2 = {newsArray2}/>} />
+        <Route path="life" element={<Life arr = {newsArray}/>} />  
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
+      {/* { <Life arr = {newsArray}/> } */}
 
       {/* {<Health  arr2 = {newsArray2}/>} */}
       

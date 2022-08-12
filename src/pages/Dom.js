@@ -3,8 +3,9 @@
 // import Health from './Health';
 // import Life from './Life';
 
-// function Dom() {
-//   return (
+function Dom() {
+  return (
+    <p>Site</p>
 //     <Router>
 //       <Routes>
 //         <Route path='/Health' index element={<Health />} />
@@ -12,7 +13,7 @@
        
 //       </Routes>
 //     </Router>
-//   );
-// }
+  );
+ }
 
-// export default Dom;
+ export default Dom;

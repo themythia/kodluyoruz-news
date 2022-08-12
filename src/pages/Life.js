@@ -58,7 +58,7 @@ const Life = (arr = {}) => {
             <div className='card1'>  
               <a href = {dataPull?.arr?.[3]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[3]?.description.substring(10 , dataPull?.arr?.[3]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='cardTitle'>
                           {dataPull?.arr?.[3]?.title}
                         </div>
                   </a>
@@ -66,7 +66,7 @@ const Life = (arr = {}) => {
             <div className='card2'>
                 <a href = {dataPull?.arr?.[4]?.id}  target = '_blank'>
                     <img src={dataPull?.arr?.[4]?.description.substring(10 , dataPull?.arr?.[4]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                      <div>
+                      <div className='cardTitle'>
                         {dataPull?.arr?.[4]?.title}
                       </div>
                 </a>
@@ -100,11 +100,10 @@ const Life = (arr = {}) => {
               </div>
         </div>
         <div className='redCard'>
-          <div className='redCardMain'>
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[8]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[8]?.description.substring(10 , dataPull?.arr?.[8]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[8]?.title}
                         </div>
                   </a>
@@ -112,7 +111,7 @@ const Life = (arr = {}) => {
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[9]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[9]?.description.substring(10 , dataPull?.arr?.[9]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[9]?.title}
                         </div>
                   </a>
@@ -120,7 +119,7 @@ const Life = (arr = {}) => {
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[10]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[10]?.description.substring(10 , dataPull?.arr?.[10]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[10]?.title}
                         </div>
                   </a>
@@ -128,7 +127,7 @@ const Life = (arr = {}) => {
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[11]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[11]?.description.substring(10 , dataPull?.arr?.[11]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[11]?.title}
                         </div>
                   </a>
@@ -136,7 +135,7 @@ const Life = (arr = {}) => {
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[12]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[12]?.description.substring(10 , dataPull?.arr?.[12]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[12]?.title}
                         </div>
                   </a>
@@ -144,12 +143,11 @@ const Life = (arr = {}) => {
               <div className='redCardIn'>
                 <a href = {dataPull?.arr?.[13]?.id}  target = '_blank'>
                       <img src={dataPull?.arr?.[13]?.description.substring(10 , dataPull?.arr?.[13]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
-                        <div>
+                        <div className='redCardTitle'>
                           {dataPull?.arr?.[13]?.title}
                         </div>
                   </a>
               </div>
-          </div>
         </div>
         <div className='ntvContent'>
           <ul className='ulCard'>
@@ -185,14 +183,13 @@ const Life = (arr = {}) => {
         <div className='bigImg'>
               
                 
-              
-          <div>
-              <div>
-              big img
-
-
-              </div>
-          </div>
+        <a href = {dataPull?.arr?.[14]?.id}  target = '_blank'>
+                      <img src={dataPull?.arr?.[14]?.description.substring(10 , dataPull?.arr?.[14]?.description.indexOf(' ' , 10)-1 )} width ="100%" height="100%"></img>
+                        <div className='bigImageTitle'>
+                          {dataPull?.arr?.[14]?.title}
+                        </div>
+        </a>
+          
         </div>
 
       {/* multiple ıtems */}
