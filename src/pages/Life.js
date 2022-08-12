@@ -1,4 +1,5 @@
 import React, { useState , useEffect} from 'react'
+import Carousel from './Carousel';
 import "./Life.css"
 
 const Life = (arr = {}) => {
@@ -19,12 +20,15 @@ const Life = (arr = {}) => {
               <div className='navbar'>Kategori</div>
         </div>
 
-        <div className='slickSlider'>Slider Alanı</div>
+        <div className='slickSlider'>
+          <Carousel carouselItemList = {dataPull?.arr}/>
+          {console.log(dataPull?.arr)}
+        </div>
         <div className='listItem'>
             <div className='listItem2'>
             <a href = {dataPull?.arr?.[0]?.id}  target = '_blank'>
                     <img src={dataPull?.arr?.[0]?.description.substring(10 , dataPull?.arr?.[0]?.description.indexOf(' ' , 10)-1 )}  width ="100%" height="100%"></img>
-                      <div>
+                      <div className='listItem2Title'>
                         {dataPull?.arr?.[0]?.title}
                       </div>
                 </a>

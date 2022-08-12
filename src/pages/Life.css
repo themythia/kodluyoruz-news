@@ -1,11 +1,11 @@
-*{
+body{
     background-color:#e9e9e9;
   
   }
   
   .header{
   width: 100%;
-  height: 68px;
+  height: 50px;
   background-color:#EB0028;
   font-size: 14px !important;
   color:white;
@@ -47,12 +47,12 @@
   font: inherit;
   vertical-align: baseline;
   width: 1000px;
-  height: 325px;
+  height: auto;
   background-color: orange;
   }
   .listItem2{
     width: 320px;
-    height: 306px;
+    height: 100%;
     flex: inherit;
     float: left;
     margin-bottom: 1.42rem;
@@ -68,7 +68,12 @@
     
   
   }
-
+  /* .listItem2 a{
+    text-dec
+  } */
+.listItem2Title{
+  
+}
   .card{
     width: 1000px;
     height: 320px;

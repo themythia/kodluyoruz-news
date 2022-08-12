@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Health from './pages/Health';
 import Life from './pages/Life';
@@ -20,6 +21,16 @@ function App() {
     {/* <Test /> */}
     {/* <Retest /> */}
     {/* <Health /> */}
+    {/* <Router>
+      <Routes>
+        <Route path='/health' index element={<Health />} />
+        <Route path='/life' element={<Life />} />
+       
+      </Routes>
+    </Router> */}
+
+
+
     </div>
   );
 }
