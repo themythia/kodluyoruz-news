@@ -43,15 +43,8 @@ const Tourism = () => {
     }
   }, [rssText]);
   return (
-    <div className='bg-white px-2 lg:w-[1000px] lg:mx-auto lg:px-0'>
+    <div className='px-2 lg:w-[1000px] lg:mx-auto lg:px-0'>
       <div className='py-4'>
-        <Link className='text-textGray font-bold' to='/'>
-          Haberler
-        </Link>
-        <span className='text-textDark'> / </span>
-        <Link className='text-textDark' to='/'>
-          Turizm Haberleri
-        </Link>
         <Carousel className='mt-4' slides={slides} detail={newsDetail} />
       </div>
       <div className='md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-3'>
