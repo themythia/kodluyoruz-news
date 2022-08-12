@@ -8,13 +8,22 @@ import 'swiper/css/navigation';
 import 'swiper/css/bundle';
 import { Pagination, Navigation } from 'swiper';
 import './style.css';
+import formatRSSFeed from '../../utils/api/formatRSSFeed';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
   const [itemList, setitemList] = useState({});
   const [newDataList, setNewDataList] = useState([]);
+  // state to handle news details
+  const [detail, setDetail] = useState([]);
+
+  console.log('itemList', itemList);
+  console.log('detail', detail);
 
   useEffect(() => {
     dataList().then((api) => {
+      console.log('api', api);
+      setDetail(formatRSSFeed({ items: api }).items);
       let textDatas = api.map((item) => ({
         imageData: item.description.split('<img src="')[1].split('?width')[0],
         titleData: item.title,
@@ -38,13 +47,16 @@ const Carousel = () => {
     return (
       <SwiperSlide key={index} className=' relative pt-8'>
         <div className=' relative h-[550px] w-[1020px]'>
-          <a href={value.hrefData} className=''>
+          <Link
+            to={`/haberler/${detail[index].id}`}
+            state={{ category: 'otomobil', news: detail[index] }}
+          >
             <img
               src={value.imageData}
               alt={value.titleData}
               className='w-full h-ful'
             />
-          </a>
+          </Link>
         </div>
         <div className='absolute text-sm p-4 bottom-14 w-1020px bg-[#00479E] text-white lg:text-2xl font-bold h-20 overflow-ellipsis'>
           <div>{value?.titleData} </div>
