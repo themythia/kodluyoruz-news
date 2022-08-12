@@ -9,16 +9,17 @@ import 'swiper/css/scrollbar';
 import '../App.css';
 import Life from './Life';
 import 'swiper/css/autoplay';
+import { useEffect, useState } from 'react';
 
-function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+// function rand(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
 
-function imgUrl() {
-  const id = rand(1, 200);
-  return  `https://picsum.photos/id/${id}/1920/1080`;
+// function imgUrl() {
+//   const id = rand(1, 200);
+//   return  `https://picsum.photos/id/${id}/1920/1080`;
 
-}
+// }
 
 // function Carousel (props){
 // console.log(props.caroselItemList)
@@ -27,44 +28,70 @@ function imgUrl() {
 //   carouselArray.push(Object.keys(props.carouselItemList)[i])
 // }
 // }
-/*
+
+
 
 const Carousel = (props) => {
-  console.log(props.carouselItemList)
-  const carouselArray = []
-  for (let i = 0; i < 10; i++) {
-      carouselArray.push(Object.keys(props.carouselItemList)[i])
+const [carouselItems, setCarouselItems] = useState([])
+const [test, setTest] = useState()
+
+  // const carouselArray = []
+  // useEffect(() => {
+  //   if (props?.carouselItemList) {
       
-  }
-  console.log(carouselArray)
+  //     for (let i = 0; i < 10; i++) {
+  //       carouselArray.push(props?.carouselItemList?.[i]);  
+  //   }
+  //     setCarouselItems (carouselArray) 
+  //   }
+
+  // }, [props])
+
+  
+        if (carouselItems?.length > 0 ) {
+          const carouselArray = []
+          for (let i = 0; i < 10; i++) {
+                  carouselArray.push(props?.carouselItemList?.[i]);  
+              }
+                setCarouselItems (carouselArray)
+                setTest ( carouselItems?.map(function  (each,index)  {
+          
+            return(
+          
+              <SwiperSlide>
+                    <div>
+                    {/* <img className="img" src={carouselItems} alt=""  width={1000} height={"100%"}/> */}
+                      <div>
+          
+                      </div>
+                    </div>
+                    
+                  </SwiperSlide>
+            )
+            
+           }))
+          
+         }
+      
+    
+
+  
+  
+ 
+        
+    
+    
+ 
 return (  
 
-
-  <div>Carousel</div>
-)
-}
-
-export default Carousel;
-
-
-*/
-
-
-
-
-
-function createSlide() {
-  return (
-    <SwiperSlide>
-      <img className="img" src={imgUrl /*Carousel*/()} alt=""  width={1000} height={"100%"}/>
-    </SwiperSlide>
-  );
-}
-
-
-export default () => {
-  return (
-    <Swiper
+ 
+  <div>
+    {/* {console.log(props?.carouselItemList)}{console.log(carouselItems)} */
+    
+    console.log(test)
+    }
+    
+    {/* <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={1}
       navigation
@@ -81,9 +108,52 @@ export default () => {
       {createSlide()}
       {createSlide()}
       {createSlide()}
-    </Swiper>
-  );
-};
+    </Swiper> */}
+
+  </div>
+)
+}
+
+export default Carousel;
+
+
+
+
+
+
+
+
+// function createSlide() {
+//   return (
+//     <SwiperSlide>
+//       <img className="img" src={/*imgUrl*/ Carousel()} alt=""  width={1000} height={"100%"}/>
+//     </SwiperSlide>
+//   );
+// }
+
+
+// export Dddata () => {
+//   return (
+//     <Swiper
+//       modules={[Navigation, Pagination, Autoplay]}
+//       slidesPerView={1}
+//       navigation
+//       autoplay={{ delay: 3000 }}
+//       pagination={{ clickable: true }}
+//     >
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//       {createSlide()}
+//     </Swiper>
+//   );
+// };
 
 
 

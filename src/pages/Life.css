@@ -3,14 +3,35 @@ body{
   
   }
   
-  .header{
+  .lifeheader{
   width: 100%;
   height: 50px;
+  padding:10px;
   background-color:#EB0028;
   font-size: 14px !important;
   color:white;
   /* display: block; */
-  
+  display:flex;
+  }
+  .lifelogo{
+    height:50px;
+    line-height:50px;
+    align-items: center;
+    width:35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .lifentvdon{
+    display: flex;
+    align-items: center;
+    width:50%;
+    justify-content: end;
+    font-weight: 700;
+  }
+  .lifentvdon a{
+    text-decoration: none;
+    color:#fff;
   }
   .navbar{
     width: 100%;

@@ -16,13 +16,19 @@ const Life = (arr = {}) => {
   return (
      <>
         <div> 
-              <div className='header'>Life</div>
-              <div className='navbar'>Kategori</div>
+              <div className='lifeheader'>
+                <div className='lifelogo'><img src="https://cdn.ntv.com.tr/img/KadinLeftLogo.svg?v=6510" height="40"></img></div>
+                <div className='lifentvdon'><a href="https://www.ntv.com.tr/">NTV.COM.TR'ye geri dön 🡲</a></div>
+              </div>
+              <div className='navbar'>
+                <ul>
+                  <a href="#"><li>Moda&Güzellik</li></a>
+                </ul>
+              </div>
         </div>
 
         <div className='slickSlider'>
           <Carousel carouselItemList = {dataPull?.arr}/>
-          {console.log(dataPull?.arr)}
         </div>
         <div className='listItem'>
             <div className='listItem2'>
@@ -198,7 +204,7 @@ const Life = (arr = {}) => {
         
              
       <div className='newsDivDis'>
-            {arr.arr.map((value, index) => {
+            {/* {arr.arr.map((value, index) => {
             // console.log("value: ",value)
               return <div className='newsDiv' key={index}>
               <a href = {value?.id} target = '_blank' textDecoration='none'>
@@ -207,13 +213,12 @@ const Life = (arr = {}) => {
               
               </a>
 
-          
-            
 
               </div>
           
-            })}
-        </div>    
+            })} */}
+      </div>  
+
           </div>
         </div>
 
