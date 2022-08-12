@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+
 import axios from 'axios';
 import { parseFeed } from 'htmlparser2';
 
@@ -15,7 +15,7 @@ const dataList = async () => {
         // xmli parçalamak için parsefeed metodu kullanıldı.
         const parseData = parseFeed(response.data)
           // parse ettiğimiz verinin itemlarına ulaşmak için kullanıyoruz.
-        
+       
         return   parseData.items
           
   
