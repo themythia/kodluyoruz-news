@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom';
 
 const ListItem = ({ index, text, link, news }) => {
   return (
-    <Link to={`/news/${news?.id}`} state={{ category: news?.category, news }}>
+    <Link
+      to={`/haberler/${news?.id}`}
+      state={{ category: news?.category, news }}
+    >
       <div
         className={`${
           index !== 4 && 'border-b border-b-[#E1E1E1]'

@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path='/' index element={<HomePage />} />
         <Route path='/turizm' element={<Tourism />} />
-        <Route path='/economy' index element={<Economy />} />
-        <Route path='/news/:newsId' element={<NewsDetail />} />
+        <Route path='/ekonomi' index element={<Economy />} />
+        <Route path='/haberler/:newsId' element={<NewsDetail />} />
         <Route path='/sanat' element={<Art />} />
         <Route path='/teknoloji' element={<Technology />} />
         <Route path='/spor' element={<Sport />} />

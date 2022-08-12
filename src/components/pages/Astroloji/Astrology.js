@@ -270,9 +270,9 @@ const Astrology = () => {
           {txt[0] ? (
             <div className='w-full h-full bg-white flex flex-col justify-center relative'>
               <Link
-                to={`/news/${news.items[count].id}`}
+                to={`/haberler/${news.items[count].id}`}
                 state={{
-                  category: news.items[count].category,
+                  category: 'magazin',
                   news: news.items[count],
                 }}
               >
@@ -383,9 +383,9 @@ const Astrology = () => {
                   style={{ borderBottom: '1px solid black' }}
                 >
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -427,9 +427,9 @@ const Astrology = () => {
                   className='col-span-2 row-span-2 w-full h-full relative mx-auto object-contain bg-white flex justify-center lg:col-span-1 md:col-span-1 sm:col-span-2 row-span-2 w-full h-full'
                 >
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                   >
@@ -466,9 +466,9 @@ const Astrology = () => {
                   style={{ borderBottom: '1px solid black' }}
                 >
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -539,9 +539,9 @@ const Astrology = () => {
                     className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full sm:col-span-3 mx-auto '
                   >
                     <Link
-                      to={`/news/${news.items[item].id}`}
+                      to={`/haberler/${news.items[item].id}`}
                       state={{
-                        category: news.items[item].category,
+                        category: 'magazin',
                         news: news.items[item],
                       }}
                       className='w-full h-full bg-contain relative'
@@ -585,9 +585,9 @@ const Astrology = () => {
                   style={{ borderBottom: '1px solid black' }}
                 >
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full bg-contain'
@@ -632,9 +632,9 @@ const Astrology = () => {
                     FOTO
                   </p>
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                   >
@@ -672,9 +672,9 @@ const Astrology = () => {
                 >
                   {' '}
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'magazin',
                       news: news.items[item],
                     }}
                     className='row-span-2 w-full h-full'
