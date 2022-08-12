@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../index.css';
+import formatRSSFeed from '../../utils/api/formatRSSFeed';
 import dataList from './DataList';
 
 const BottomPage = () => {
-  const [itemList, setItemList] = useState({})
-  const [newDataList, setNewDataList] = useState([])
-  const [showMore, setShowMore] = useState(12)
-
+  const [itemList, setItemList] = useState({});
+  const [newDataList, setNewDataList] = useState([]);
+  const [showMore, setShowMore] = useState(12);
+  // state to handle news details
+  const [detail, setDetail] = useState([]);
 
   useEffect(() => {
     dataList().then((api) => {
+      setDetail(formatRSSFeed({ items: api }).items);
       let textDatas = api.map((item) => ({
         imageData: item.description.split('<img src="')[1].split('?width')[0],
         titleData: item.title,
@@ -17,25 +21,23 @@ const BottomPage = () => {
       }));
       setItemList(textDatas);
     });
-    }, []);
+  }, []);
 
-    useEffect(() => {
-      console.log('test')
+  useEffect(() => {
+    console.log('test');
 
-      if (Object.keys(itemList).length > 0) {
-        console.log('test123123')
-        let newArray = [];
-        for (let i = 0; i < showMore; i++) {
-          newArray.push(itemList[i]);
-         
-        }
-        setNewDataList(newArray)
+    if (Object.keys(itemList).length > 0) {
+      console.log('test123123');
+      let newArray = [];
+      for (let i = 0; i < showMore; i++) {
+        newArray.push(itemList[i]);
       }
-      console.log('test')
-    },[showMore, itemList])
+      setNewDataList(newArray);
+    }
+    console.log('test');
+  }, [showMore, itemList]);
 
-    console.log(newDataList)
- 
+  console.log(newDataList);
 
   const newList = newDataList?.map(function (value, index) {
     return (
@@ -43,18 +45,16 @@ const BottomPage = () => {
         className='bg-white relative h-64 w-100/3  box-border items-center justify-center'
         key={index}
       >
-        <a
-          href={ value.hrefData }
-          className='relative block max-w-full'
+        <Link
+          to={`/haberler/${detail[index].id}`}
+          state={{ category: 'otomobil', news: detail[index] }}
         >
           <img
-            src={
-              value.imageData
-            } alt={value.titleData}
-          
+            src={value.imageData}
+            alt={value.titleData}
             className='min-h-11 cursor-pointer'
           ></img>
-        </a>
+        </Link>
         <div className='block items-center justify-center p-4 text-16-19 font-bold line-clamp-2 '>
           {value.titleData}
         </div>

@@ -1,17 +1,16 @@
-import React from 'react'
-import Carousel from './Carousel'
-import BottomPage from './BottomPage'
-import Head from './Head'
+import React from 'react';
+import Carousel from './Carousel';
+import BottomPage from './BottomPage';
+import Head from './Head';
 
 const Otomobil = () => {
   return (
     <div>
-        <Head />
-        <Carousel />
-        <BottomPage />
-      
+      <Head />
+      <Carousel />
+      <BottomPage />
     </div>
-  )
-}
+  );
+};
 
-export default Otomobil
+export default Otomobil;

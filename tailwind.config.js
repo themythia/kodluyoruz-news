@@ -10,9 +10,17 @@ module.exports = {
         textRed: '#9C0000',
         breakingRed: '#BB1919',
         newsListBg: '#DCDCDC',
+        textGray: '#909090',
         tech: '#007FBD',
         world: '#0092A8',
         infoText: '#819099',
+        carouselBorder: '#E6E6E6',
+        carouselMobileBg: '#650000',
+        economy: '#C59527',
+        twitter: '#1C9DEB',
+        facebook: '#4064AD',
+        whatsapp: '#25AF3A',
+        flipboard: '#E12828',
       },
       fontFamily: {
         roboto: ['Roboto'],
@@ -25,6 +33,11 @@ module.exports = {
         '18-28': ['18px', '28px'],
         '20-22': ['20px', '22px'],
         '20-28': ['20px', '28px'],
+        '20-34': ['20px', '34px'],
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '40/23': '40 / 23',
       },
       boxShadow: {
         '3xl': '0px 6px 8px -5px rgba(0, 0, 0, 0.2)',
@@ -38,5 +51,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
