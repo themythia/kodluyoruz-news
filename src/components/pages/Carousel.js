@@ -1,103 +1,83 @@
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useEffect, useState, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState,  } from 'react';
 import '../../index.css';
 import dataList from './DataList';
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/bundle";
-import { Pagination, Navigation } from "swiper";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/bundle';
+import { Pagination, Navigation } from 'swiper';
+import './style.css'
 
 
-
-
-
-const Carousel = () => { 
-
+const Carousel = () => {
   const [itemList, setitemList] = useState({});
+  const [newDataList, setNewDataList] = useState([])
+  
 
   useEffect(() => {
-    dataList().then((api) => setitemList(api));
-  }, []);
-
-console.log(itemList)
+    dataList().then((api) => {
+      let textDatas = api.map((item) => ({
+        imageData: item.description.split('<img src="')[1].split('?width')[0],
+        titleData: item.title,
+        hrefData: item.link,
+      }));
+      setitemList(textDatas);
+    });
+    }, []);
  
+
   useEffect(() => {
     if (Object.keys(itemList).length > 0) {
-      let textDatas = { imageData: [], titleData: [], hrefData: [] };
-      if (itemList) {
-          for (let i = 0; i < 10; i++) {
-        textDatas.imageData.push(
-          itemList[i].description.split('<img src="')[1].split('?width')[0]
-        );
-        textDatas.titleData.push(itemList[i].title);
-        textDatas.hrefData.push(itemList[i].link);
+      let newArray = [];
+      for (let i = 0; i < 10; i++) {
+        newArray.push(itemList[i]);
       }
-      setitemList(textDatas);
+      setNewDataList(newArray)   
     }
-   
-    
-  }
   }, [itemList]);
-
-
-
-  const [newDataList , setNewDataList] = useState([]);
-  useEffect(() =>  {
-    let newArray = []
-  for (let i=0; i < 10; i++) {
-    newArray.push(itemList[i])
-  }
-  setNewDataList(newArray)
   
-},[itemList]
-)
-    console.log(newDataList)
+    const newMappingData = newDataList?.map(function (value, index) {     
 
-  const newMappingData = newDataList?.map(function (value, index) {
-    
-    
-    return (
-      <SwiperSlide
-       key={index} className='items-start justify-start flex h-full w-full '>
-       <div  slot='container-start' className='parallax-bg'>
-       <a href={value?.[index]?.description}  className='relative'>
-       <img src={value?.link} >
-       </img>
-       </a>
-       </div>
-       <div
-          className='opacity-80 bg-blue-600 text-2xl p-3 ml-44 mb-4 relative rounded-full'
-          data-swiper-parallax='-100'
+      return (
+        <SwiperSlide
+          key={index}
+          className=' relative pt-8'
         >
-          <div>{ value?.title } </div>
+          <div    className=' relative h-[550px] w-[1020px]'>
+            <a href={value.hrefData} className=''>
+              <img src={value.imageData} alt={value.titleData} className='w-full h-ful'/>
+            </a>
           </div>
-      </SwiperSlide>
-    )
-   
-  })
+          <div
+            className='absolute text-sm p-4 bottom-14 w-1020px bg-[#00479E] text-white lg:text-2xl font-bold h-20 overflow-ellipsis'
+          >
+            <div>{value?.titleData} </div>
+          </div>
+        </SwiperSlide>
+      );
+    });
+      
   
+    return(
+     <div>
+            <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true, renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+            }}}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+        >
 
-
-  return(
-   <div>
-          <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-      >
-    
-    {newMappingData}
-    </Swiper>
-     </div>
-  )
+      {newMappingData}
+      </Swiper>
+       </div>
+    )
 };
 
 export default Carousel;

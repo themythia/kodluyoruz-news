@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer components {
-  /*Header ilk kısım  */
-  /* Arka plan rengi, main position, margin ve padding 0, dikeyde baseline, block halinde görünsün   */
+  @layer base {
+    body {
+      @apply bg-bg;
+    }
+  }
+
   .header {
     @apply font-roboto bg-textDark relative box-border m-0 p-0 border-0 block;
   }

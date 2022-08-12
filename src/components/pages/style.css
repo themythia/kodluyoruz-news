@@ -46,7 +46,18 @@ body {
   object-fit: cover;
 }
 
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
+.swiper-pagination-bullet {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
 }
