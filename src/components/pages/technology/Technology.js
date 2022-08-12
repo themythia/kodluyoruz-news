@@ -230,6 +230,7 @@ const Technology = () => {
                       category: 'teknoloji',
                       news: news.items[item],
                     }}
+                    className='row-span-2 w-full h-full bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
@@ -286,6 +287,7 @@ const Technology = () => {
                       category: 'teknoloji',
                       news: news.items[item + 2],
                     }}
+                    className='row-span-2 w-full h-full bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
