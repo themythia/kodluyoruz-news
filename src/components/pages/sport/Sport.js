@@ -52,7 +52,6 @@ function Sport() {
   useEffect(() => {
     if (text.length > 0) {
       const feed = parseFeed(text);
-      console.log('feed:', feed);
       setNews(formatRSSFeed(feed));
       let textContents = [
         {
@@ -208,7 +207,7 @@ function Sport() {
         </a>
       </div>
       <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-2/3 mx-auto h-auto md:w-full sm:w-full mt-4'>
-        <div className='col-span-3 row-span-4 lg:col-span-2 row-span-4 md:col-span-2 row-span-2 sm:col-span-3 row-span-4 '>
+        <div className='col-span-3  lg:col-span-2 row-span-4 md:col-span-2 row-span-2 sm:col-span-3'>
           {txt[0] ? (
             <div className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'>
               <Link
@@ -320,7 +319,7 @@ function Sport() {
             <div>Loading...</div>
           )}
         </div>
-        <div className='grid grid-rows-3 gap-y-2 col-span-3 ml-2 mb-2 row-span-1 md:col-span-1 row-span-1 sm:col-span-2 row-span-2'>
+        <div className='grid grid-rows-3 gap-y-2 col-span-3 ml-2 mb-2  md:col-span-1 row-span-1 sm:col-span-2 row-span-2'>
           {txt[0] ? (
             <>
               {order2.map((item, index) => (
@@ -347,7 +346,7 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 row-span-1 ml-2 md:col-span-1 row-span-1 sm:col-span-1'>
+        <div className='col-span-3 ml-2 md:col-span-1 row-span-1 sm:col-span-1'>
           {txt[0] ? (
             <>
               {order3.map((item, index) => (

@@ -25,7 +25,6 @@ const InfoContextWrapper = ({ children }) => {
     setCategory,
     weathers,
   };
-  console.log(category, weathers);
   return (
     <InfoContext.Provider value={{ state, weathers }}>
       {children}

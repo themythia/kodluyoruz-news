@@ -1,12 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import './styles.css';
-
 import { EffectCoverflow, Pagination, Navigation, Parallax } from 'swiper';
 
 const CarouselSlider = (news) => {
@@ -73,6 +70,7 @@ const CarouselSlider = (news) => {
         centeredSlides={true}
         slidesPerView={'auto'}
         initialSlide={2}
+        autoplay={{ delay: 3000 }}
         coverflowEffect={{
           rotate: 30,
           stretch: 0,
@@ -82,7 +80,7 @@ const CarouselSlider = (news) => {
         }}
         pagination={pagination}
         modules={[Parallax, Pagination, Navigation, EffectCoverflow]}
-        className='mySwiper max-w-screen-lg'
+        className='mySwiper max-w-[1000px]'
       >
         {newsArray}
       </Swiper>

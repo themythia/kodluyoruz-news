@@ -1,29 +1,71 @@
 import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useCategory } from '../../../contexts/InfoContext';
+import useWindowSize from '../../../utils/hooks/useWindowSize';
 
 const NavBarCategoryLane = (props) => {
-  const { category, setCategory } = useCategory();
+  const { width } = useWindowSize();
+  const [totalTitle, setTotalTitle] = useState(10);
+  const [categoriesArray, setCategoriesArray] = useState([]);
+  const [isActive, setIsActive] = useState(Array(10)?.fill(false));
+  //ekran genişliğine göre kategori sayısı
+
+  const categoryColors = [
+    'text-economy',
+    'text-textDark',
+    'text-red-600',
+    'text-sky-900',
+    'text-textDark',
+    'text-[#bb1818]',
+    'text-textDark',
+    'text-textDark',
+    'text-blue-900',
+    'text-[#bb1818]',
+  ];
+  useEffect(() => {
+    if (width < 350) {
+      setTotalTitle(3);
+    } else if (width < 640) {
+      setTotalTitle(4);
+    } else if (width < 768) {
+      setTotalTitle(5);
+    } else if (width < 1000) {
+      setTotalTitle(8);
+    } else {
+      setTotalTitle(10);
+    }
+  }, [width]);
 
   const categories = props.categories;
   // Listelenmesini istediğimiz rakam
-  const totalItemNumber =
-    Object.keys(categories).length >= 10 ? 10 : categories.length;
-
   // Kategori listesi oluşturuluyor
-  const categoriesList = [];
-  for (let i = 0; i < totalItemNumber; i++) {
-    categoriesList.push(
-      <li key={i} className='content-list-items'>
-        <Link
-          to={'/' + Object.keys(categories)[i]}
-          onClick={() => setCategory(Object.keys(categories)[i])}
-        >
-          {Object.values(categories)[i].toUpperCase().replace('I', 'İ')}
-        </Link>
-      </li>
-    );
-  }
+  useEffect(() => {
+    const categoriesList = [];
+    if (totalTitle > 0) {
+      for (let i = 0; i < totalTitle; i++) {
+        categoriesList.push(
+          <li
+            key={i}
+            className={`content-list-items  ${
+              isActive[i]
+                ? `${categoryColors[i] + ' text-xl'}`
+                : 'text-textDark  text-16-19 '
+            } }`}
+            onClick={() => {
+              let newArr = Array(10)?.fill(false);
+              newArr[i] = !newArr[i];
+              return setIsActive(newArr);
+            }}
+          >
+            <Link to={'/' + Object.keys(categories)[i]}>
+              {Object.values(categories)[i].toUpperCase().replace('I', 'İ')}
+            </Link>
+          </li>
+        );
+      }
+      setCategoriesArray(categoriesList);
+    }
+  }, [totalTitle, isActive]);
 
   let moreCategoriesList = Array(Object.keys(categories).length - 10).fill(
     null
@@ -45,7 +87,7 @@ const NavBarCategoryLane = (props) => {
         <Menu
           offsetY={12}
           menuButton={({ open, key }) => (
-            <MenuButton>
+            <MenuButton key={key}>
               {open ? (
                 <svg
                   width='20'
@@ -57,16 +99,16 @@ const NavBarCategoryLane = (props) => {
                   <path
                     d='M19 1L1 13'
                     stroke='#022032'
-                    stroke-width='2'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   />
                   <path
                     d='M1 1L19 13'
                     stroke='#022032'
-                    stroke-width='2'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   />
                 </svg>
               ) : (
@@ -97,7 +139,7 @@ const NavBarCategoryLane = (props) => {
       <div className='container'>
         <div className='content'>
           <DrawerMenu />
-          <ul className='content-list'>{categoriesList}</ul>
+          <ul className='content-list'>{categoriesArray}</ul>
         </div>
       </div>
     </div>

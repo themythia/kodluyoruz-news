@@ -15,13 +15,19 @@ import Header from './shared/Header/Header';
 import Turkey from './pages/turkey/Turkey';
 
 const NewsRouter = () => {
+  const socialLinks = {
+    twitter: 'https://twitter.com/ntv',
+    facebook: 'https://www.facebook.com/NTV',
+    instagram: 'https://www.instagram.com/ntv/',
+    youtube: 'https://www.youtube.com/ntv',
+    flipboard: 'https://flipboard.com/@ntv',
+  };
   return (
     <>
       <Header />
       <Routes>
         {/* <Route path='/' index element={<HomePage />} />*/}
         <Route path='/' index element={<HomePage />} />
-        <Route path='*' element={<NotFound />} />
         <Route path='/news/:newsId' element={<NewsDetail />} />
         <Route path='/Ekonomi' index element={<Economy />} />
         <Route path='/Yasam' element={<Life />} />
@@ -33,8 +39,9 @@ const NewsRouter = () => {
         <Route path='/Saglik' element={<Health />} />
         <Route path='/Turizm' element={<Tourism />} />
         <Route path='/Teknoloji' element={<Technology />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
-      <Footer />
+      <Footer socialLinks={socialLinks} />
     </>
   );
 };

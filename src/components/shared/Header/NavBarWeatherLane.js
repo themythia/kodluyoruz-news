@@ -24,11 +24,9 @@ import { useCategory } from '../../../contexts/InfoContext';
 const NavBarWeatherLane = () => {
   const [getData, setGetData] = useState([]);
   const [changeCity, setChangeCity] = useState(0);
-  const { category, weathers } = useCategory();
-  console.log(category, weathers);
+  const { weathers } = useCategory();
 
   useEffect(() => {
-    console.log(weathers);
     if (weathers) {
       setGetData(weathers);
     }
@@ -76,8 +74,8 @@ const NavBarWeatherLane = () => {
                 {'\xB0'}
               </div>
             </div>
-            <img alt={cities[index]} src={each[0]} />
           </div>
+          <img alt={cities[index]} src={each[0]} />
         </MenuItem>
       );
     });

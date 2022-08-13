@@ -17,7 +17,7 @@
   }
   /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
   .header .container {
-    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline flex items-center justify-center;
+    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-[1000px] border-0 align-baseline flex items-center justify-center;
   }
   /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
   .header .container .content {
@@ -33,7 +33,7 @@
     @apply font-roboto bg-white  relative box-border m-0 p-0 border-0 block shadow-3xl;
   }
   .header-category .container {
-    @apply bg-white relative box-border mx-auto my-0 p-0 w-full max-w-screen-lg border-0 align-baseline flex justify-center;
+    @apply bg-white relative box-border mx-auto my-0 p-0 w-full max-w-[1000px] border-0 align-baseline flex justify-center;
   }
   .header-category .container .content {
     @apply bg-white relative flex items-center  w-full;
@@ -43,7 +43,7 @@
     @apply flex py-3 px-6  list-none box-border m-0 w-full justify-evenly;
   }
   .header-category .container .content .content-list .content-list-items {
-    @apply shrink-0 relative box-border text-16-19 font-semibold flex justify-between items-center;
+    @apply shrink-0 relative box-border font-semibold flex justify-between items-center;
   }
 
   /*Header 3. kısım  */

@@ -36,9 +36,6 @@ const Technology = () => {
   const [showMore, setShowMore] = useState(
     'col-span-3 bg-white h-12 flex justify-center'
   );
-  const [slider, setSlider] = useState(
-    Array.from(Array(3).keys(), (x) => x + 22)
-  );
 
   // to handle news detail
   const [news, setNews] = useState([]);
@@ -46,7 +43,6 @@ const Technology = () => {
   const order1 = [10, 11, 12];
   const order2 = [13, 14, 15, 16, 17, 18];
   const order3 = Array.from(Array(moreNumbers).keys(), (x) => x + 19);
-  console.log('order3', order3);
 
   useEffect(() => {
     fetch(
@@ -60,7 +56,6 @@ const Technology = () => {
     if (text.length > 0) {
       const feed = parseFeed(text);
       setNews(formatRSSFeed(feed));
-      console.log('feed:', feed);
       let textContents = [
         { textContent: [], imageContent: [], linkContent: [] },
       ];
@@ -100,11 +95,8 @@ const Technology = () => {
         }
         setTxt(textContents);
       }
-      console.log(textContents[0].textContent);
     }
   }, [text]);
-
-  console.log('news', news);
 
   function numbers(i) {
     let squares = (Array(9).fill(style2) + ',' + Array(1).fill(style3)).split(
@@ -132,15 +124,6 @@ const Technology = () => {
 
   return (
     <div>
-      <div className='flex bg-black h-14 items-center text-2xl flex lg:pl-64 sm:pl-32'>
-        <a href='https://ntv.com.tr' className=''>
-          <img
-            className='mr-36'
-            src='https://cdn.ntv.com.tr/img/logo.svg?v=6429z'
-            alt='ntv.com.tr'
-          ></img>
-        </a>
-      </div>
       <div>
         {txt[0] ? (
           <>
@@ -156,7 +139,7 @@ const Technology = () => {
       </div>
 
       <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-2/3 mx-auto h-auto md:w-full sm:w-full mt-4'>
-        <div className='col-span-3 row-span-4 w-full h-full  lg:col-span-3 row-span-4 w-full h-full md:col-span-3 row-span-4 w-full h-full sm:col-span-3 row-span-4 w-full h-full'>
+        <div className='col-span-3   lg:col-span-3 md:col-span-3  sm:col-span-3 row-span-4 w-full h-full'>
           {txt[0] ? (
             <div className='w-full h-full relative bg-white flex flex-col justify-center'>
               <Link
@@ -222,8 +205,11 @@ const Technology = () => {
         <div className='col-span-3 row-span-auto mt-2 grid grid-cols-3 gap-4'>
           {txt[0] ? (
             <>
-              {order1.map((item) => (
-                <div className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'>
+              {order1.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                >
                   <Link
                     to={`/news/${news.items[item].id}`}
                     state={{
@@ -254,8 +240,11 @@ const Technology = () => {
         <div className='col-span-3 row-span-1 h-3/4 mt-4 grid grid-cols-6 gap-4'>
           {txt[0] ? (
             <div className='col-span-6 row-span-1 h-3/4 mt-2 grid grid-cols-6 gap-4 bg-black p-4'>
-              {order2.map((item) => (
-                <div className='bg-sky-900 overflow-hidden bg-black hover:bg-slate-800 col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-4 sm:col-span-3 mx-auto'>
+              {order2.map((item, index) => (
+                <div
+                  key={index}
+                  className='bg-sky-900 overflow-hidden bg-black hover:bg-slate-800 col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-4 sm:col-span-3 mx-auto'
+                >
                   <a
                     href={`${txt[0].linkContent[item]}`}
                     className='row-span-2 w-full h-full bg-contain'
@@ -278,8 +267,11 @@ const Technology = () => {
         <div className='col-span-3 row-span-auto grid grid-cols-3 gap-4'>
           {txt[0] ? (
             <>
-              {order3.map((item) => (
-                <div className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'>
+              {order3.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                >
                   <Link
                     to={`/news/${news.items[item + 2].id}`}
                     state={{

@@ -1,10 +1,4 @@
-const Footer = ({
-  twitter = '',
-  facebook = '',
-  instagram = '',
-  youtube = '',
-  linkedin = '',
-}) => {
+const Footer = ({ socialLinks = {} }) => {
   const infoTitle = 'KURUMSAL';
   const subTitle = "NTV'yi Keşfedin";
   const InfoList = [
@@ -45,10 +39,10 @@ const Footer = ({
               <li>{subTitle}</li>
 
               {/* Twitter */}
-              {twitter.indexOf('twitter') !== -1 ? (
+              {socialLinks.twitter?.indexOf('twitter') !== -1 ? (
                 <li>
                   <a
-                    href={twitter}
+                    href={socialLinks.twitter}
                     target='_blank'
                     alt='Twitter'
                     rel='noreferrer'
@@ -85,10 +79,10 @@ const Footer = ({
               )}
 
               {/* Facebook */}
-              {facebook.indexOf('facebook') !== -1 ? (
+              {socialLinks.facebook?.indexOf('facebook') !== -1 ? (
                 <li>
                   <a
-                    href={facebook}
+                    href={socialLinks.facebook}
                     target='_blank'
                     alt='Facebook'
                     rel='noreferrer'
@@ -125,10 +119,10 @@ const Footer = ({
               )}
 
               {/* İnstagram */}
-              {instagram.indexOf('instagram') !== -1 ? (
+              {socialLinks.instagram?.indexOf('instagram') !== -1 ? (
                 <li>
                   <a
-                    href={instagram}
+                    href={socialLinks.instagram}
                     target='_blank'
                     alt='Instagram'
                     rel='noreferrer'
@@ -187,10 +181,10 @@ const Footer = ({
               )}
 
               {/* Youtube */}
-              {youtube.indexOf('youtube') !== -1 ? (
+              {socialLinks.youtube?.indexOf('youtube') !== -1 ? (
                 <li>
                   <a
-                    href={youtube}
+                    href={socialLinks.youtube}
                     target='_blank'
                     alt='Youtube'
                     rel='noreferrer'
@@ -232,31 +226,28 @@ const Footer = ({
               )}
 
               {/* Linkedin */}
-              {linkedin.indexOf('linkedin') !== -1 ? (
+              {socialLinks.flipboard?.indexOf('flipboard') !== -1 ? (
                 <li>
                   <a
-                    href={linkedin}
+                    href={socialLinks.flipboard}
                     target='_blank'
                     alt='Linkedin'
                     rel='noreferrer'
                   >
                     <svg
-                      width='22'
+                      width='24'
                       height='22'
-                      viewBox='0 0 22 22'
+                      viewBox='0 0 24 22'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <path
-                        d='M4.96787 7.23449H0.37085V21.8941H4.96787V7.23449Z'
-                        fill='#819099'
-                      />
-                      <path
-                        d='M17.403 6.9167C17.2335 6.89551 17.0535 6.88492 16.8734 6.87433C14.2995 6.7684 12.8484 8.29368 12.3399 8.9504C12.2022 9.13047 12.1387 9.23639 12.1387 9.23639V7.27683H7.74292V21.9364H12.1387H12.3399C12.3399 20.4429 12.3399 18.96 12.3399 17.4665C12.3399 16.6615 12.3399 15.8565 12.3399 15.0515C12.3399 14.0558 12.2658 12.9966 12.7636 12.0857C13.1873 11.3231 13.9499 10.9417 14.8079 10.9417C17.35 10.9417 17.403 13.2402 17.403 13.4521C17.403 13.4627 17.403 13.4733 17.403 13.4733V22H22V12.4352C22 9.16225 20.3371 7.23446 17.403 6.9167Z'
-                        fill='#819099'
-                      />
-                      <path
-                        d='M2.66923 5.33847C4.14341 5.33847 5.33848 4.14342 5.33848 2.66924C5.33848 1.19506 4.14341 0 2.66923 0C1.19505 0 0 1.19506 0 2.66924C0 4.14342 1.19505 5.33847 2.66923 5.33847Z'
+                      <rect width='9' height='22' fill='#819099' />
+                      <rect x='9' width='14.67' height='7' fill='#819099' />
+                      <rect
+                        x='9'
+                        y='7'
+                        width='7.33'
+                        height='7.33'
                         fill='#819099'
                       />
                     </svg>
@@ -265,22 +256,19 @@ const Footer = ({
               ) : (
                 <li>
                   <svg
-                    width='22'
+                    width='24'
                     height='22'
-                    viewBox='0 0 22 22'
+                    viewBox='0 0 24 22'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
                   >
-                    <path
-                      d='M4.96787 7.23449H0.37085V21.8941H4.96787V7.23449Z'
-                      fill='#819099'
-                    />
-                    <path
-                      d='M17.403 6.9167C17.2335 6.89551 17.0535 6.88492 16.8734 6.87433C14.2995 6.7684 12.8484 8.29368 12.3399 8.9504C12.2022 9.13047 12.1387 9.23639 12.1387 9.23639V7.27683H7.74292V21.9364H12.1387H12.3399C12.3399 20.4429 12.3399 18.96 12.3399 17.4665C12.3399 16.6615 12.3399 15.8565 12.3399 15.0515C12.3399 14.0558 12.2658 12.9966 12.7636 12.0857C13.1873 11.3231 13.9499 10.9417 14.8079 10.9417C17.35 10.9417 17.403 13.2402 17.403 13.4521C17.403 13.4627 17.403 13.4733 17.403 13.4733V22H22V12.4352C22 9.16225 20.3371 7.23446 17.403 6.9167Z'
-                      fill='#819099'
-                    />
-                    <path
-                      d='M2.66923 5.33847C4.14341 5.33847 5.33848 4.14342 5.33848 2.66924C5.33848 1.19506 4.14341 0 2.66923 0C1.19505 0 0 1.19506 0 2.66924C0 4.14342 1.19505 5.33847 2.66923 5.33847Z'
+                    <rect width='9' height='22' fill='#819099' />
+                    <rect x='9' width='14.67' height='7' fill='#819099' />
+                    <rect
+                      x='9'
+                      y='7'
+                      width='7.33'
+                      height='7.33'
                       fill='#819099'
                     />
                   </svg>
