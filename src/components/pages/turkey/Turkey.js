@@ -1,12 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getPosts } from '../../../services/posts';
 import CarouselSlider from '../../shared/carouselslider/CarouselSlider';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { Link } from 'react-router-dom';
+
 const Turkey = () => {
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(18);
+  // state to handle news details
+  const [details, setDetails] = useState([]);
+
+  console.log('details', details);
 
   useEffect(() => {
-    getPosts('turkiye')?.then((data) => setGetData(data));
+    getPosts('turkiye')?.then((data) => {
+      setGetData(data);
+      setDetails(formatRSSFeed({ items: data }).items);
+    });
   }, []);
 
   const downBottom = useRef(null);
@@ -19,6 +29,7 @@ const Turkey = () => {
   function goDown() {
     downBottom.current?.scrollIntoView();
   }
+  console.log('newsArray,', newsArray);
 
   function goUp() {
     upTop.current?.scrollIntoView();
@@ -30,16 +41,10 @@ const Turkey = () => {
         key={index}
         data-testid='list-cards'
       >
-        <a
-          href={
-            each?.['description']
-              ? each['description'].substring(
-                  10,
-                  each['description'].indexOf(' ', 10) - 1
-                )
-              : ''
-          }
+        <Link
           className='relative block max-w-full'
+          to={`/haberler/${details?.[index]?.id}`}
+          state={{ category: 'turkiye', news: details?.[index] }}
         >
           <img
             src={
@@ -53,7 +58,7 @@ const Turkey = () => {
             alt='HTML tutorial'
             className='min-h-11 cursor-pointer'
           ></img>
-        </a>
+        </Link>
         <div
           className='block items-center justify-center p-4 text-16-19 font-bold line-clamp-2 '
           data-testid='card-title'
@@ -82,7 +87,7 @@ const Turkey = () => {
               fill='#022032'
             />
           </svg>
-          <CarouselSlider data={newsArray} />
+          <CarouselSlider data={newsArray} details={details} />
           <div className=' mb-5 relative mx-auto max-w-[1000px]  w-full'>
             <ul className='relative box-border gap-4 clear-both flex flex-wrap items-center justify-between'>
               {newsList}

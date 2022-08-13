@@ -5,8 +5,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
 import { EffectCoverflow, Pagination, Navigation, Parallax } from 'swiper';
+import { Link } from 'react-router-dom';
 
-const CarouselSlider = (news) => {
+const CarouselSlider = ({ data, details }) => {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -15,7 +16,7 @@ const CarouselSlider = (news) => {
   };
   let newData = [];
   for (let i = 0; i < 10; i++) {
-    newData.push(news.data[i]);
+    newData.push(data[i]);
   }
 
   const newsArray = newData.map(function (each, key) {
@@ -25,16 +26,9 @@ const CarouselSlider = (news) => {
         key={key}
       >
         <div slot='container-start' className='parallax-bg'>
-          <a
-            href={
-              each?.['description']
-                ? each['description'].substring(
-                    10,
-                    each['description'].indexOf(' ', 10) - 1
-                  )
-                : ''
-            }
-            className='relative'
+          <Link
+            to={`/haberler/${details?.[key]?.id}`}
+            state={{ category: 'turkiye', news: details?.[key] }}
           >
             <img
               src={
@@ -48,7 +42,7 @@ const CarouselSlider = (news) => {
               alt='test'
               className='image rounded-3xl'
             ></img>
-          </a>
+          </Link>
         </div>
         <div
           className='opacity-80 bg-blue-600 text-2xl p-3 ml-44 mb-4 relative rounded-full'
