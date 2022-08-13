@@ -43,7 +43,6 @@ const Astrology = () => {
   const order7 = Array.from(Array(moreNumbers).keys(), (x) => x + 28);
 
   const [news, setNews] = useState([]);
-  console.log('news', news);
 
   function more() {
     if (moreNumbers <= 60) {
@@ -63,7 +62,6 @@ const Astrology = () => {
     if (text.length > 0) {
       const feed = parseFeed(text);
       setNews(formatRSSFeed(feed));
-      console.log('feed:', feed);
       let textContents = [
         { textContent: [], imageContent: [], linkContent: [], headContent: [] },
       ];
@@ -144,7 +142,6 @@ const Astrology = () => {
         }
         setTxt(textContents);
       }
-      console.log(textContents[0].headContent);
     }
   }, [text]);
 
@@ -265,8 +262,8 @@ const Astrology = () => {
           GEZİ
         </a>
       </div>
-      <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 mx-auto lg:w-3/4 mx-auto h-auto md:w-full sm:w-full mt-4'>
-        <div className='col-span-3 row-span-4 w-full h-full mx-auto lg:col-span-3 row-span-4 w-full h-full md:col-span-3 row-span-4 w-full h-full  sm:col-span-3 row-span-6 w-full h-full '>
+      <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-3/4 mx-auto h-auto md:w-full sm:w-full mt-4'>
+        <div className='col-span-3 mx-auto lg:col-span-3 md:col-span-3 row-span-4  sm:col-span-3 row-span-6 w-full h-full '>
           {txt[0] ? (
             <div className='w-full h-full bg-white flex flex-col justify-center relative'>
               <Link
@@ -424,7 +421,7 @@ const Astrology = () => {
               {order2.map((item, index) => (
                 <div
                   key={index}
-                  className='col-span-2 row-span-2 w-full h-full relative mx-auto object-contain bg-white flex justify-center lg:col-span-1 md:col-span-1 sm:col-span-2 row-span-2 w-full h-full'
+                  className='col-span-2 relative mx-auto object-contain bg-white flex justify-center lg:col-span-1 md:col-span-1 sm:col-span-2 row-span-2 w-full h-full'
                 >
                   <Link
                     to={`/haberler/${news.items[item].id}`}
