@@ -7,7 +7,7 @@ const CarouselItem = ({ index, type }) => {
   const news = useDynamicContext(type);
   return (
     <Link
-      to={`/news/${news?.items?.[index + 10].id}`}
+      to={`/haberler/${news?.items?.[index + 10].id}`}
       state={{
         category: news?.items?.[index + 10].category,
         news: news?.items?.[index + 10],

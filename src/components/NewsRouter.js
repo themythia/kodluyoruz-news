@@ -26,19 +26,17 @@ const NewsRouter = () => {
     <>
       <Header />
       <Routes>
-        {/* <Route path='/' index element={<HomePage />} />*/}
-        <Route path='/' index element={<HomePage />} />
-        <Route path='/news/:newsId' element={<NewsDetail />} />
-        <Route path='/Ekonomi' index element={<Economy />} />
-        <Route path='/Yasam' element={<Life />} />
-        <Route path='/Magazin' element={<Astrology />} />
-        <Route path='/Spor' element={<Sport />} />
-        {/* Otomobil sayfası */}
-        <Route path='/Sanat' element={<Art />} />
-        <Route path='/Turkiye' element={<Turkey />} />
-        <Route path='/Saglik' element={<Health />} />
-        <Route path='/Turizm' element={<Tourism />} />
-        <Route path='/Teknoloji' element={<Technology />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/haberler/:newsId' element={<NewsDetail />} />
+        <Route path='/ekonomi' element={<Economy />} />
+        <Route path='/yasam' element={<Life />} />
+        <Route path='/magazin' element={<Astrology />} />
+        <Route path='/spor' element={<Sport />} />
+        <Route path='/sanat' element={<Art />} />
+        <Route path='/turkiye' element={<Turkey />} />
+        <Route path='/saglik' element={<Health />} />
+        <Route path='/turizm' element={<Tourism />} />
+        <Route path='/teknoloji' element={<Technology />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer socialLinks={socialLinks} />

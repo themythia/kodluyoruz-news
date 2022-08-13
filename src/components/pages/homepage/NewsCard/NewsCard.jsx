@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NewsCard = ({ news, type, page }) => {
   return (
     <Link
-      to={`/news/${news?.id}`}
+      to={`/haberler/${news?.id}`}
       state={{ category: news?.category, news }}
       className={`flex flex-col text-white font-bold ${
         page === 'home' ? 'w-[calc((100vw-32px)/2.22)]' : 'w-full'

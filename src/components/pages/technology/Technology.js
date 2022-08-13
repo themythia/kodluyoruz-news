@@ -144,9 +144,9 @@ const Technology = () => {
             <div className='w-full h-full relative bg-white flex flex-col justify-center'>
               <Link
                 key={count}
-                to={`/news/${news.items[count].id}`}
+                to={`/haberler/${news.items[count].id}`}
                 state={{
-                  category: news.items[count].category,
+                  category: 'teknoloji',
                   news: news.items[count],
                 }}
               >
@@ -211,11 +211,12 @@ const Technology = () => {
                   className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                 >
                   <Link
-                    to={`/news/${news.items[item].id}`}
+                    to={`/haberler/${news.items[item].id}`}
                     state={{
-                      category: news.items[item].category,
+                      category: 'teknoloji',
                       news: news.items[item],
                     }}
+                    className='row-span-2 w-full h-full bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
@@ -273,11 +274,12 @@ const Technology = () => {
                   className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
                 >
                   <Link
-                    to={`/news/${news.items[item + 2].id}`}
+                    to={`/haberler/${news.items[item + 2].id}`}
                     state={{
-                      category: news.items[item + 2].category,
+                      category: 'teknoloji',
                       news: news.items[item + 2],
                     }}
+                    className='row-span-2 w-full h-full bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}

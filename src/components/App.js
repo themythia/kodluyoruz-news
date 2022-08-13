@@ -4,11 +4,9 @@ import InfoContextWrapper from '../contexts/InfoContext';
 
 function App() {
   return (
-    <>
-      <InfoContextWrapper>
-        <NewsRouter />
-      </InfoContextWrapper>
-    </>
+    <InfoContextWrapper>
+      <NewsRouter />
+    </InfoContextWrapper>
   );
 }
 
