@@ -39,6 +39,16 @@ module.exports = {
         '4/3': '4 / 3',
         '40/23': '40 / 23',
       },
+      boxShadow: {
+        '3xl': '0px 6px 8px -5px rgba(0, 0, 0, 0.2)',
+      },
+      width: {
+        '100/3': '32%',
+        130: '130%',
+      },
+      minHeight: {
+        11: '11rem',
+      },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
