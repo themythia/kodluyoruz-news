@@ -22,6 +22,19 @@ body{
     flex-direction: row;
     justify-content: center;
   }
+  .carouselTitle{
+    position: absolute;
+    bottom: 40px;
+    background-color: transparent;
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold;
+    text-align:center;
+    width:100%;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom:15px !important;
+  }
   .lifentvdon{
     display: flex;
     align-items: center;
@@ -45,16 +58,17 @@ body{
   }
   .slickSlider{
     width: 1000px;
-    height:655px; 
+    height:auto; 
     user-select: none;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
     position: relative;
     margin: auto ;
     color:red;
-    background-color: black;
     vertical-align: baseline;
-  
+    padding-bottom:10px;
+    position: relative;
+    text-align: center;
   }
   .listItem{
   justify-content:flex-start;
@@ -333,41 +347,6 @@ body{
   background-color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* .multipleItems{
-    float: left; 
-    width: 333px;
-    height: 279px;
-    margin-right: 20px;
-      margin: auto;
-    margin-top: 22px;
-    margin-left: 175px;
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-    display: block;
-    background-color: gray;
-    flex-wrap: wrap;
-    column-gap: line-size;
-    row-gap: line-size;
-    grid-template-columns: 300px;
-    grid-template-rows: 80px;
-  
-  } */
   .showMore{
     float: left;
     width: 1020px;
@@ -380,17 +359,6 @@ body{
     margin-top: 20px;
   } 
   
-  /* .footerCopyRight{
-    float: left;
-    width: 1000px;
-    height: 34px;
-    position: relative;
-    margin-left: 175px;
-    background-color: #022032;
-    color: #fff;
-    box-sizing: border-box;
-  }
-   */
   .footer{
     font:inherit;
     /* vertical-align: baseline; */

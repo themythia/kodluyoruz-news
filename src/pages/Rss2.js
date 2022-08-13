@@ -82,14 +82,7 @@ const [loadMore2 , setLoadMore2] = useState(62);
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
-      {/* { <Life arr = {newsArray}/> } */}
-
-      {/* {<Health  arr2 = {newsArray2}/>} */}
-      
-      
-      
-  
-      
+     
     </div>
     
     );

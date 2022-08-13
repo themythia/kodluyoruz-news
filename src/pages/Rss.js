@@ -50,6 +50,9 @@ const Rss = () => {
     <div>
       
       <Life arr = {rssArray && rssArray}     />
+      {/* <Health arr2 = {rssArray && rssArray}     /> */}
+
+      
 
     </div>
   )

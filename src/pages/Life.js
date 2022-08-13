@@ -204,7 +204,7 @@ const Life = (arr = {}) => {
         
              
       <div className='newsDivDis'>
-            {/* {arr.arr.map((value, index) => {
+            {arr.arr.map((value, index) => {
             // console.log("value: ",value)
               return <div className='newsDiv' key={index}>
               <a href = {value?.id} target = '_blank' textDecoration='none'>
@@ -216,7 +216,7 @@ const Life = (arr = {}) => {
 
               </div>
           
-            })} */}
+            })}
       </div>  
 
           </div>

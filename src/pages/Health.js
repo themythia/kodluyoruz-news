@@ -1,21 +1,12 @@
 import React , {useState , useEffect}from 'react'
 import "./Health.css"
-
-
+import Carousel from './Carousel';
 
 const Health = (arr2 = {}) => {
       const [dataPull2 , setDataPull2] = useState(null);
-  
-      useEffect(() => {
-        
-      setDataPull2 (arr2) 
-       
+      useEffect(() => {       
+      setDataPull2 (arr2)      
       }, [arr2])
- 
-console.log(arr2)
-  
-
-
   return (
      <>
         <div className='header'>
@@ -23,8 +14,10 @@ console.log(arr2)
         </div>
         <div className='navbar'>Sağlık</div>
         <div className='altNavbar'><div className="altNavbarText">Sağlık Haberleri</div></div>
-        <div className='slickSlider'>Slider Alanı</div>
-        <div className='slider2'>2. slider</div>
+        <div className='slickSlider'>
+        <Carousel carouselItemList = {dataPull2?.arr2}/>
+        </div>
+        {/* <div className='slider2'>2. slider</div> */}
         
         <div className='list'>
               <div className='list1'>
@@ -69,6 +62,8 @@ console.log(arr2)
             </div>
       
       </div>
+        
+        
         <div className='showMorehealt'>Daha Fazla Göster</div>
         <div className='footerCopyRighthealth'>NTV icon copyright</div>
         <div className='footerhealth'>Kurumsal</div>
