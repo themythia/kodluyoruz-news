@@ -39,7 +39,7 @@ React, React Router, TailwindCSS, Vercel
 
 #### Kadir Özsoy
 
-- **Pages Contributed:**
+- **Pages Contributed:** Life, Health
 - https://github.com/kozsoy
 
 #### Yusuf Avcılar
