@@ -45,8 +45,8 @@ const Carousel = () => {
 
   const newMappingData = newDataList?.map(function (value, index) {
     return (
-      <SwiperSlide key={index} className=' relative pt-8'>
-        <div className=' relative h-[550px] w-[1020px]'>
+      <SwiperSlide key={index} className='relative pt-8 flex justify-center'>
+        <div className='relative h-[550px] w-[1020px]'>
           <Link
             to={`/haberler/${detail[index].id}`}
             state={{ category: 'otomobil', news: detail[index] }}

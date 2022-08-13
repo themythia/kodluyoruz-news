@@ -6056,7 +6056,7 @@
     "prelude-ls" "~1.1.2"
     "type-check" "~0.3.2"
 
-"lilconfig@^2.0.3", "lilconfig@^2.0.5":
+"lilconfig@^2.0.3", "lilconfig@^2.0.5", "lilconfig@^2.0.6":
   "integrity" "sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg=="
   "resolved" "https://registry.npmjs.org/lilconfig/-/lilconfig-2.0.6.tgz"
   "version" "2.0.6"
@@ -7632,6 +7632,11 @@
   "resolved" "https://registry.npmjs.org/react-transition-state/-/react-transition-state-1.1.4.tgz"
   "version" "1.1.4"
 
+"react-xml-parser@^1.1.8":
+  "integrity" "sha512-yX9k9LNCRzzNnFWoyo9cWEjtor6n6VD0Uh7z1ww5rIP6h5vdhJKEmowsm9RumEJMRdr7akcT4mMBScpsz573qQ=="
+  "resolved" "https://registry.npmjs.org/react-xml-parser/-/react-xml-parser-1.1.8.tgz"
+  "version" "1.1.8"
+
 "react@*", "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>=16.14.0", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
@@ -8516,10 +8521,10 @@
   "resolved" "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
   "version" "3.2.4"
 
-"tailwindcss@^3.0.2", "tailwindcss@^3.0.7", "tailwindcss@^3.1.6", "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1":
-  "integrity" "sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg=="
-  "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.6.tgz"
-  "version" "3.1.6"
+"tailwindcss@^3.0.2", "tailwindcss@^3.0.7", "tailwindcss@^3.1.7", "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1":
+  "integrity" "sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g=="
+  "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.8.tgz"
+  "version" "3.1.8"
   dependencies:
     "arg" "^5.0.2"
     "chokidar" "^3.5.3"
@@ -8530,7 +8535,7 @@
     "fast-glob" "^3.2.11"
     "glob-parent" "^6.0.2"
     "is-glob" "^4.0.3"
-    "lilconfig" "^2.0.5"
+    "lilconfig" "^2.0.6"
     "normalize-path" "^3.0.0"
     "object-hash" "^3.0.0"
     "picocolors" "^1.0.0"
