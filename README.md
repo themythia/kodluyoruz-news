@@ -15,37 +15,37 @@ React, React Router, TailwindCSS, Vercel
 #### Ahmet Adsay
 
 - **Pages Contributed:** Otomobil
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ahmetadsay)
+- https://github.com/ahmetadsay
 
 #### Can Gönenli
 
 - **Pages Contributed:** Sport, Technology
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cngnnli)
+- https://github.com/cngnnli
 
 #### Emir Al
 
 - **Pages Contributed:** Homepage, Economy, NewsDetail
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/themythia)
+- https://github.com/themythia
 
 #### Enes Yasin Gedik
 
 - **Pages Contributed:** Turkiye, Header, Footer
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Argedik)
+- https://github.com/Argedik
 
 #### Hazal Çevik
 
 - **Pages Contributed:** Magazin
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HazalCevikk)
+- https://github.com/HazalCevikk
 
 #### Kadir Özsoy
 
 - **Pages Contributed:**
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kozsoy)
+- https://github.com/kozsoy
 
 #### Yusuf Avcılar
 
 - **Pages Contributed:** Tourism, Art
-  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yusufavcilar)
+- https://github.com/yusufavcilar
 
 ## Environment Variables
 
