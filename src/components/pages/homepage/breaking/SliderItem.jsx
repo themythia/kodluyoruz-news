@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const SliderItem = ({ news }) => {
   return (
     <Link
-      to={`/news/${news?.id}}`}
+      to={`/haberler/${news?.id}}`}
       state={{
         category: news?.category,
         news: news,

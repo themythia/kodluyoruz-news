@@ -3,29 +3,17 @@ import { useNavigate } from 'react-router-dom';
 const Breadcrumb = ({ type, newsTitle }) => {
   const navigate = useNavigate();
   const categories = {
-    saglik: {
-      path: '/saglik',
-      str: 'Sağlık Haberleri',
-    },
-    yasam: {
-      path: '/yasam',
-      str: 'Yaşam Haberleri',
-    },
-    web: {
-      path: '/web',
-      str: 'Web Haberleri',
-    },
-    tarih: {
-      path: '/tarih',
-      str: 'Tarih Haberleri',
-    },
     ekonomi: {
-      path: '/economy',
+      path: '/ekonomi',
       str: 'Ekonomi Haberleri',
     },
     ntvpara: {
-      path: '/economy',
+      path: '/ekonomi',
       str: 'Ekonomi Haberleri',
+    },
+    spor: {
+      path: '/spor',
+      str: 'Spor Haberleri',
     },
     sporskor: {
       path: '/spor',
@@ -35,14 +23,6 @@ const Breadcrumb = ({ type, newsTitle }) => {
       path: '/teknoloji',
       str: 'Teknoloji Haberleri',
     },
-    otomobil: {
-      path: '/otomobil',
-      str: 'Otomobil Haberleri',
-    },
-    egitim: {
-      path: '/egitim',
-      str: 'Eğitim Haberleri',
-    },
     sanat: {
       path: '/sanat',
       str: 'Sanat Haberleri',
@@ -51,13 +31,9 @@ const Breadcrumb = ({ type, newsTitle }) => {
       path: '/turizm',
       str: 'Turizm Haberleri',
     },
-    turkiye: {
-      path: '/turkiye',
-      str: 'Türkiye Haberleri',
-    },
-    dunya: {
-      path: '/dunya',
-      str: 'Dunya Haberleri',
+    magazin: {
+      path: '/magazin',
+      str: 'Magazin Haberleri',
     },
     'n-life': {
       path: '/magazin',
@@ -74,10 +50,12 @@ const Breadcrumb = ({ type, newsTitle }) => {
           >
             Haberler
           </span>
-          <span
-            className='ml-1 text-[#909090] hover:text-textDark duration-200 cursor-pointer'
-            onClick={() => navigate(categories?.[type]?.path || '/')}
-          >{`/ ${categories?.[type]?.str || `${type} Haberleri`}`}</span>
+          {categories.hasOwnProperty(type) && (
+            <span
+              className='ml-1 text-[#909090] hover:text-textDark duration-200 cursor-pointer'
+              onClick={() => navigate(categories?.[type]?.path || '/')}
+            >{`/ ${categories?.[type]?.str || `${type} Haberleri`}`}</span>
+          )}
           <span className='ml-1 text-textDark cursor-pointer'>{`/ ${newsTitle}`}</span>
         </p>
       </div>

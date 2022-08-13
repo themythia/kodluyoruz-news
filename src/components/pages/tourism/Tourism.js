@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import TourismCard from './TourismCard';
 import { parseFeed } from 'htmlparser2';
 import Carousel from './Carousel';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 
 const Tourism = () => {
   const [rssText, setRssText] = useState('');
   const [news, setNews] = useState([]);
   const [slides, setSlides] = useState([]);
+  // state to handle news detail link
+  const [newsDetail, setNewsDetail] = useState([]);
 
   const fetchNews = async () => {
     const response = await fetch(
@@ -17,6 +20,7 @@ const Tourism = () => {
     const data = await response.text();
     const parsedData = await parseFeed(data);
 
+    setNewsDetail(formatRSSFeed(parsedData).items);
     setRssText(parsedData);
   };
 
@@ -48,11 +52,17 @@ const Tourism = () => {
         <Link className='text-textDark' to='/'>
           Turizm Haberleri
         </Link>
-        <Carousel className='mt-4' slides={slides} />
+        <Carousel className='mt-4' slides={slides} detail={newsDetail} />
       </div>
       <div className='md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-3'>
         {news.length > 0 ? (
-          news.map((item, index) => <TourismCard key={index} content={item} />)
+          news.map((item, index) => (
+            <TourismCard
+              key={index}
+              content={item}
+              detail={newsDetail[index]}
+            />
+          ))
         ) : (
           <p className='font-bold'> Yükleniyor...</p>
         )}

@@ -13,7 +13,7 @@ const Breadcrumb = () => {
         </p>
         <p
           className='ml-1 text-textDark cursor-pointer'
-          onClick={() => navigate('/economy')}
+          onClick={() => navigate('/ekonomi')}
         >
           / Ekonomi Haberleri
         </p>
