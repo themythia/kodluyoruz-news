@@ -45,7 +45,7 @@ const Carousel = () => {
 
   const newMappingData = newDataList?.map(function (value, index) {
     return (
-      <SwiperSlide key={index} className='relative pt-8 flex justify-center'>
+      <SwiperSlide key={index} className='relative pt-8'>
         <div className='relative h-[550px] w-[1020px]'>
           <Link
             to={`/haberler/${detail[index].id}`}
@@ -54,7 +54,7 @@ const Carousel = () => {
             <img
               src={value.imageData}
               alt={value.titleData}
-              className='w-full h-ful'
+              className='w-full h-full'
             />
           </Link>
         </div>
@@ -69,7 +69,7 @@ const Carousel = () => {
     <div>
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={0}
         loop={true}
         pagination={{
           clickable: true,
