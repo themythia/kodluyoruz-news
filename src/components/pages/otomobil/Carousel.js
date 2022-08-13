@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect, useState } from 'react';
-import '../../index.css';
+import '../../../index.css';
 import dataList from './DataList';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/bundle';
 import { Pagination, Navigation } from 'swiper';
 import './style.css';
-import formatRSSFeed from '../../utils/api/formatRSSFeed';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import { Link } from 'react-router-dom';
 
 const Carousel = () => {

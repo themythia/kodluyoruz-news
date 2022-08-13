@@ -13,7 +13,7 @@ import NewsDetail from './pages/newsDetail/NewsDetail';
 import Footer from './shared/Footer';
 import Header from './shared/Header/Header';
 import Turkey from './pages/turkey/Turkey';
-import Otomobil from './pages/Otomobil';
+import Otomobil from './pages/otomobil/Otomobil';
 
 const NewsRouter = () => {
   const socialLinks = {

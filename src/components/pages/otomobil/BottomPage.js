@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../../index.css';
-import formatRSSFeed from '../../utils/api/formatRSSFeed';
+import '../../../index.css';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import dataList from './DataList';
 
 const BottomPage = () => {
