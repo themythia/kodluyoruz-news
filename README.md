@@ -1,17 +1,91 @@
-# kodluyoruz-news
+# Kodluyoruz News
 
-### project structure
+Kodluyoruz News is a frontend clone of a Turkish news TV channel NTV's [website](https://ntv.com.tr). Made with a group of 7 developers for [Kodluyoruz](https://www.kodluyoruz.org/) K137. Mersin Frontend Web Bootcamp Graduation Project.
 
--src
+<!-- Vercel deployment'i yapana kadar gecici link -->
 
-- components
-  - shared
-  - pages
-    - homepage
-    - teknoloji
-    - gundem
-- utils
-  - tests
-  - api / dao
-- contexts
-- assets
+**Live Demo:** https://temp.vercel.app
+
+## Tech Stack
+
+React, React Router, TailwindCSS, Vercel
+
+## Contributors
+
+#### Ahmet Adsay
+
+- **Pages Contributed:** Otomobil
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ahmetadsay)
+
+#### Can Gönenli
+
+- **Pages Contributed:** Sport, Technology
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cngnnli)
+
+#### Emir Al
+
+- **Pages Contributed:** Homepage, Economy, NewsDetail
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/themythia)
+
+#### Enes Yasin Gedik
+
+- **Pages Contributed:** Turkiye, Header, Footer
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Argedik)
+
+#### Hazal Çevik
+
+- **Pages Contributed:** Magazin
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HazalCevikk)
+
+#### Kadir Özsoy
+
+- **Pages Contributed:**
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kozsoy)
+
+#### Yusuf Avcılar
+
+- **Pages Contributed:** Tourism, Art
+  [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yusufavcilar)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+| Variable | Description |
+| ----------------- | ------------------------------------------------------------------ |
+| `REACT_APP_API_KEY` | To use https://currencyscoop.com/ free currency API |
+
+## Run Locally
+
+- Clone the project
+
+```
+  git clone https://github.com/themythia/kodluyoruz-news.git
+```
+
+- Go to the project directory
+
+```
+  cd kodluyoruz-news
+```
+
+- Install dependencies
+
+```
+  npm install
+```
+
+- Create `.env` file and enter required environment variables
+
+- Start the server
+
+```
+  npm run start
+```
+
+## Running Tests
+
+To run tests, run the following command
+
+```
+  npm run test
+```
