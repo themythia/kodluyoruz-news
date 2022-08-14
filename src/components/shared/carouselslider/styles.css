@@ -1,4 +1,4 @@
-.swiper {
+.turkey .swiper {
   width: 100%;
   height: 100%;
   padding-top: 50px;
@@ -10,7 +10,7 @@
   margin-bottom: 10px;
 }
 
-.swiper-slide {
+.turkey .swiper-slide {
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -34,7 +34,7 @@
   justify-content: start;
 }
 
-.swiper-slide img {
+.turkey .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -52,13 +52,13 @@
   background-position: center;
 }
 
-.swiper-wrapper {
+.turkey .swiper-wrapper {
   height: auto;
   margin-right: 100px;
   margin-bottom: 5px;
 }
 
-.swiper-pagination-bullet {
+.turkey .swiper-pagination-bullet {
   width: 30px;
   height: 30px;
   text-align: center;
@@ -69,7 +69,7 @@
   background: white;
 }
 
-.swiper-pagination-bullet-active {
+.turkey .swiper-pagination-bullet-active {
   color: #fff;
   background: #007aff;
 }

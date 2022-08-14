@@ -1,0 +1,173 @@
+.health .slickSlider {
+  width: 1000px;
+  height: 648px;
+  user-select: none;
+  /* -webkit-tap-highlight-color: transparent; */
+  position: relative;
+  margin: auto;
+  color: red;
+}
+.health .slider2 {
+  font: inherit;
+  vertical-align: baseline;
+  width: 1000px;
+  height: 256px;
+  background-color: #022032;
+  margin: auto;
+  color: #fff;
+}
+
+.list {
+  width: 1000px;
+  box-sizing: border-box;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.list1 {
+  position: relative;
+  text-align: center;
+  width: 98%;
+  /* margin-left: 175px;    */
+  margin: 10px 10px 10px 0px;
+}
+.cardListTitle {
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  background-color: transparent;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+.list1 div img {
+  width: 100%;
+}
+.list2 {
+  width: 98%;
+  position: relative;
+  text-align: center;
+  margin: 10px 0px 10px 10px;
+}
+.list2 div img {
+  width: 100%;
+}
+.multiple {
+  width: 1020px;
+  height: auto;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.multipleIn {
+  justify-content: flex-start;
+  height: auto;
+  flex: auto;
+  flex-direction: row;
+  gap: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  float: left;
+}
+
+.multipleItems {
+  margin-right: 0% !important;
+  flex: inherit;
+  width: 320px;
+  height: 306px;
+  float: left;
+  margin-bottom: 1.42857rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: teal;
+}
+.newsDivhealth {
+  display: flex;
+  width: 31.5%;
+  float: left;
+  margin: 0.5em;
+  min-height: 340px;
+}
+.newsDivhealth div {
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+}
+.newstitlehealth {
+  display: flex;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  color: #022032;
+  flex-direction: column;
+}
+.showMorehealt {
+  display: inline-block;
+  width: 1000px;
+  height: 58px;
+  position: relative;
+  /* display: block; */
+  box-sizing: border-box;
+  background-color: rgb(157, 184, 175);
+  color: black;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.footerCopyRighthealth {
+  display: inline-block;
+  width: 100%;
+  height: 34px;
+  position: relative;
+  background-color: #022032;
+  color: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #3b5664;
+}
+
+.footerhealth {
+  font: inherit;
+  /* vertical-align: baseline; */
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 342px;
+  background-color: #022032;
+  margin-top: 0.5px;
+  /* justify-content: space-between; */
+  color: #fff;
+}
+
+.footerIconshealth {
+  width: 100%;
+  height: 100px;
+  float: left;
+  background-color: #022032;
+  color: #fff;
+  border-top: 1px solid #3b5664;
+}
