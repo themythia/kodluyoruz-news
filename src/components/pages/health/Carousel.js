@@ -1,12 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "../App.css";
-import "swiper/css/autoplay";
-import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import { useEffect, useState } from 'react';
 
 const Carousel = (props) => {
   const [carouselItems, setCarouselItems] = useState([]);
@@ -22,19 +21,19 @@ const Carousel = (props) => {
       setTest(
         carouselItems?.map(function (each, index) {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div>
                 <img
-                  className="img"
-                  src={each?.["description"]?.substring(
+                  className='img'
+                  src={each?.['description']?.substring(
                     10,
-                    each?.["description"]?.indexOf(" ", 10) - 1
+                    each?.['description']?.indexOf(' ', 10) - 1
                   )}
-                  alt=""
+                  alt=''
                   width={1000}
-                  height={"100%"}
+                  height={'100%'}
                 />
-                <div className="carouselTitle">{each?.["title"]}</div>
+                <div className='carouselTitle'>{each?.['title']}</div>
               </div>
             </SwiperSlide>
           );

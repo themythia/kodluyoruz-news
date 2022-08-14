@@ -1,22 +1,15 @@
-
 import React from 'react';
-import Health from './pages/Health';
-import Life from './pages/Life';
-import Rss from './pages/Rss';
-import Rss2 from './pages/Rss2'
-
-import './App.css';
-
-import Carousel from './pages/Carousel';
+import Health from './components/pages/health/Health';
+import Life from './components/pages/life/Life';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">     
-      { <Rss2 /> }
-    </div>
+    <Routes>
+      <Route path='/hayat' element={<Life />} />
+      <Route path='/saglik' element={<Health />} />
+    </Routes>
   );
 }
 
 export default App;
- 
-  
