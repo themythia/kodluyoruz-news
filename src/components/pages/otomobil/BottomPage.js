@@ -24,20 +24,14 @@ const BottomPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log('test');
-
     if (Object.keys(itemList).length > 0) {
-      console.log('test123123');
       let newArray = [];
       for (let i = 0; i < showMore; i++) {
         newArray.push(itemList[i]);
       }
       setNewDataList(newArray);
     }
-    console.log('test');
   }, [showMore, itemList]);
-
-  console.log(newDataList);
 
   const newList = newDataList?.map(function (value, index) {
     return (

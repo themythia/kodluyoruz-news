@@ -10,8 +10,6 @@ const Turkey = () => {
   // state to handle news details
   const [details, setDetails] = useState([]);
 
-  console.log('details', details);
-
   useEffect(() => {
     getPosts('turkiye')?.then((data) => {
       setGetData(data);
@@ -29,7 +27,6 @@ const Turkey = () => {
   function goDown() {
     downBottom.current?.scrollIntoView();
   }
-  console.log('newsArray,', newsArray);
 
   function goUp() {
     upTop.current?.scrollIntoView();

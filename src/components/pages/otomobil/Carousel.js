@@ -17,12 +17,8 @@ const Carousel = () => {
   // state to handle news details
   const [detail, setDetail] = useState([]);
 
-  console.log('itemList', itemList);
-  console.log('detail', detail);
-
   useEffect(() => {
     dataList().then((api) => {
-      console.log('api', api);
       setDetail(formatRSSFeed({ items: api }).items);
       let textDatas = api.map((item) => ({
         imageData: item.description.split('<img src="')[1].split('?width')[0],
