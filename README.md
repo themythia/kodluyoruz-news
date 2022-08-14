@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Kodluyoruz News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kodluyoruz News is a frontend clone of a Turkish news TV channel NTV's [website](https://ntv.com.tr). Made with a group of 7 developers for [Kodluyoruz](https://www.kodluyoruz.org/) K137. Mersin Frontend Web Bootcamp Graduation Project.
 
-## Available Scripts
+<!-- Vercel deployment'i yapana kadar gecici link -->
 
-In the project directory, you can run:
+**Live Demo:** https://temp.vercel.app
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React, React Router, TailwindCSS, Vercel
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contributors
 
-### `npm test`
+#### Ahmet Adsay
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Pages Contributed:** Otomobil
+- https://github.com/ahmetadsay
 
-### `npm run build`
+#### Can Gönenli
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Pages Contributed:** Sport, Technology
+- https://github.com/cngnnli
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Emir Al
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Pages Contributed:** Homepage, Economy, NewsDetail
+- https://github.com/themythia
 
-### `npm run eject`
+#### Enes Yasin Gedik
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Pages Contributed:** Turkiye, Header, Footer
+- https://github.com/Argedik
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Hazal Çevik
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Pages Contributed:** Magazin
+- https://github.com/HazalCevikk
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Kadir Özsoy
 
-## Learn More
+- **Pages Contributed:** Life, Health
+- https://github.com/kozsoy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Yusuf Avcılar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Pages Contributed:** Tourism, Art
+- https://github.com/yusufavcilar
 
-### Code Splitting
+## Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run this project, you will need to add the following environment variables to your .env file
+| Variable | Description |
+| ----------------- | ------------------------------------------------------------------ |
+| `REACT_APP_API_KEY` | To use https://currencyscoop.com/ free currency API |
 
-### Analyzing the Bundle Size
+## Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Clone the project
 
-### Making a Progressive Web App
+```
+  git clone https://github.com/themythia/kodluyoruz-news.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Go to the project directory
 
-### Advanced Configuration
+```
+  cd kodluyoruz-news
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Install dependencies
 
-### Deployment
+```
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Create `.env` file and enter required environment variables
 
-### `npm run build` fails to minify
+- Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+  npm run start
+```
+
+## Running Tests
+
+To run tests, run the following command
+
+```
+  npm run test
+```
