@@ -4,7 +4,7 @@ Kodluyoruz News is a frontend clone of a Turkish news TV channel NTV's [website]
 
 <!-- Vercel deployment'i yapana kadar gecici link -->
 
-**Live Demo:** kodluyoruz-news.vercel.app
+**Live Demo:** https://kodluyoruz-news.vercel.app
 
 ## Tech Stack
 
