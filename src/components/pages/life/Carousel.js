@@ -6,10 +6,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { useEffect, useState } from 'react';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { Link } from 'react-router-dom';
 
 const Carousel = (props) => {
   const [carouselItems, setCarouselItems] = useState([]);
   const [test, setTest] = useState();
+  console.log('carouselItems', carouselItems);
+  console.log('details', props.details);
 
   useEffect(() => {
     if (props?.carouselItemList?.length > 0) {
@@ -22,7 +26,13 @@ const Carousel = (props) => {
         carouselItems?.map(function (each, index) {
           return (
             <SwiperSlide key={index}>
-              <div>
+              <Link
+                to={`/haberler/${props.details?.[index]?.id}`}
+                state={{
+                  category: props.details?.[index]?.category,
+                  news: props.details?.[index],
+                }}
+              >
                 <img
                   className='img'
                   src={each?.['description']?.substring(
@@ -34,7 +44,7 @@ const Carousel = (props) => {
                   height={'100%'}
                 />
                 <div className='carouselTitle'>{each?.['title']}</div>
-              </div>
+              </Link>
             </SwiperSlide>
           );
         })

@@ -3,11 +3,15 @@ import './Health.css';
 import Carousel from './Carousel';
 import { parseFeed } from 'htmlparser2';
 import axios from 'axios';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { useNavigate } from 'react-router-dom';
 
 const Health = (arr2 = {}) => {
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(62);
   const [dataPull2, setDataPull2] = useState(null);
+  const [details, setDetails] = useState([]);
+  const navigate = useNavigate();
 
   async function request() {
     const dataUrl = await axios.get(
@@ -18,7 +22,11 @@ const Health = (arr2 = {}) => {
   }
 
   useEffect(() => {
-    request()?.then((data) => setGetData(data));
+    request()?.then((data) => {
+      setDetails(formatRSSFeed({ items: data }).items);
+
+      setGetData(data);
+    });
   }, []);
 
   useEffect(() => {
@@ -32,13 +40,18 @@ const Health = (arr2 = {}) => {
   return (
     <div className='health'>
       <div className='slickSlider'>
-        <Carousel carouselItemList={dataPull2?.arr2} />
+        <Carousel carouselItemList={dataPull2?.arr2} details={details} />
       </div>
-      {/* <div className='slider2'>2. slider</div> */}
 
       <div className='list'>
         <div className='list1'>
-          <a href={dataPull2?.arr2?.[0]?.id} target='_blank'>
+          <div
+            onClick={() =>
+              navigate(`/haberler/${details?.[0]?.id}`, {
+                state: { category: details?.[0]?.category, news: details?.[0] },
+              })
+            }
+          >
             <img
               src={dataPull2?.arr2?.[0]?.description.substring(
                 10,
@@ -46,10 +59,16 @@ const Health = (arr2 = {}) => {
               )}
             ></img>
             <div className='cardListTitle'>{dataPull2?.arr2?.[0]?.title}</div>
-          </a>
+          </div>
         </div>
         <div className='list2'>
-          <a href={dataPull2?.arr2?.[1]?.id} target='_blank'>
+          <div
+            onClick={() =>
+              navigate(`/haberler/${details?.[1]?.id}`, {
+                state: { category: details?.[1]?.category, news: details?.[1] },
+              })
+            }
+          >
             <img
               src={dataPull2?.arr2?.[1]?.description.substring(
                 10,
@@ -57,7 +76,7 @@ const Health = (arr2 = {}) => {
               )}
             ></img>
             <div className='cardListTitle'>{dataPull2?.arr2?.[1]?.title}</div>
-          </a>
+          </div>
         </div>
       </div>
       <div className='multiple'>
@@ -66,7 +85,16 @@ const Health = (arr2 = {}) => {
             {dataPull2?.arr2?.map((value, index) => {
               return (
                 <div className='newsDivhealth' key={index}>
-                  <a href={value?.id} target='_blank' textDecoration='none'>
+                  <div
+                    onClick={() =>
+                      navigate(`/haberler/${details?.[index]?.id}`, {
+                        state: {
+                          category: details?.[index]?.category,
+                          news: details?.[index],
+                        },
+                      })
+                    }
+                  >
                     <img
                       src={value?.description.substring(
                         10,
@@ -77,7 +105,7 @@ const Health = (arr2 = {}) => {
                     <div className='newstitlehealth'>
                       {value?.title.substring(0, 80) + '...'}
                     </div>
-                  </a>
+                  </div>
                 </div>
               );
             })}
