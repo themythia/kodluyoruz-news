@@ -19,7 +19,6 @@ const Life = (arr = {}) => {
     const array = parseFeed(dataUrl.data).items;
     return array;
   }
-  console.log('details:', details);
 
   useEffect(() => {
     request()?.then((data) => {

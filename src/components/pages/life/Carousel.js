@@ -12,8 +12,6 @@ import { Link } from 'react-router-dom';
 const Carousel = (props) => {
   const [carouselItems, setCarouselItems] = useState([]);
   const [test, setTest] = useState();
-  console.log('carouselItems', carouselItems);
-  console.log('details', props.details);
 
   useEffect(() => {
     if (props?.carouselItemList?.length > 0) {
