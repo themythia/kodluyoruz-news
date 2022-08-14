@@ -1,4 +1,4 @@
-.slickSlider {
+.health .slickSlider {
   width: 1000px;
   height: 648px;
   user-select: none;
@@ -7,7 +7,7 @@
   margin: auto;
   color: red;
 }
-.slider2 {
+.health .slider2 {
   font: inherit;
   vertical-align: baseline;
   width: 1000px;

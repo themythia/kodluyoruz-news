@@ -30,7 +30,7 @@ const Life = (arr = {}) => {
   }, [getData, loadMore]);
 
   return (
-    <>
+    <div className='life'>
       <div className='slickSlider'>
         <Carousel carouselItemList={dataPull?.arr} />
       </div>
@@ -337,7 +337,7 @@ const Life = (arr = {}) => {
 
       <div className='showMore'>Daha Fazla Göster</div>
       <div className='footerIcons '>Ntv'yi Keşfet</div>
-    </>
+    </div>
   );
 };
 

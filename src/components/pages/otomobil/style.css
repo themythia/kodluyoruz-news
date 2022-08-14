@@ -15,14 +15,14 @@ body {
   padding: 0;
 }
 
-.swiper {
+.otomobil .swiper {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: start;
 }
 
-.swiper-slide {
+.otomobil .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -42,14 +42,14 @@ body {
   align-items: center;
 }
 
-.swiper-slide img {
+.otomobil .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.swiper-pagination-bullet {
+.otomobil .swiper-pagination-bullet {
   width: 40px;
   height: 40px;
   text-align: center;
@@ -60,7 +60,7 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.swiper-pagination-bullet-active {
+.otomobil .swiper-pagination-bullet-active {
   color: #fff;
   background: #007aff;
 }

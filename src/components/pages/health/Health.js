@@ -30,7 +30,7 @@ const Health = (arr2 = {}) => {
   }, [getData, loadMore]);
 
   return (
-    <>
+    <div className='health'>
       <div className='slickSlider'>
         <Carousel carouselItemList={dataPull2?.arr2} />
       </div>
@@ -89,7 +89,7 @@ const Health = (arr2 = {}) => {
       <div className='footerCopyRighthealth'>NTV icon copyright</div>
       <div className='footerhealth'>Kurumsal</div>
       <div className='footerIconshealth'>Ntv'yi Keşfet</div>
-    </>
+    </div>
   );
 };
 

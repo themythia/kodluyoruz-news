@@ -1,4 +1,6 @@
-#app { height: 100% }
+#app {
+  height: 100%;
+}
 html,
 body {
   position: relative;
@@ -14,12 +16,12 @@ body {
   padding: 0;
 }
 
-.swiper {
+.life .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
+.life .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -38,8 +40,7 @@ body {
   -webkit-align-items: center;
   align-items: center;
 }
-
-.swiper-slide img {
+.life .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
