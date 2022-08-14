@@ -13,6 +13,7 @@ import NewsDetail from './pages/newsDetail/NewsDetail';
 import Footer from './shared/Footer';
 import Header from './shared/Header/Header';
 import Turkey from './pages/turkey/Turkey';
+import Otomobil from './pages/otomobil/Otomobil';
 
 const NewsRouter = () => {
   const socialLinks = {
@@ -36,7 +37,8 @@ const NewsRouter = () => {
         <Route path='/turkiye' element={<Turkey />} />
         <Route path='/saglik' element={<Health />} />
         <Route path='/turizm' element={<Tourism />} />
-        <Route path='/teknoloji' element={<Technology />} />
+        <Route path='/teknoloji' element={<Technology />} />{' '}
+        <Route path='/otomobil' element={<Otomobil />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer socialLinks={socialLinks} />
