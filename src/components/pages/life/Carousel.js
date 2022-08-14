@@ -33,10 +33,7 @@ const Carousel = (props) => {
               >
                 <img
                   className='img'
-                  src={each?.['description']?.substring(
-                    10,
-                    each?.['description']?.indexOf(' ', 10) - 1
-                  )}
+                  src={props.details?.[index]?.media}
                   alt=''
                   width={1000}
                   height={'100%'}
