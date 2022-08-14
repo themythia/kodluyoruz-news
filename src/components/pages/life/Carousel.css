@@ -9,20 +9,19 @@ body {
 
 body {
   background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
 }
 
-.otomobil .swiper {
+.life .swiper {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: start;
 }
 
-.otomobil .swiper-slide {
+.life .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -41,26 +40,9 @@ body {
   -webkit-align-items: center;
   align-items: center;
 }
-
-.otomobil .swiper-slide img {
+.life .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.otomobil .swiper-pagination-bullet {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.otomobil .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #007aff;
 }

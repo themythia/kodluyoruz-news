@@ -69,7 +69,7 @@ const Turkey = () => {
     );
   });
   return (
-    <>
+    <div className='turkey'>
       <div className='font-roboto common-container bg-bg' ref={upTop}>
         <div className='category-container mx-3 '>
           <svg
@@ -126,7 +126,7 @@ const Turkey = () => {
           />
         </svg>
       </footer>
-    </>
+    </div>
   );
 };
 

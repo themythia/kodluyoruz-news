@@ -5,7 +5,7 @@ import Head from './Head';
 
 const Otomobil = () => {
   return (
-    <div>
+    <div className='otomobil'>
       <Head />
       <Carousel />
       <BottomPage />
