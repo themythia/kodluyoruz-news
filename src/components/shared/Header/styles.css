@@ -1,0 +1,20 @@
+.szh-menu-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* .szh-menu-container .szh-menu {
+  left: 0px !important;
+} */
+
+.szh-menu {
+  background: #021521 !important;
+  color: white !important;
+}
+
+.szh-menu__item--hover {
+  color: #021521 !important;
+}
+
+.szh-menu__item {
+}

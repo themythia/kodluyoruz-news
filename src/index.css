@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg;
+  }
+}
+
+@layer components {
+  /*Header ilk kısım  */
+  /* Arka plan rengi, main position, margin ve padding 0, dikeyde baseline, block halinde görünsün   */
+  .header {
+    @apply font-roboto bg-textDark relative box-border m-0 p-0 border-0 block;
+  }
+  /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
+  .header .container {
+    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-[1000px] border-0 align-baseline flex items-center justify-center;
+  }
+  /*Yukarıdakilerden tek farkı max genişliğin 1024 olması */
+  .header .container .content {
+    @apply bg-textDark relative box-border w-full my-0 mx-auto py-2 border-0 align-baseline flex items-center justify-between;
+  }
+
+  .header-weather {
+    @apply relative box-border m-0 p-0 border-0  text-white flex items-center justify-center;
+  }
+
+  /*Header 2. kısım  */
+  .header-category {
+    @apply font-roboto bg-white  relative box-border m-0 p-0 border-0 block shadow-3xl;
+  }
+  .header-category .container {
+    @apply bg-white relative box-border mx-auto my-0 p-0 w-full max-w-[1000px] border-0 align-baseline flex justify-center;
+  }
+  .header-category .container .content {
+    @apply bg-white relative flex items-center  w-full;
+  }
+
+  .header-category .container .content .content-list {
+    @apply flex py-3 px-6  list-none box-border m-0 w-full justify-evenly;
+  }
+  .header-category .container .content .content-list .content-list-items {
+    @apply shrink-0 relative box-border font-semibold flex justify-between items-center;
+  }
+
+  /*Header 3. kısım  */
+  .header-sub-category {
+    @apply font-roboto !bg-breakingRed relative w-full box-border m-0 p-0 border-0 block;
+  }
+  .header-sub-category .container {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 block;
+  }
+  .header-sub-category .container .content {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 flex items-center;
+  }
+  .header-sub-category .container .content h4 {
+    @apply text-white font-black leading-10 text-16-19;
+  }
+
+  /*Header 4. kısım  */
+  .page-title-info {
+    @apply font-roboto mx-auto max-w-screen-lg text-infoText text-14-16 m-6 items-center justify-start flex flex-row font-bold;
+  }
+
+  .page-title-info .title-item-active {
+    @apply text-navBg  before:px-1 before:content-["/"] font-bold;
+  }
+  /* Orta Bölüm */
+  #main-content .container {
+    @apply relative max-w-screen-lg mx-auto my-0 p-0 border-0 block;
+  }
+
+  /*Footer 1. kısım*/
+  .footer-about {
+    @apply font-roboto bg-textDark relative box-border m-0 py-4 border-b border-gray-500 border-solid block;
+  }
+  .footer-about .container {
+    @apply bg-textDark relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline flex items-center justify-start;
+  }
+  .footer-about .container .content {
+    @apply text-infoText font-black;
+  }
+  .footer-about .container .content h4 {
+    @apply text-infoText font-black text-16-19 my-4;
+  }
+  .footer-about .container .content ul li {
+    @apply text-14-22 font-normal my-1;
+  }
+  .social-info {
+    @apply bg-textDark relative box-border m-0 py-4 border-b border-gray-300 border-solid block;
+  }
+  /*Footer 2. kısım*/
+  .social-info .container {
+    @apply bg-textDark  relative box-border mx-auto my-0 p-0 max-w-screen-lg border-0 align-baseline;
+  }
+  .social-info .container .content ul {
+    @apply text-infoText font-roboto text-16-19 font-black flex  items-center;
+  }
+  .social-info .container .content ul li {
+    @apply ml-4;
+  }
+  /* Carousel stylings for react-slick */
+  .home__carousel {
+    @apply w-full h-12 md:h-[70px] px-[15px] mb-2.5 md:px-0 pb-[7px] md:pb-0 m-0 list-none text-center bg-carouselMobileBg md:bg-white flex flex-row items-center justify-center shadow-[0_1px_0_0_rgb(0_0_0_/_15%)];
+  }
+
+  .home__carousel li,
+  .econ__carousel li {
+    @apply relative flex flex-row items-center justify-center w-[9px] md:w-[calc((100%-45px)/20)] md:max-w-[45px] h-full md:aspect-square md:h-auto mr-[5px] p-0 cursor-pointer;
+  }
+
+  .home__carousel li:last-of-type,
+  .econ__carousel li:last-of-type {
+    @apply mr-0;
+  }
+
+  .home__carousel li button,
+  .econ__carousel li button {
+    @apply text-[0px] md:text-18-28 lg:text-20-22 md:font-bold leading-[0px] block w-[9px] md:w-full md:max-w-[45px] h-[9px] md:h-full rounded-full bg-white/60 md:bg-white md:text-textDark cursor-pointer border-0 md:border-2 md:border-carouselBorder outline-none;
+  }
+  .home__carousel li.slick-active button {
+    @apply bg-white md:bg-textRed md:text-white duration-200;
+  }
+
+  .econ__carousel {
+    @apply w-full h-12 md:h-[70px] px-[15px] mb-2.5 md:px-0 pb-[7px] md:pb-0 m-0 list-none text-center bg-economy md:bg-white flex flex-row items-center justify-center shadow-[0_1px_0_0_rgb(0_0_0_/_15%)];
+  }
+
+  .econ__carousel li.slick-active button {
+    @apply bg-white md:bg-economy md:text-white duration-200;
+  }
+  .news-detail__innerContainer {
+    @apply text-14-22 md:text-base lg:text-18-28 font-normal;
+  }
+  .news-detail__innerContainer p {
+    @apply py-2 lg:py-2.5;
+  }
+  .news-detail__innerContainer strong {
+    @apply font-bold py-2 lg:py-2.5;
+  }
+  .news-detail__innerContainer img {
+    @apply py-2 lg:my-2.5;
+  }
+}
+
+.slick-list {
+  padding: 0 !important;
+}
