@@ -113,7 +113,7 @@ const Life = (arr = {}) => {
         </div>
       </div>
 
-      <div className='content'>
+      <div className='lifecontent'>
         <div className='contentAll'>
           <a href={dataPull?.arr?.[5]?.id} target='_blank' rel='noreferrer'>
             <img
