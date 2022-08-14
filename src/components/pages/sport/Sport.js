@@ -319,7 +319,7 @@ function Sport() {
             <div>Loading...</div>
           )}
         </div>
-        <div className='grid grid-rows-3 gap-y-2 col-span-3 ml-2 mb-2  md:col-span-1 row-span-1 sm:col-span-2 row-span-2'>
+        <div className='grid grid-rows-3 gap-y-2 col-span-3 ml-2 mb-2  md:col-span-1 row-span-1 sm:col-span-2'>
           {txt[0] ? (
             <>
               {order2.map((item, index) => (
