@@ -41,7 +41,7 @@
   color: white;
   font-weight: bold;
 }
-.list1 a img {
+.list1 div img {
   width: 100%;
 }
 .list2 {
@@ -50,7 +50,7 @@
   text-align: center;
   margin: 10px 0px 10px 10px;
 }
-.list2 a img {
+.list2 div img {
   width: 100%;
 }
 .multiple {
@@ -111,7 +111,7 @@
   margin: 0.5em;
   min-height: 340px;
 }
-.newsDivhealth a {
+.newsDivhealth div {
   text-decoration: none;
   color: #000;
   background-color: #fff;

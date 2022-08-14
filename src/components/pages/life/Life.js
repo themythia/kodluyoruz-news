@@ -1,13 +1,16 @@
 import axios from 'axios';
 import { parseFeed } from 'htmlparser2';
 import React, { useState, useEffect } from 'react';
+import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import Carousel from './Carousel';
 import './Life.css';
+import { Link } from 'react-router-dom';
 
 const Life = (arr = {}) => {
   const [dataPull, setDataPull] = useState(null);
   const [getData, setGetData] = useState({});
   const [loadMore, setLoadMore] = useState(30);
+  const [details, setDetails] = useState([]);
 
   async function request() {
     const dataUrl = await axios.get(
@@ -16,9 +19,13 @@ const Life = (arr = {}) => {
     const array = parseFeed(dataUrl.data).items;
     return array;
   }
+  console.log('details:', details);
 
   useEffect(() => {
-    request()?.then((data) => setGetData(data));
+    request()?.then((data) => {
+      setDetails(formatRSSFeed({ items: data }).items);
+      setGetData(data);
+    });
   }, []);
 
   useEffect(() => {
@@ -32,11 +39,14 @@ const Life = (arr = {}) => {
   return (
     <div className='life'>
       <div className='slickSlider'>
-        <Carousel carouselItemList={dataPull?.arr} />
+        <Carousel carouselItemList={dataPull?.arr} details={details} />
       </div>
       <div className='listItem'>
         <div className='listItem2'>
-          <a href={dataPull?.arr?.[0]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[0]?.id}`}
+            state={{ category: details?.[0]?.category, news: details?.[0] }}
+          >
             <img
               src={dataPull?.arr?.[0]?.description.substring(
                 10,
@@ -47,10 +57,13 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div className='listItem2Title'>{dataPull?.arr?.[0]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='listItem2'>
-          <a href={dataPull?.arr?.[1]?.id} target='_blank'>
+          <Link
+            to={`/haberler/${details?.[1]?.id}`}
+            state={{ category: details?.[1]?.category, news: details?.[1] }}
+          >
             <img
               src={dataPull?.arr?.[1]?.description.substring(
                 10,
@@ -61,11 +74,14 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div>{dataPull?.arr?.[1]?.title}</div>
-          </a>
+          </Link>
         </div>
 
         <div className='listItem2'>
-          <a href={dataPull?.arr?.[2]?.id} target='_blank'>
+          <Link
+            to={`/haberler/${details?.[2]?.id}`}
+            state={{ category: details?.[2]?.category, news: details?.[2] }}
+          >
             <img
               src={dataPull?.arr?.[2]?.description.substring(
                 10,
@@ -76,7 +92,7 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div>{dataPull?.arr?.[2]?.title}</div>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -84,7 +100,10 @@ const Life = (arr = {}) => {
 
       <div className='card'>
         <div className='card1'>
-          <a href={dataPull?.arr?.[3]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[3]?.id}`}
+            state={{ category: details?.[3]?.category, news: details?.[3] }}
+          >
             <img
               src={dataPull?.arr?.[3]?.description.substring(
                 10,
@@ -95,10 +114,13 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div className='cardTitle'>{dataPull?.arr?.[3]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='card2'>
-          <a href={dataPull?.arr?.[4]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[4]?.id}`}
+            state={{ category: details?.[4]?.category, news: details?.[4] }}
+          >
             <img
               src={dataPull?.arr?.[4]?.description.substring(
                 10,
@@ -109,13 +131,16 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div className='cardTitle'>{dataPull?.arr?.[4]?.title}</div>
-          </a>
+          </Link>
         </div>
       </div>
 
       <div className='lifecontent'>
         <div className='contentAll'>
-          <a href={dataPull?.arr?.[5]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[5]?.id}`}
+            state={{ category: details?.[5]?.category, news: details?.[5] }}
+          >
             <img
               src={dataPull?.arr?.[5]?.description.substring(
                 10,
@@ -126,10 +151,13 @@ const Life = (arr = {}) => {
               height='100%'
             ></img>
             <div>{dataPull?.arr?.[5]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='contentAll'>
-          <a href={dataPull?.arr?.[6]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[6]?.id}`}
+            state={{ category: details?.[6]?.category, news: details?.[6] }}
+          >
             <img
               src={dataPull?.arr?.[6]?.description.substring(
                 10,
@@ -140,10 +168,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div>{dataPull?.arr?.[6]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='contentAll'>
-          <a href={dataPull?.arr?.[7]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[7]?.id}`}
+            state={{ category: details?.[7]?.category, news: details?.[7] }}
+          >
             <img
               src={dataPull?.arr?.[7]?.description.substring(
                 10,
@@ -154,12 +185,15 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div>{dataPull?.arr?.[7]?.title}</div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className='redCard'>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[8]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[8]?.id}`}
+            state={{ category: details?.[8]?.category, news: details?.[8] }}
+          >
             <img
               src={dataPull?.arr?.[8]?.description.substring(
                 10,
@@ -170,10 +204,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[8]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[9]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[9]?.id}`}
+            state={{ category: details?.[9]?.category, news: details?.[9] }}
+          >
             <img
               src={dataPull?.arr?.[9]?.description.substring(
                 10,
@@ -184,10 +221,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[9]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[10]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[10]?.id}`}
+            state={{ category: details?.[10]?.category, news: details?.[10] }}
+          >
             <img
               src={dataPull?.arr?.[10]?.description.substring(
                 10,
@@ -198,10 +238,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[10]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[11]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[11]?.id}`}
+            state={{ category: details?.[11]?.category, news: details?.[11] }}
+          >
             <img
               src={dataPull?.arr?.[11]?.description.substring(
                 10,
@@ -212,10 +255,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[11]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[12]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[12]?.id}`}
+            state={{ category: details?.[12]?.category, news: details?.[12] }}
+          >
             <img
               src={dataPull?.arr?.[12]?.description.substring(
                 10,
@@ -226,10 +272,13 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[12]?.title}</div>
-          </a>
+          </Link>
         </div>
         <div className='redCardIn'>
-          <a href={dataPull?.arr?.[13]?.id} target='_blank' rel='noreferrer'>
+          <Link
+            to={`/haberler/${details?.[13]?.id}`}
+            state={{ category: details?.[13]?.category, news: details?.[13] }}
+          >
             <img
               src={dataPull?.arr?.[13]?.description.substring(
                 10,
@@ -240,13 +289,16 @@ const Life = (arr = {}) => {
               alt=''
             ></img>
             <div className='redCardTitle'>{dataPull?.arr?.[13]?.title}</div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className='ntvContent'>
         <ul className='ulCard'>
           <li className='listCard'>
-            <a href={dataPull?.arr?.[14]?.id} target='_blank' rel='noreferrer'>
+            <Link
+              to={`/haberler/${details?.[14]?.id}`}
+              state={{ category: details?.[14]?.category, news: details?.[14] }}
+            >
               <img
                 src={dataPull?.arr?.[14]?.description.substring(
                   10,
@@ -257,10 +309,13 @@ const Life = (arr = {}) => {
                 alt=''
               ></img>
               <div>{dataPull?.arr?.[14]?.title}</div>
-            </a>
+            </Link>
           </li>
           <li className='listCard'>
-            <a href={dataPull?.arr?.[15]?.id} target='_blank' rel='noreferrer'>
+            <Link
+              to={`/haberler/${details?.[15]?.id}`}
+              state={{ category: details?.[15]?.category, news: details?.[15] }}
+            >
               <img
                 src={dataPull?.arr?.[15]?.description.substring(
                   10,
@@ -271,10 +326,13 @@ const Life = (arr = {}) => {
                 alt=''
               ></img>
               <div>{dataPull?.arr?.[15]?.title}</div>
-            </a>
+            </Link>
           </li>
           <li className='listCard'>
-            <a href={dataPull?.arr?.[16]?.id} target='_blank' rel='noreferrer'>
+            <Link
+              to={`/haberler/${details?.[16]?.id}`}
+              state={{ category: details?.[16]?.category, news: details?.[16] }}
+            >
               <img
                 src={dataPull?.arr?.[16]?.description.substring(
                   10,
@@ -285,13 +343,16 @@ const Life = (arr = {}) => {
                 alt=''
               ></img>
               <div>{dataPull?.arr?.[16]?.title}</div>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
 
       <div className='bigImg'>
-        <a href={dataPull?.arr?.[14]?.id} target='_blank' rel='noreferrer'>
+        <Link
+          to={`/haberler/${details?.[14]?.id}`}
+          state={{ category: details?.[14]?.category, news: details?.[14] }}
+        >
           <img
             src={dataPull?.arr?.[14]?.description.substring(
               10,
@@ -302,7 +363,7 @@ const Life = (arr = {}) => {
             alt=''
           ></img>
           <div className='bigImageTitle'>{dataPull?.arr?.[14]?.title}</div>
-        </a>
+        </Link>
       </div>
 
       {/* multiple ıtems */}
@@ -312,11 +373,12 @@ const Life = (arr = {}) => {
             {dataPull?.arr.map((value, index) => {
               return (
                 <div className='newsDiv' key={index}>
-                  <a
-                    href={value?.id}
-                    target='_blank'
-                    textDecoration='none'
-                    rel='noreferrer'
+                  <Link
+                    to={`/haberler/${details?.[index]?.id}`}
+                    state={{
+                      category: details?.[index]?.category,
+                      news: details?.[index],
+                    }}
                   >
                     <img
                       src={value?.description.substring(
@@ -327,7 +389,7 @@ const Life = (arr = {}) => {
                       alt=''
                     ></img>
                     <div className='newstitle'>{value?.title}</div>
-                  </a>
+                  </Link>
                 </div>
               );
             })}
