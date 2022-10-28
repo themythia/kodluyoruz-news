@@ -5,6 +5,7 @@ import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import Carousel from './Carousel';
 import './Life.css';
 import { Link } from 'react-router-dom';
+import { CORS_PROXY } from '../../..';
 
 const Life = (arr = {}) => {
   const [dataPull, setDataPull] = useState(null);
@@ -14,7 +15,7 @@ const Life = (arr = {}) => {
 
   async function request() {
     const dataUrl = await axios.get(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/yasam.rss'
+      CORS_PROXY + 'https://www.ntv.com.tr/yasam.rss'
     );
     const array = parseFeed(dataUrl.data).items;
     return array;

@@ -1,8 +1,8 @@
 import { parseFeed } from 'htmlparser2';
+import { CORS_PROXY } from '../..';
 import formatRSSFeed from './formatRSSFeed';
 
 const fetchHome = async () => {
-  const corsProxy = 'https://pacific-caverns-96128.herokuapp.com/';
   const rssFeeds = [
     'https://www.ntv.com.tr/son-dakika.rss',
     'https://www.ntv.com.tr/teknoloji.rss',
@@ -13,7 +13,7 @@ const fetchHome = async () => {
   // fetches RSS feed & formats the response
   const handleFetch = async (index) => {
     try {
-      const response = await fetch(corsProxy + rssFeeds[index]);
+      const response = await fetch(CORS_PROXY + rssFeeds[index]);
       const text = await response.text();
       const parse = parseFeed(text);
       return formatRSSFeed(parse);

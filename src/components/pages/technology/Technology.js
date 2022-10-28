@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import { Link } from 'react-router-dom';
+import { CORS_PROXY } from '../../..';
 
 const Technology = () => {
   const style1 =
@@ -45,9 +46,7 @@ const Technology = () => {
   const order3 = Array.from(Array(moreNumbers).keys(), (x) => x + 19);
 
   useEffect(() => {
-    fetch(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/teknoloji.rss'
-    )
+    fetch(CORS_PROXY + 'https://www.ntv.com.tr/teknoloji.rss')
       .then((res) => res.text())
       .then((data) => setText(data));
   }, []);
@@ -129,7 +128,7 @@ const Technology = () => {
           <>
             {
               <div>
-                <p className='bg-blue-900 w-full text-white h-12 font-bold items-center text-2xl flex lg:pl-64 sm:pl-32'>
+                <p className='flex items-center w-full h-12 text-2xl font-bold text-white bg-blue-900 lg:pl-64 sm:pl-32'>
                   Teknoloji Haberleri
                 </p>
               </div>
@@ -138,10 +137,10 @@ const Technology = () => {
         ) : null}
       </div>
 
-      <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-2/3 mx-auto h-auto md:w-full sm:w-full mt-4'>
-        <div className='col-span-3   lg:col-span-3 md:col-span-3  sm:col-span-3 row-span-4 w-full h-full'>
+      <div className='grid h-auto grid-cols-3 gap-1 px-2 mx-auto mt-4 grid-rows-7 lg:w-2/3 md:w-full sm:w-full'>
+        <div className='w-full h-full col-span-3 row-span-4 lg:col-span-3 md:col-span-3 sm:col-span-3'>
           {txt[0] ? (
-            <div className='w-full h-full relative bg-white flex flex-col justify-center'>
+            <div className='relative flex flex-col justify-center w-full h-full bg-white'>
               <Link
                 key={count}
                 to={`/haberler/${news.items[count].id}`}
@@ -153,18 +152,18 @@ const Technology = () => {
                 {/* <a href={`${txt[0].linkContent[count]}`}> */}
                 <img
                   src={txt[0].imageContent[count]}
-                  className='w-full h-full bg-cover bg-center'
+                  className='w-full h-full bg-center bg-cover'
                   alt='sportimage'
                 />
                 {/* </a> */}
               </Link>
-              <div className='justify-center flex'>
-                <p className='lg:text-3xl flex absolute w-auto bottom-32 text-center text-white font-bold font-sans p-2 bg-blue-900 box-border md:text-xl sm:text-sm'>
+              <div className='flex justify-center'>
+                <p className='box-border absolute flex w-auto p-2 font-sans font-bold text-center text-white bg-blue-900 lg:text-3xl bottom-32 md:text-xl sm:text-sm'>
                   {txt[0].textContent[count]}
                 </p>
               </div>
 
-              <ul className='absolute bottom-0 flex justify-center flex-nowrap w-full cursor-pointer bg-white p-5'>
+              <ul className='absolute bottom-0 flex justify-center w-full p-5 bg-white cursor-pointer flex-nowrap'>
                 <li onMouseEnter={() => numbers(1)} className={numberClass[0]}>
                   1
                 </li>
@@ -202,13 +201,13 @@ const Technology = () => {
           )}
         </div>
 
-        <div className='col-span-3 row-span-auto mt-2 grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3 col-span-3 gap-4 mt-2 row-span-auto'>
           {txt[0] ? (
             <>
               {order1.map((item, index) => (
                 <div
                   key={index}
-                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                  className='flex grid flex-col items-center justify-center w-full h-full col-span-3 grid-rows-3 row-span-1 mx-auto bg-white md:col-span-1 sm:col-span-3'
                 >
                   <Link
                     to={`/haberler/${news.items[item].id}`}
@@ -216,20 +215,20 @@ const Technology = () => {
                       category: 'teknoloji',
                       news: news.items[item],
                     }}
-                    className='row-span-2 w-full h-full bg-contain'
+                    className='w-full h-full row-span-2 bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
                     {/* </a> */}
                   </Link>
-                  <p className='row-span-1 my-auto px-2 text-black font-bold text-center'>
+                  <p className='row-span-1 px-2 my-auto font-bold text-center text-black'>
                     {txt[0].textContent[item]}
                   </p>
                 </div>
@@ -238,25 +237,25 @@ const Technology = () => {
           ) : null}
         </div>
 
-        <div className='col-span-3 row-span-1 h-3/4 mt-4 grid grid-cols-6 gap-4'>
+        <div className='grid grid-cols-6 col-span-3 row-span-1 gap-4 mt-4 h-3/4'>
           {txt[0] ? (
-            <div className='col-span-6 row-span-1 h-3/4 mt-2 grid grid-cols-6 gap-4 bg-black p-4'>
+            <div className='grid grid-cols-6 col-span-6 row-span-1 gap-4 p-4 mt-2 bg-black h-3/4'>
               {order2.map((item, index) => (
                 <div
                   key={index}
-                  className='bg-sky-900 overflow-hidden bg-black hover:bg-slate-800 col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-4 sm:col-span-3 mx-auto'
+                  className='grid w-full h-full col-span-3 grid-rows-4 row-span-1 mx-auto overflow-hidden bg-black bg-white bg-sky-900 hover:bg-slate-800 md:col-span-1 sm:col-span-3'
                 >
                   <a
                     href={`${txt[0].linkContent[item]}`}
-                    className='row-span-2 w-full h-full bg-contain'
+                    className='w-full h-full row-span-2 bg-contain'
                   >
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
                   </a>
-                  <p className='row-span-2 text-xs mt-2 px-2 text-white text-left'>
+                  <p className='row-span-2 px-2 mt-2 text-xs text-left text-white'>
                     {txt[0].textContent[item]}
                   </p>
                 </div>
@@ -265,13 +264,13 @@ const Technology = () => {
           ) : null}
         </div>
 
-        <div className='col-span-3 row-span-auto grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3 col-span-3 gap-4 row-span-auto'>
           {txt[0] ? (
             <>
               {order3.map((item, index) => (
                 <div
                   key={index}
-                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                  className='flex grid flex-col items-center justify-center w-full h-full col-span-3 grid-rows-3 row-span-1 mx-auto bg-white md:col-span-1 sm:col-span-3'
                 >
                   <Link
                     to={`/haberler/${news.items[item + 2].id}`}
@@ -279,20 +278,20 @@ const Technology = () => {
                       category: 'teknoloji',
                       news: news.items[item + 2],
                     }}
-                    className='row-span-2 w-full h-full bg-contain'
+                    className='w-full h-full row-span-2 bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
                     {/* </a> */}
                   </Link>
-                  <p className='row-span-1 my-auto px-2 text-black font-bold text-center'>
+                  <p className='row-span-1 px-2 my-auto font-bold text-center text-black'>
                     {txt[0].textContent[item]}
                   </p>
                 </div>
@@ -319,7 +318,7 @@ const Technology = () => {
         {txt[0] ? (
           <>
             {
-              <div className='flex bg-black h-14 items-center mt-4 text-2xl flex lg:pl-64 sm:pl-32'>
+              <div className='flex items-center mt-4 text-2xl bg-black h-14 lg:pl-64 sm:pl-32'>
                 <a href='https://ntv.com.tr' className=''>
                   <img
                     className='mr-12'
@@ -327,7 +326,7 @@ const Technology = () => {
                     alt='ntv.com.tr'
                   ></img>
                 </a>
-                <a className='text-white text-sm'>
+                <a className='text-sm text-white'>
                   &#169; Copyright 2022 | Tüm Hakları Saklıdır.
                 </a>
               </div>

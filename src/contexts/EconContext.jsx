@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
 import formatRSSFeed from '../utils/api/formatRSSFeed';
 import fetchCurrencies from '../utils/api/fetchCurrencies';
+import { CORS_PROXY } from '..';
 
 export const EconContext = createContext();
 
@@ -12,9 +13,7 @@ const EconContextWrapper = ({ children }) => {
 
   useEffect(() => {
     // fetches RSS feed
-    fetch(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/ekonomi.rss'
-    )
+    fetch(CORS_PROXY + 'https://www.ntv.com.tr/ekonomi.rss')
       .then((res) => res.text())
       .then((data) => parseFeed(data))
       .then((parsedData) => setNews(formatRSSFeed(parsedData)))

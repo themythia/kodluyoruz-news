@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { parseFeed } from 'htmlparser2';
+import { CORS_PROXY } from '../../..';
 
 const dataList = async () => {
   const response = await axios.get(
-    `https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/otomobil.rss`
+    CORS_PROXY + 'https://www.ntv.com.tr/otomobil.rss'
   );
 
   // xmli parçalamak için parsefeed metodu kullanıldı.

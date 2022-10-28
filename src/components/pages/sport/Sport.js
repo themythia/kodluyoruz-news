@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
 import { Link } from 'react-router-dom';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { CORS_PROXY } from '../../..';
 
 function Sport() {
   const style1 =
@@ -42,9 +43,7 @@ function Sport() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/sporskor.rss'
-    )
+    fetch(CORS_PROXY + 'https://www.ntv.com.tr/sporskor.rss')
       .then((res) => res.text())
       .then((data) => setText(data));
   }, []);
@@ -192,7 +191,7 @@ function Sport() {
 
   return (
     <div>
-      <div className='flex bg-sky-900 justify-around h-14 items-center'>
+      <div className='flex items-center justify-around bg-sky-900 h-14'>
         <a href='/' className=''>
           <img
             className='mr-36'
@@ -201,15 +200,15 @@ function Sport() {
           ></img>
         </a>
         <a href='https://ntv.com.tr'>
-          <span className='text-white text-sm font-semibold'>
+          <span className='text-sm font-semibold text-white'>
             NTV.COM.TR'ye geri dön &#8594;
           </span>
         </a>
       </div>
-      <div className='grid grid-cols-3 grid-rows-7 gap-1 px-2 lg:w-2/3 mx-auto h-auto md:w-full sm:w-full mt-4'>
-        <div className='col-span-3  lg:col-span-2 row-span-4 md:col-span-2 row-span-2 sm:col-span-3'>
+      <div className='grid h-auto grid-cols-3 gap-1 px-2 mx-auto mt-4 grid-rows-7 lg:w-2/3 md:w-full sm:w-full'>
+        <div className='col-span-3 row-span-2 row-span-4 lg:col-span-2 md:col-span-2 sm:col-span-3'>
           {txt[0] ? (
-            <div className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'>
+            <div className='relative flex justify-center object-contain w-full h-full mx-auto bg-white'>
               <Link
                 to={`/haberler/${news.items[count].id}`}
                 state={{
@@ -219,12 +218,12 @@ function Sport() {
               >
                 <img
                   src={txt[0].imageContent[count]}
-                  className='bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full'
+                  className='w-full h-full bg-center bg-cover bg-origin-padding bg-origin-border'
                   alt='sportimage'
                 />
               </Link>
               <p
-                className='w-full h-28 absolute bottom-20 text-center font-bold font-sans p-2 box-border text-white text-3xl'
+                className='box-border absolute w-full p-2 font-sans text-3xl font-bold text-center text-white h-28 bottom-20'
                 style={{
                   background:
                     'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
@@ -234,11 +233,11 @@ function Sport() {
               </p>
               <button
                 type='button'
-                className='flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none'
+                className='absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none'
               >
                 <span
                   onClick={() => handleClickPrev()}
-                  className='inline-flex justify-center items-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
+                  className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
                 >
                   <svg
                     aria-hidden='true'
@@ -259,11 +258,11 @@ function Sport() {
               </button>
               <button
                 type='button'
-                className='flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none'
+                className='absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none'
               >
                 <span
                   onClick={() => handleClickNext()}
-                  className='inline-flex justify-center items-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
+                  className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
                 >
                   <svg
                     aria-hidden='true'
@@ -282,7 +281,7 @@ function Sport() {
                   </svg>
                 </span>
               </button>
-              <ul className='absolute bottom-0 flex justify-center flex-nowrap w-full cursor-pointer bg-white p-5'>
+              <ul className='absolute bottom-0 flex justify-center w-full p-5 bg-white cursor-pointer flex-nowrap'>
                 <li onClick={() => numbers(1)} className={numberClass[0]}>
                   1
                 </li>
@@ -319,7 +318,7 @@ function Sport() {
             <div>Loading...</div>
           )}
         </div>
-        <div className='grid grid-rows-3 gap-y-2 col-span-3 ml-2 mb-2  md:col-span-1 row-span-1 sm:col-span-2'>
+        <div className='grid col-span-3 grid-rows-3 row-span-1 mb-2 ml-2 gap-y-2 md:col-span-1 sm:col-span-2'>
           {txt[0] ? (
             <>
               {order2.map((item, index) => (
@@ -331,13 +330,13 @@ function Sport() {
                     news: news.items[item],
                   }}
                 >
-                  <div className='row-span-3 w-full h-full bg-white grid grid-cols-2'>
+                  <div className='grid w-full h-full grid-cols-2 row-span-3 bg-white'>
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='col-span-1 my-auto w-full h-full bg-contain'
+                      className='w-full h-full col-span-1 my-auto bg-contain'
                     ></img>
-                    <p className='col-span-1 my-auto px-2 text-xs text-blue-900 font-bold text-left'>
+                    <p className='col-span-1 px-2 my-auto text-xs font-bold text-left text-blue-900'>
                       {txt[0].textContent[item]}
                     </p>
                   </div>
@@ -346,7 +345,7 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 ml-2 md:col-span-1 row-span-1 sm:col-span-1'>
+        <div className='col-span-3 row-span-1 ml-2 md:col-span-1 sm:col-span-1'>
           {txt[0] ? (
             <>
               {order3.map((item, index) => (
@@ -358,13 +357,13 @@ function Sport() {
                     news: news.items[item],
                   }}
                 >
-                  <div className='row-span-1 w-full h-full bg-white grid grid-rows-3'>
+                  <div className='grid w-full h-full grid-rows-3 row-span-1 bg-white'>
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
-                    <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-left'>
+                    <p className='row-span-1 px-2 my-auto font-bold text-left text-blue-900'>
                       {txt[0].textContent[item]}
                     </p>
                   </div>
@@ -373,7 +372,7 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 mt-2 grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-2 col-span-3 gap-4 mt-2'>
           {txt[0] ? (
             <>
               {order5.map((item, index) => (
@@ -386,16 +385,16 @@ function Sport() {
                   }}
                 >
                   <div
-                    className='relative w-full mx-auto object-contain h-full bg-white flex justify-center'
+                    className='relative flex justify-center object-contain w-full h-full mx-auto bg-white'
                     key={index}
                   >
                     <img
                       src={txt[0].imageContent[item]}
-                      className='bg-cover bg-center bg-origin-padding bg-origin-border w-full h-full'
+                      className='w-full h-full bg-center bg-cover bg-origin-padding bg-origin-border'
                       alt='sportimage'
                     />
                     <p
-                      className='w-full h-24 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-xl'
+                      className='box-border absolute bottom-0 w-full h-24 p-2 font-sans text-xl font-bold text-center text-white'
                       style={{
                         background:
                           'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
@@ -409,12 +408,12 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 row-span-auto mt-2 grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3 col-span-3 gap-4 mt-2 row-span-auto'>
           {txt[0] ? (
             <>
               {order6.map((item, index) => (
                 <div
-                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                  className='flex grid flex-col items-center justify-center w-full h-full col-span-3 grid-rows-3 row-span-1 mx-auto bg-white md:col-span-1 sm:col-span-3'
                   key={index}
                 >
                   <Link
@@ -424,15 +423,15 @@ function Sport() {
                       category: 'spor',
                       news: news.items[item],
                     }}
-                    className='row-span-2 w-full h-full bg-contain'
+                    className='w-full h-full row-span-2 bg-contain'
                   >
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
                   </Link>
-                  <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
+                  <p className='row-span-1 px-2 my-auto font-bold text-center text-blue-900'>
                     {txt[0].textContent[item]}
                   </p>
                 </div>
@@ -440,7 +439,7 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 row-span-auto mt-2 grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3 col-span-3 gap-4 mt-2 row-span-auto'>
           {txt[0] ? (
             <>
               {order7.map((item, index) => (
@@ -453,15 +452,15 @@ function Sport() {
                   }}
                 >
                   <div
-                    className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                    className='flex grid flex-col items-center justify-center w-full h-full col-span-3 grid-rows-3 row-span-1 mx-auto bg-white md:col-span-1 sm:col-span-3'
                     key={index}
                   >
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
-                    <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
+                    <p className='row-span-1 px-2 my-auto font-bold text-center text-blue-900'>
                       {txt[0].textContent[item]}
                     </p>
                   </div>
@@ -470,15 +469,15 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 mt-2 grid'>
+        <div className='grid col-span-3 mt-2'>
           {txt[0] ? (
             <>
               {order8.map((item, index) => (
                 <div
-                  className='relative w-full mx-auto h-full bg-white'
+                  className='relative w-full h-full mx-auto bg-white'
                   key={index}
                 >
-                  <p className='text-3xl mt-2 mb-2 ml-4 font-bold justify-start'>
+                  <p className='justify-start mt-2 mb-2 ml-4 text-3xl font-bold'>
                     FOTO
                   </p>
                   <Link
@@ -491,11 +490,11 @@ function Sport() {
                   >
                     <img
                       src={txt[0].imageContent[item]}
-                      className='w-full h-max box-border'
+                      className='box-border w-full h-max'
                       alt='sportimage'
                     />
                     <p
-                      className='w-full h-28 bottom-0 absolute text-center font-bold font-sans p-2 box-border text-white text-4xl'
+                      className='box-border absolute bottom-0 w-full p-2 font-sans text-4xl font-bold text-center text-white h-28'
                       style={{
                         background:
                           'linear-gradient(0deg, rgba(2,0,36,0.6) 50%, transparent 100%)',
@@ -509,18 +508,18 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='relative grid grid-cols-3 grid-rows-1 col-span-3 row-span-1 w-full h-auto'>
+        <div className='relative grid w-full h-auto grid-cols-3 col-span-3 grid-rows-1 row-span-1'>
           {txt[0] ? (
             <>
               {
                 <>
                   <button
                     type='button'
-                    className='cursor-default absolute mt-10'
+                    className='absolute mt-10 cursor-default'
                   >
                     <span
                       onClick={() => handleClickPrev2()}
-                      className='bg-sky-800 inline-flex w-8 h-10'
+                      className='inline-flex w-8 h-10 bg-sky-800'
                     >
                       <svg
                         className='text-white'
@@ -540,11 +539,11 @@ function Sport() {
                   </button>
                   <button
                     type='button'
-                    className='cursor-default absolute mt-10 right-0'
+                    className='absolute right-0 mt-10 cursor-default'
                   >
                     <span
                       onClick={() => handleClickNext2()}
-                      className='bg-sky-800 inline-flex w-8 h-10'
+                      className='inline-flex w-8 h-10 bg-sky-800'
                     >
                       <svg
                         className='text-white'
@@ -578,17 +577,17 @@ function Sport() {
                   }}
                 >
                   <div
-                    className='row-span-3 p-3 w-full h-full bg-white grid grid-cols-2'
+                    className='grid w-full h-full grid-cols-2 row-span-3 p-3 bg-white'
                     key={index}
                   >
                     {/* <a href={`${txt[0].linkContent[item]}`}> */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='bg-gray-200 row-span-1 w-full h-full bg-contain'
+                      className='w-full h-full row-span-1 bg-gray-200 bg-contain'
                     ></img>
                     {/* </a> */}
-                    <p className='hover:ease-in duration-300 hover:bg-sky-800 hover:text-white bg-gray-200 px-2 text-xs text-black w-full h-full font-bold text-left'>
+                    <p className='w-full h-full px-2 text-xs font-bold text-left text-black duration-300 bg-gray-200 hover:ease-in hover:bg-sky-800 hover:text-white'>
                       {txt[0].textContent[item]}
                     </p>
                   </div>
@@ -597,12 +596,12 @@ function Sport() {
             </>
           ) : null}
         </div>
-        <div className='col-span-3 row-span-auto mt-2 grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3 col-span-3 gap-4 mt-2 row-span-auto'>
           {txt[0] ? (
             <>
               {order1.map((item, index) => (
                 <div
-                  className='flex flex-col justify-center items-center col-span-3 md:col-span-1 row-span-1 w-full h-full bg-white grid grid-rows-3 sm:col-span-3 mx-auto'
+                  className='flex grid flex-col items-center justify-center w-full h-full col-span-3 grid-rows-3 row-span-1 mx-auto bg-white md:col-span-1 sm:col-span-3'
                   key={index}
                 >
                   <Link
@@ -612,20 +611,20 @@ function Sport() {
                       category: 'spor',
                       news: news.items[item],
                     }}
-                    className='row-span-2 w-full h-full bg-contain'
+                    className='w-full h-full row-span-2 bg-contain'
                   >
                     {/* <a
                       href={`${txt[0].linkContent[item]}`}
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     > */}
                     <img
                       src={txt[0].imageContent[item]}
                       alt=''
-                      className='row-span-2 w-full h-full bg-contain'
+                      className='w-full h-full row-span-2 bg-contain'
                     ></img>
                     {/* </a> */}
                   </Link>
-                  <p className='row-span-1 my-auto px-2 text-blue-900 font-bold text-center'>
+                  <p className='row-span-1 px-2 my-auto font-bold text-center text-blue-900'>
                     {txt[0].textContent[item]}
                   </p>
                 </div>
@@ -651,7 +650,7 @@ function Sport() {
         {txt[0] ? (
           <>
             {
-              <div className='flex bg-sky-900 mt-10 justify-around h-14 items-center'>
+              <div className='flex items-center justify-around mt-10 bg-sky-900 h-14'>
                 <a href='/' className=''>
                   <img
                     className='mr-12'
@@ -660,7 +659,7 @@ function Sport() {
                   ></img>
                 </a>
                 <a href='https://ntv.com.tr'>
-                  <span className='text-white text-sm font-semibold'>
+                  <span className='text-sm font-semibold text-white'>
                     &#169; Copyrigth 2022 | Tüm Hakları Saklıdır.
                   </span>
                 </a>

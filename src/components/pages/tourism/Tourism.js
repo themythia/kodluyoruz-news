@@ -4,6 +4,7 @@ import TourismCard from './TourismCard';
 import { parseFeed } from 'htmlparser2';
 import Carousel from './Carousel';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { CORS_PROXY } from '../../..';
 
 const Tourism = () => {
   const [rssText, setRssText] = useState('');
@@ -14,7 +15,7 @@ const Tourism = () => {
 
   const fetchNews = async () => {
     const response = await fetch(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/seyahat.rss'
+      CORS_PROXY + 'https://www.ntv.com.tr/seyahat.rss'
     );
 
     const data = await response.text();

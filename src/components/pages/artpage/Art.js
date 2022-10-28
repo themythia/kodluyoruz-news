@@ -4,6 +4,7 @@ import ArtCard from './ArtCard';
 import { parseFeed } from 'htmlparser2';
 import Carousel from './Carousel';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
+import { CORS_PROXY } from '../../..';
 
 const Art = () => {
   const [rssText, setRssText] = useState('');
@@ -14,7 +15,7 @@ const Art = () => {
 
   const fetchNews = async () => {
     const response = await fetch(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/sanat.rss'
+      CORS_PROXY + 'https://www.ntv.com.tr/sanat.rss'
     );
 
     const data = await response.text();

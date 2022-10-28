@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { parseFeed } from 'htmlparser2';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import { Link } from 'react-router-dom';
+import { CORS_PROXY } from '../../..';
 
 const Astrology = () => {
   const style1 =
@@ -52,7 +53,7 @@ const Astrology = () => {
 
   useEffect(() => {
     fetch(
-      'https://pacific-caverns-96128.herokuapp.com/http://www.ntv.com.tr/n-life.rss'
+      CORS_PROXY + 'http://www.ntv.com.tr/n-life.rss'
     )
       .then((res) => res.text())
       .then((data) => setText(data));

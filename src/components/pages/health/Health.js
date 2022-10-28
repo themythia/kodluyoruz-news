@@ -5,6 +5,7 @@ import { parseFeed } from 'htmlparser2';
 import axios from 'axios';
 import formatRSSFeed from '../../../utils/api/formatRSSFeed';
 import { useNavigate } from 'react-router-dom';
+import { CORS_PROXY } from '../../..';
 
 const Health = (arr2 = {}) => {
   const [getData, setGetData] = useState({});
@@ -15,7 +16,7 @@ const Health = (arr2 = {}) => {
 
   async function request() {
     const dataUrl = await axios.get(
-      'https://pacific-caverns-96128.herokuapp.com/https://www.ntv.com.tr/saglik.rss'
+      CORS_PROXY + 'https://www.ntv.com.tr/saglik.rss'
     );
     const array = parseFeed(dataUrl.data).items;
     return array;
